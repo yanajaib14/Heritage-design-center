@@ -44,7 +44,7 @@ export default function NavBar() {
       <nav ref={navRef} className={`nav${scrolled ? " scrolled" : ""}`} style={{ opacity: 0 }}>
         <a href="#top" className="nav-logo" aria-label="Heritage Design Center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/0c15682d-817f-4508-b804-ad5aba6b200f/Heritage_Design_Center_email_signature_400px.png?content-type=image%2Fpng" alt="Heritage Design Center" height={74} style={{ height: 74, width: "auto" }} />
+          <img src="https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/0c15682d-817f-4508-b804-ad5aba6b200f/Heritage_Design_Center_email_signature_400px.png?content-type=image%2Fpng" alt="Heritage Design Center" height={74} style={{ height: 89, width: "auto" }} />
         </a>
         <div className="nav-center">
           {[

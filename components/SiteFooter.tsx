@@ -27,7 +27,7 @@ export default function SiteFooter() {
     <footer ref={footerRef}>
       <div className="footer-inner">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/0c15682d-817f-4508-b804-ad5aba6b200f/Heritage_Design_Center_email_signature_400px.png?content-type=image%2Fpng" alt="Heritage Design Center" className="footer-logo" style={{ height: 82, width: "auto" }} />
+        <img src="https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/0c15682d-817f-4508-b804-ad5aba6b200f/Heritage_Design_Center_email_signature_400px.png?content-type=image%2Fpng" alt="Heritage Design Center" className="footer-logo" style={{ height: 98, width: "auto" }} />
         <div className="footer-tag">Kitchen &amp; Bath Showroom — Lacey, WA</div>
 
         <nav className="footer-nav">
