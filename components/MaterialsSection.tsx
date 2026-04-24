@@ -44,9 +44,9 @@ export default function MaterialsSection() {
       <div className="materials-inner">
         <div className="materials-head">
           <span className="eyebrow">The Materials Library</span>
-          <h2>An Archive <em>You Can Touch.</em></h2>
+          <h2>Touch the Future <em>of Your Space.</em></h2>
           <p>
-            Stone slabs, cabinet doors, tile samples, and metal finishes — laid out together, the way they&apos;ll actually live in your space. No guesswork, no catalog browsing.
+            Where your vision finds its physical form. Explore a curated library of stone, cabinetry, and hardware — laid out together so you can experience your design before you build it.
           </p>
         </div>
         <div className="materials-collage">

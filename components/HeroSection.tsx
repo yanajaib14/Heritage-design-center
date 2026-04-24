@@ -62,7 +62,7 @@ export default function HeroSection() {
       <div
         ref={bgRef}
         className="hero-bg"
-        style={{ backgroundImage: "url('/assets/hero-bg.jpg')" }}
+        style={{ backgroundImage: "url('https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/e2edde19-4fb4-4a28-920e-207d0ee8b444/ChatGPT+Image+Apr+2%2C+2026%2C+10_37_53+AM.png?content-type=image%2Fpng')" }}
         aria-hidden="true"
       />
       <div className="hero-overlay" aria-hidden="true" />

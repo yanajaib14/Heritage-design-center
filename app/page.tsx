@@ -48,7 +48,7 @@ export default function Home() {
       <Showcase
         reverse
         eyebrow="Countertops"
-        title={<>Stone That Stops You <em>in Your Tracks.</em></>}
+        title={<>Surfaces You&apos;ll Love, <em>Built for Everyday Function.</em></>}
         body="Quartz, marble, quartzite, granite, and butcher block from MSI Surfaces and Cambria."
         pills={["Quartz", "Marble", "Granite", "Butcher Block"]}
         brands={[
@@ -72,8 +72,8 @@ export default function Home() {
         brands={[{ label: "MSI Surfaces", href: "https://www.msisurfaces.com/" }]}
         cta="Browse the Tile Library"
         ctaHref={SCHEDULE}
-        image="https://images.squarespace-cdn.com/content/v1/6982349a56e1e46c7b2e0861/5cbd15c4-dad8-4add-9312-4991168d9b42/Screenshot+2026-03-16+161014.png?format=500w"
-        imageAlt="Zellige handmade tile"
+        image="https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/0c09e194-781a-4b95-8986-697488e320d0/ChatGPT+Image+Apr+3%2C+2026%2C+12_06_18+PM.png?content-type=image%2Fpng"
+        imageAlt="Tile and stone selection"
       />
 
       {/* Fixtures & Hardware */}

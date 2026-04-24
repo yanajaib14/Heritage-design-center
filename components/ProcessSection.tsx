@@ -72,13 +72,21 @@ export default function ProcessSection() {
             The Heritage Experience
           </span>
           <h2>
-            A Considered Process,{" "}
-            <em>From First Visit to Final Install.</em>
+            From First Visit to{" "}
+            <em>Final Detail.</em>
           </h2>
+          <p style={{ marginTop: "24px" }}>
+            Four chapters, one throughline. Our designers guide every decision — from the first sketch to the last piece of hardware — so your project moves forward with clarity.
+          </p>
         </div>
-        <p>
-          Four chapters, one throughline. Our designers guide every decision — from the first sketch to the last piece of hardware — so your project moves forward with clarity.
-        </p>
+        <div className="process-head-img">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/561695ba-8683-4348-93fb-4067502ac4e9/Design+Review+Meeting.png?content-type=image%2Fpng"
+            alt="Design review meeting"
+            loading="lazy"
+          />
+        </div>
       </div>
 
       <div className="process-timeline">

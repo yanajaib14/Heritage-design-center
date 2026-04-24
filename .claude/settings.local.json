@@ -15,7 +15,9 @@
       "Bash(curl -sI \"https://api.anthropic.com/v1/design/h/e1viAdlayEY2puickGrE4A\")",
       "Bash(git init *)",
       "Bash(git add *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(gh --version)",
+      "Bash(git push *)"
     ]
   }
 }
