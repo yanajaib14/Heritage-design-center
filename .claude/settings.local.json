@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest . --typescript --tailwind --app --no-eslint --no-src-dir --import-alias \"@/*\" --yes)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/kitchens)",
+      "Bash(curl -s -o /dev/null -w \" %{http_code}\" http://localhost:3000/baths)",
+      "Bash(curl -s -o /dev/null -w \" %{http_code}\" http://localhost:3000/about)",
+      "Bash(curl -s -o /dev/null -w \" %{http_code}\" http://localhost:3000/contact)",
+      "PowerShell(Start-Process \"http://localhost:3000\")",
+      "WebFetch(domain:claude.ai)",
+      "WebFetch(domain:api.anthropic.com)",
+      "Bash(curl -sI \"https://api.anthropic.com/v1/design/h/e1viAdlayEY2puickGrE4A\")",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
+    ]
+  }
+}
