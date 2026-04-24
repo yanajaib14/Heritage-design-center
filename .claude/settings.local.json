@@ -18,7 +18,11 @@
       "Bash(git commit *)",
       "Bash(gh --version)",
       "Bash(git push *)",
-      "Bash(git config *)"
+      "Bash(git config *)",
+      "Bash(vercel --version)",
+      "Bash(vercel --prod)",
+      "Bash(vercel --prod --yes)",
+      "Bash(vercel --prod --yes --name heritage-design-center)"
     ]
   }
 }

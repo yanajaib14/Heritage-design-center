@@ -1313,7 +1313,7 @@ footer {
   .hero-ctas .btn { width: 100%; text-align: center; }
   .frosted-pill { font-size: 11px; letter-spacing: 0.12em; }
   .hero-card { border-radius: 12px; }
-  .nav-logo img { height: 58px !important; }
+  .nav-logo img { height: 70px !important; }
   .trust { padding: 64px 20px; }
   .trust-stats { grid-template-columns: 1fr 1fr; gap: 32px; }
   .process { padding: 64px 20px; }
@@ -1350,7 +1350,7 @@ footer {
   .trust-stats { grid-template-columns: 1fr; }
   .btn { padding: 14px 20px; font-size: 13px; }
   .mobile-menu a.ml { font-size: 28px; }
-  .nav-logo img { height: 52px !important; }
+  .nav-logo img { height: 62px !important; }
 }
 
 ::selection { background: var(--gold); color: var(--bg); }
