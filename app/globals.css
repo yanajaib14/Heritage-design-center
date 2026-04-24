@@ -1262,10 +1262,12 @@ footer {
 @media (max-width: 960px) {
   .nav-center, .nav-cta { display: none; }
   .hamburger { display: flex; }
-  .hero { padding-top: 120px; }
+  .hero { padding-top: 120px; flex-direction: column; align-items: stretch; justify-content: flex-start; }
+  .hero-inner { width: 100%; }
   .hero h1 { font-size: clamp(36px, 9vw, 44px); }
   .hero-sub { font-size: 17px; }
-  .hero-bottom { position: static; margin-top: 56px; flex-direction: column; align-items: stretch; }
+  .hero-bottom { position: static; width: 100%; margin-top: 40px; flex-direction: column; align-items: stretch; gap: 16px; }
+  .frosted-pill { white-space: normal; border-radius: 12px; width: 100%; box-sizing: border-box; }
   .hero-card { width: 100%; }
   .trust-stats { grid-template-columns: 1fr; gap: 40px; padding: 40px 0; }
   .showcase-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -1303,15 +1305,14 @@ footer {
 /* ---------- Responsive — mobile (iPhone & Android ~390–420px) ---------- */
 @media (max-width: 640px) {
   :root { --pad: 20px; }
-  .hero { padding: 100px 20px 60px; min-height: 100svh; overflow-x: hidden; }
+  .hero { padding: 100px 20px 60px; min-height: 100svh; }
   .hero h1 { font-size: clamp(32px, 10vw, 40px); }
   .hero-sub { font-size: 16px; max-width: 100%; }
   .hero-pill { font-size: 11px; padding: 8px 14px; }
   .hero-ctas { flex-direction: column; gap: 12px; }
   .hero-ctas .btn { width: 100%; text-align: center; }
-  .hero-bottom { position: static; margin-top: 32px; flex-direction: column; align-items: stretch; gap: 16px; width: 100%; }
-  .frosted-pill { white-space: normal; border-radius: 12px; width: 100%; box-sizing: border-box; font-size: 11px; letter-spacing: 0.12em; }
-  .hero-card { width: 100%; border-radius: 12px; }
+  .frosted-pill { font-size: 11px; letter-spacing: 0.12em; }
+  .hero-card { border-radius: 12px; }
   .nav-logo img { height: 58px !important; }
   .trust { padding: 64px 20px; }
   .trust-stats { grid-template-columns: 1fr 1fr; gap: 32px; }
