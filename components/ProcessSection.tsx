@@ -67,15 +67,13 @@ export default function ProcessSection() {
   return (
     <section className="process" id="process" ref={sectionRef}>
       <div className="process-head">
-        <div>
-          <span className="eyebrow" style={{ display: "block", marginBottom: "20px" }}>
-            The Heritage Experience
-          </span>
+        <div className="process-head-copy">
+          <span className="eyebrow">The Heritage Experience</span>
           <h2>
             From First Visit to{" "}
             <em>Final Detail.</em>
           </h2>
-          <p style={{ marginTop: "24px" }}>
+          <p>
             Four chapters, one throughline. Our designers guide every decision — from the first sketch to the last piece of hardware — so your project moves forward with clarity.
           </p>
         </div>

@@ -928,10 +928,25 @@ footer {
   object-fit: cover;
   display: block;
 }
+.process-head-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+.process-head-copy .eyebrow {
+  display: block;
+  margin: 0 0 20px 0;
+  padding: 0;
+}
 .process-head h2 {
   font-size: clamp(44px, 5.2vw, 68px);
   font-weight: 500;
   max-width: 14ch;
+  margin: 0;
+  padding: 0;
 }
 .process-head h2 em { font-style: italic; color: var(--gold); font-weight: 400; }
 .process-head p {
@@ -939,8 +954,8 @@ footer {
   font-size: 19px;
   line-height: 1.75;
   text-align: left;
-  margin-left: 0;
-  padding-left: 0;
+  margin: 24px 0 0 0;
+  padding: 0;
   max-width: 420px;
   margin: 0 0 6px auto;
   font-weight: 300;
