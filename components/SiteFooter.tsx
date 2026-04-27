@@ -47,7 +47,7 @@ export default function SiteFooter() {
           <strong>Showroom</strong>
           8695 Martin Way E #101, Lacey, WA 98516<br />
           (360) 557-3441 ·{" "}
-          <a href="mailto:hello@heritagedesigncenter.com">hello@heritagedesigncenter.com</a>
+          <a href="mailto:showroom@heritagedesignctr.com">showroom@heritagedesignctr.com</a>
         </div>
 
         <div className="socials">
