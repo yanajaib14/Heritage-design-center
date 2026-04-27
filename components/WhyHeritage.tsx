@@ -24,8 +24,8 @@ const items = [
   },
   {
     num: "04",
-    title: "The 10 Day Kitchens Advantage",
-    body: "Installation through our sister company means ten-business-day kitchen turnarounds — premium design at a pace no one else in the region can match.",
+    title: "Built for Builders & Contractors",
+    body: "We handle design and supply so you can stay focused on what you do best — building. Bring your clients to the showroom and we take it from specification to delivery.",
   },
 ];
 
@@ -60,7 +60,7 @@ export default function WhyHeritage() {
         <span className="eyebrow">Why Heritage</span>
         <h2>Not a Cabinet Dealer. <em>A Design House.</em></h2>
         <p>
-          Most showrooms sell materials. We design with them. The combination of an installation team, a curated material library, and designers who work across both is rare in the South Sound — and it&apos;s the reason projects finish on time and look the way they were promised.
+          Most showrooms sell materials. We design with them. Whether you&apos;re a homeowner with a vision or a contractor who needs a reliable design and supply partner, Heritage gives you the expertise, the products, and the process to get it done right.
         </p>
       </div>
       <div className="why-grid">

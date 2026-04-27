@@ -25,7 +25,7 @@ const steps = [
   {
     num: "04 — Build",
     title: "Execute without surprises.",
-    body: "Through our sister company 10 Day Kitchens, installation is fast, warranted, and managed by people who know exactly what was specified.",
+    body: "From final specification to material delivery, every detail is coordinated and documented — so your builder or contractor can execute without surprises.",
   },
 ];
 

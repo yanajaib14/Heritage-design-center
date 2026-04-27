@@ -30,9 +30,9 @@ export default function AudienceSplit() {
     <section className="audience" ref={sectionRef}>
       <div className="audience-col ac-home">
         <div className="num">01</div>
-        <h2>Designing Your Dream Space?</h2>
+        <h2>Homeowners &amp; DIY Renovators</h2>
         <p>
-          Imagine the kitchen or bath you&apos;ve always pictured. We&apos;ll help you find every material, every finish, every cabinet that makes it real — with expert design guidance included at no additional charge.
+          Whether you&apos;re tackling it yourself or working with a contractor, we handle every design decision and source every material — so your project starts with a clear plan and the right products in hand.
         </p>
         <a className="link-arrow" href={SCHEDULE_URL} target="_blank" rel="noopener">
           Book a Free Consultation <span className="arrow">→</span>
@@ -41,12 +41,12 @@ export default function AudienceSplit() {
       <div className="divider" />
       <div className="audience-col ac-trade">
         <div className="num">02</div>
-        <h2>Build With a Partner Who Gets It.</h2>
+        <h2>Builders &amp; Contractors</h2>
         <p>
-          We work the way you work. Trade pricing, reliable lead times, dedicated project support, and the material depth to spec any job from first draft to final install.
+          Bring your clients to our showroom. We handle the design, specification, and material supply — you stay focused on the build. Trade pricing, reliable lead times, and a dedicated team that speaks your language.
         </p>
         <a className="link-arrow" href={SCHEDULE_URL} target="_blank" rel="noopener">
-          Apply for Trade Access <span className="arrow">→</span>
+          Set Up a Trade Account <span className="arrow">→</span>
         </a>
       </div>
     </section>

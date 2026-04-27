@@ -79,10 +79,7 @@ export default function VisitSection() {
         </div>
 
         <div className="sister-note">
-          Proud sister company of{" "}
-          <a href="https://10daykitchens.com" target="_blank" rel="noopener">
-            10 Day Kitchens — 10daykitchens.com
-          </a>
+          Serving homeowners, builders, and contractors across the South Sound — Lacey, Olympia, Tumwater, and beyond.
         </div>
       </div>
     </section>

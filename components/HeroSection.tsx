@@ -78,7 +78,7 @@ export default function HeroSection() {
         </h1>
 
         <p ref={subRef} className="hero-sub" style={{ opacity: 0 }}>
-          Whether you&apos;re a homeowner planning a project or a builder managing one, we provide expert design support and curated materials to move your project forward.
+          We design it, we source it, we deliver it. Whether you&apos;re a homeowner with a vision or a builder who needs a trusted design and supply partner — Heritage is where projects come together.
         </p>
 
         <div ref={ctasRef} className="hero-ctas" style={{ opacity: 0 }}>

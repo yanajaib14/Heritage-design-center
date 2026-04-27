@@ -66,11 +66,7 @@ export default function SiteFooter() {
         </div>
 
         <div className="footer-fine">
-          Sister company:{" "}
-          <a href="https://10daykitchens.com" target="_blank" rel="noopener">
-            10 Day Kitchens — 10daykitchens.com
-          </a>
-          <br />
+          Design. Supply. Delivered right.<br />
           © {new Date().getFullYear()} Heritage Design Center. All rights reserved.
         </div>
       </div>
