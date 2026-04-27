@@ -79,7 +79,9 @@ export default function VisitSection() {
         </div>
 
         <div className="sister-note">
-          Serving homeowners, builders, and contractors across the South Sound — Lacey, Olympia, Tumwater, and beyond.
+          Serving homeowners, builders, and contractors across Western Washington —{" "}
+          Thurston · Pierce · King · Kitsap · Mason · Lewis · Grays Harbor · Pacific ·{" "}
+          Wahkiakum · Cowlitz · Clark · Snohomish · Skagit · Whatcom · Clallam · Jefferson · Island · San Juan Counties
         </div>
       </div>
     </section>

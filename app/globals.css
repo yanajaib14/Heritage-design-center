@@ -45,6 +45,7 @@ h1, h2, h3, h4 {
   line-height: 1.08;
   color: var(--white);
 }
+h1 em, h2 em { white-space: nowrap; }
 
 .eyebrow {
   font-family: var(--font-body);

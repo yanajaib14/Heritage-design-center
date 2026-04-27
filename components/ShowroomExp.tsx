@@ -43,7 +43,7 @@ export default function ShowroomExp() {
       <div className="showroom-inner">
         <div className="showroom-copy">
           <span className="eyebrow">A Destination, Not an Errand</span>
-          <h2>Visit the <em>Design Center.</em></h2>
+          <h2>Visit <span style={{ whiteSpace: "nowrap" }}>the <em>Design Center.</em></span></h2>
           <p>
             An afternoon at Heritage is less showroom, more studio. Designers at your pace, materials in your hands, and the quiet room to decide with intention.
           </p>
