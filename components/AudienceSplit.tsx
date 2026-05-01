@@ -6,7 +6,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const SCHEDULE_URL = "https://10daykitchens.hbportal.co/schedule/698386a7bad8ce0037d6fb1c";
+const SCHEDULE_URL = "https://10daykitchens.hbportal.co/public/69f4fca66910ddf27daf62b7";
+const TRADE_URL = "https://10daykitchens.hbportal.co/public/69f50cd056cf56fd0dd4c172/1-form";
 
 export default function AudienceSplit() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -32,7 +33,7 @@ export default function AudienceSplit() {
         <div className="num">01</div>
         <h2>Homeowners &amp; DIY Renovators</h2>
         <p>
-          Whether you&apos;re tackling it yourself or working with a contractor, we handle every design decision and source every material — so your project starts with a clear plan and the right products in hand.
+          Whether you&apos;re tackling it yourself or working with a contractor, we handle every design decision and source every material, so your project starts with a clear plan and the right products in hand.
         </p>
         <a className="link-arrow" href={SCHEDULE_URL} target="_blank" rel="noopener">
           Book a Free Consultation <span className="arrow">→</span>
@@ -43,10 +44,10 @@ export default function AudienceSplit() {
         <div className="num">02</div>
         <h2>Builders &amp; Contractors</h2>
         <p>
-          Bring your clients to our showroom. We handle the design, specification, and material supply — you stay focused on the build. Trade pricing, reliable lead times, and a dedicated team that speaks your language.
+          Bring your clients to our showroom. We handle the design, specification, and material supply, and you stay focused on the build. Trade pricing, reliable lead times, and a dedicated team that speaks your language.
         </p>
-        <a className="link-arrow" href={SCHEDULE_URL} target="_blank" rel="noopener">
-          Set Up a Trade Account <span className="arrow">→</span>
+        <a className="link-arrow" href={TRADE_URL} target="_blank" rel="noopener">
+          Partner with us <span className="arrow">→</span>
         </a>
       </div>
     </section>

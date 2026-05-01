@@ -136,10 +136,10 @@ h1 em, h2 em { white-space: nowrap; }
 
 /* ---------- Promo Bar ---------- */
 .promo-bar-container {
-  position: fixed;
+  position: absolute;
   top: 0; left: 0; right: 0;
   min-height: var(--promo-height);
-  background: #C5A059;
+  background: #D9B35C;
   border-bottom: 1px solid rgba(26, 20, 16, 0.22);
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
   z-index: 120;
@@ -207,7 +207,7 @@ body.has-promo .nav {
   top: var(--promo-height);
 }
 body.has-promo .nav.scrolled {
-  top: var(--promo-height);
+  top: 0;
 }
 
 body.has-promo .hero {
@@ -260,9 +260,9 @@ body.has-promo .hero {
 }
 .nav-center a {
   font-family: var(--font-body);
-  font-weight: 400;
-  font-size: 14px;
-  letter-spacing: 0.12em;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--white);
   transition: color 250ms var(--ease);
@@ -348,7 +348,7 @@ body.has-promo .hero {
 }
 .hero-inner {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   max-width: var(--max);
   margin: 0 auto;
   width: 100%;
@@ -395,6 +395,8 @@ body.has-promo .hero {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
+  position: relative;
+  z-index: 4;
 }
 
 .hero-bottom {
@@ -438,9 +440,9 @@ body.has-promo .hero {
 }
 
 .hero-card {
-  width: 360px;
+  width: 420px;
   max-width: 100%;
-  padding: 24px;
+  padding: 28px;
   border: 1px solid var(--gold-border);
   background: rgba(15, 14, 13, 0.55);
   backdrop-filter: blur(16px);
@@ -1167,6 +1169,7 @@ footer {
   gap: 16px;
 }
 .mat-card {
+  display: block;
   position: relative;
   overflow: hidden;
   border: 1px solid var(--gold-border);
@@ -1185,7 +1188,14 @@ footer {
   border-color: var(--gold-border-strong);
   transform: translateY(-4px);
 }
+.mat-card:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-color: var(--gold);
+}
 .mat-card:hover img { transform: scale(1.05); }
+.mat-card:hover img,
+.mat-card:focus-visible img { transform: scale(1.05); }
 .mat-card .tag {
   position: absolute;
   bottom: 14px; left: 14px;
@@ -1427,10 +1437,8 @@ footer {
 /* ---------- Responsive — mobile (iPhone & Android ~390–420px) ---------- */
 @media (max-width: 640px) {
   :root { --pad: 20px; }
-  body.has-promo .nav,
-  body.has-promo .nav.scrolled {
-    top: var(--promo-height);
-  }
+  body.has-promo .nav { top: var(--promo-height); }
+  body.has-promo .nav.scrolled { top: 0; }
   body.has-promo .hero {
     padding-top: calc(100px + var(--promo-height));
   }
@@ -1442,7 +1450,7 @@ footer {
   .hero-ctas .btn { width: 100%; text-align: center; }
   .frosted-pill { font-size: 11px; letter-spacing: 0.12em; }
   .hero-card { border-radius: 12px; }
-  .nav-logo img { height: 70px !important; }
+  .nav-logo img { height: 84px !important; }
   .trust { padding: 64px 20px; }
   .trust-stats { grid-template-columns: 1fr 1fr; gap: 32px; }
   .process { padding: 64px 20px; }
@@ -1479,7 +1487,7 @@ footer {
   .trust-stats { grid-template-columns: 1fr; }
   .btn { padding: 14px 20px; font-size: 13px; }
   .mobile-menu a.ml { font-size: 28px; }
-  .nav-logo img { height: 62px !important; }
+  .nav-logo img { height: 74px !important; }
 }
 
 ::selection { background: var(--gold); color: var(--bg); }

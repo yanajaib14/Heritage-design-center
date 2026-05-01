@@ -1,6 +1,7 @@
 const brands = [
   { label: "KCD Kitchen Cabinet Distributors", href: "https://www.kcdus.com/" },
   { label: "Lectus Cabinetry", href: "https://www.lectuscabinets.com/" },
+  { label: "Merit Cabinetry", href: "https://www.merit-kitchens.com/custom-kitchen-cabinetry/" },
   { label: "Showplace Cabinetry", href: "https://showplacecabinetry.com/" },
   { label: "MSI Surfaces", href: "https://www.msisurfaces.com/" },
   { label: "Cambria", href: "https://www.cambriausa.com/" },
