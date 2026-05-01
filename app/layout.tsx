@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Jost } from "next/font/google";
 import "./globals.css";
+import PromoBar from "@/components/PromoBar";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -39,7 +40,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${cormorant.variable} ${jost.variable}`}>
-      <body>{children}</body>
+      <body>
+        <PromoBar />
+        {children}
+      </body>
     </html>
   );
 }
