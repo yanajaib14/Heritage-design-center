@@ -1,17 +1,25 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Link from "next/link";
+import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 
 const SCHEDULE_URL = "https://10daykitchens.hbportal.co/schedule/698386a7bad8ce0037d6fb1c";
 
 export default function PromoBar() {
   const [isVisible, setIsVisible] = useState(true);
+  const promoRef = useRef<HTMLDivElement>(null);
+
+  const syncPromoHeight = () => {
+    const promo = promoRef.current;
+    if (!promo) return;
+    const height = `${promo.offsetHeight}px`;
+    document.documentElement.style.setProperty("--promo-height", height);
+  };
 
   useEffect(() => {
     // Add class to body to push nav down
     document.body.classList.add("has-promo");
+    syncPromoHeight();
 
     // Slight delay for a fade-in effect to look premium
     gsap.fromTo(
@@ -20,26 +28,38 @@ export default function PromoBar() {
       { y: 0, opacity: 1, duration: 0.8, ease: "power3.out", delay: 0.5 }
     );
 
+    const onResize = () => syncPromoHeight();
+    window.addEventListener("resize", onResize);
+
     return () => {
       document.body.classList.remove("has-promo");
+      document.documentElement.style.removeProperty("--promo-height");
+      window.removeEventListener("resize", onResize);
     };
   }, []);
 
   const handleClose = () => {
     setIsVisible(false);
     document.body.classList.remove("has-promo");
+    document.documentElement.style.removeProperty("--promo-height");
   };
 
   if (!isVisible) return null;
 
   return (
-    <div className="promo-bar-container">
+    <div ref={promoRef} className="promo-bar-container">
       <div className="promo-bar-inner">
         <span className="promo-badge">Coming Soon</span>
         <p className="promo-text">
-          Our showroom in Lacey is opening soon.{" "}
+          <strong>Our showroom in Lacey is opening soon.</strong>
+          <span className="promo-divider" aria-hidden="true">•</span>
+          <span className="promo-hours">Monday-Friday 9am-5:30pm</span>
+          <span className="promo-divider" aria-hidden="true">•</span>
+          <span className="promo-hours">Saturday by appointment only</span>
+          <span className="promo-divider" aria-hidden="true">•</span>
+          <span className="promo-hours">Closed Sunday</span>{" "}
           <a href={SCHEDULE_URL} target="_blank" rel="noopener" className="promo-link">
-            Schedule a priority consultation
+            Schedule now
             <svg
               width="12"
               height="12"
