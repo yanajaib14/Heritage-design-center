@@ -1,18 +1,13 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const SCHEDULE_URL = "https://10daykitchens.hbportal.co/schedule/698386a7bad8ce0037d6fb1c";
-
-const tabContent: Record<string, { title: string; cta: string }> = {
-  kitchens:  { title: "Book your free design session", cta: "Start with kitchens" },
-  bathrooms: { title: "Design a bath that exhales.", cta: "Start with bathrooms" },
-  trade:     { title: "Partner with our trade team.", cta: "Open trade access" },
-};
+const GET_STARTED_URL = "https://10daykitchens.hbportal.co/public/69936e5e0e854c002ad50a5f";
+const TRADE_CONTACT_URL = "https://10daykitchens.hbportal.co/public/69f50cd056cf56fd0dd4c172";
 
 export default function HeroSection() {
   const bgRef = useRef<HTMLDivElement>(null);
@@ -21,9 +16,7 @@ export default function HeroSection() {
   const subRef = useRef<HTMLParagraphElement>(null);
   const ctasRef = useRef<HTMLDivElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
-  const [activeTab, setActiveTab] = useState("kitchens");
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const ctaTextRef = useRef<HTMLSpanElement>(null);
+
 
   useEffect(() => {
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
@@ -44,18 +37,6 @@ export default function HeroSection() {
 
     return () => { ScrollTrigger.getAll().forEach(t => t.kill()); };
   }, []);
-
-  const switchTab = (key: string) => {
-    if (key === activeTab || !titleRef.current || !ctaTextRef.current) return;
-    gsap.to([titleRef.current, ctaTextRef.current], {
-      opacity: 0, y: -8, duration: 0.18, ease: "power2.in",
-      onComplete: () => {
-        setActiveTab(key);
-        gsap.fromTo([titleRef.current, ctaTextRef.current],
-          { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" });
-      },
-    });
-  };
 
   return (
     <section className="hero" id="top">
@@ -78,11 +59,11 @@ export default function HeroSection() {
         </h1>
 
         <p ref={subRef} className="hero-sub" style={{ opacity: 0 }}>
-          We design it, we source it, we deliver it. Whether you&apos;re a homeowner with a vision or a builder who needs a trusted design and supply partner — Heritage is where projects come together.
+          We design it, we source it, we deliver it. Whether you&apos;re a homeowner with a vision or a builder who needs a trusted design and supply partner, Heritage is where projects come together.
         </p>
 
         <div ref={ctasRef} className="hero-ctas" style={{ opacity: 0 }}>
-          <a className="btn btn-solid" href={SCHEDULE_URL} target="_blank" rel="noopener">
+          <a className="btn btn-solid" href={GET_STARTED_URL} target="_blank" rel="noopener">
             Get Started
           </a>
           <a className="btn btn-ghost" href="#cabinetry">
@@ -94,25 +75,14 @@ export default function HeroSection() {
       <div ref={bottomRef} className="hero-bottom">
         <div className="hero-bottom-item frosted-pill" style={{ opacity: 0 }}>
           <span className="dot-live" />
-          Showroom Coming Soon! — 8695 Martin Way E #101, Lacey WA
+          Showroom Coming Soon! 8695 Martin Way E #101, Lacey WA
         </div>
 
         <div className="hero-bottom-item hero-card" style={{ opacity: 0 }}>
-          <div className="hero-card-tabs" role="tablist">
-            {(["kitchens", "bathrooms", "trade"] as const).map((key) => (
-              <button
-                key={key}
-                role="tab"
-                className={activeTab === key ? "active" : ""}
-                onClick={() => switchTab(key)}
-              >
-                {key.charAt(0).toUpperCase() + key.slice(1)}
-              </button>
-            ))}
-          </div>
-          <h4 ref={titleRef}>{tabContent[activeTab].title}</h4>
-          <a className="link-arrow" href={SCHEDULE_URL} target="_blank" rel="noopener">
-            <span ref={ctaTextRef}>{tabContent[activeTab].cta}</span>
+          <h4>Builders &amp; Contractors</h4>
+          <p className="hero-card-sub">Design and supply support for the modern builder.</p>
+          <a className="link-arrow" href={TRADE_CONTACT_URL} target="_blank" rel="noopener">
+            <span>BECOME A PARTNER WITH US</span>
             <span className="arrow">→</span>
           </a>
         </div>

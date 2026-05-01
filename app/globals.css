@@ -474,8 +474,15 @@ body.has-promo .hero {
 .hero-card h4 {
   font-size: 22px;
   font-weight: 500;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
   font-family: var(--font-display);
+}
+.hero-card-sub {
+  font-size: 13px;
+  color: var(--white-dim);
+  font-weight: 300;
+  margin-bottom: 18px;
+  line-height: 1.6;
 }
 .hero-card .link-arrow { font-size: 11px; }
 
@@ -1337,43 +1344,77 @@ footer {
   color: var(--white);
   font-weight: 300;
 }
-.showroom-stack {
+.showroom-slider-wrap {
   position: relative;
-  aspect-ratio: 4 / 5;
-}
-.showroom-stack .s-a, .showroom-stack .s-b {
-  position: absolute;
-  overflow: hidden;
   border: 1px solid var(--gold-border);
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background: var(--bg-surface);
 }
-.showroom-stack .s-a { inset: 0 20% 20% 0; }
-.showroom-stack .s-b { inset: 30% 0 0 30%; }
-.showroom-stack img {
+.showroom-slider-track {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+.showroom-slide {
+  min-width: 100%;
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.showroom-slide img {
   width: 100%; height: 100%;
   object-fit: cover;
   display: block;
 }
-.showroom-stack .s-b::after {
-  content: '';
+.showroom-arrow {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(15,14,13,0) 55%, rgba(15,14,13,0.7));
-  pointer-events: none;
-}
-.showroom-stack .frame-label {
-  position: absolute;
-  bottom: 20px; left: 50%;
-  transform: translateX(-50%);
-  z-index: 3;
-  padding: 10px 18px;
-  background: rgba(15,14,13,0.75);
-  backdrop-filter: blur(6px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(15, 14, 13, 0.65);
   border: 1px solid var(--gold-border);
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 18px;
   color: var(--white);
-  white-space: nowrap;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  z-index: 5;
+  cursor: pointer;
+  transition: background 0.25s, border-color 0.25s;
+  backdrop-filter: blur(6px);
+}
+.showroom-arrow:hover {
+  background: rgba(201, 168, 76, 0.25);
+  border-color: var(--gold-border-strong);
+}
+.showroom-arrow-prev { left: 12px; }
+.showroom-arrow-next { right: 12px; }
+.showroom-dots {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 5;
+}
+.showroom-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: rgba(245, 240, 232, 0.3);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+.showroom-dot.active {
+  background: var(--gold);
+  transform: scale(1.35);
 }
 
 /* ---------- GSAP reveal initial state ---------- */
@@ -1430,7 +1471,7 @@ footer {
   .mat-d { grid-column: 1 / span 3; grid-row: span 2; }
   .mat-e { grid-column: 4 / span 3; grid-row: span 2; }
   .showroom-inner { grid-template-columns: 1fr; }
-  .showroom-stack { aspect-ratio: 4/5; max-width: 540px; margin: 0 auto; }
+  .showroom-slider-wrap { aspect-ratio: 4/3; max-width: 540px; margin: 0 auto; }
   .footer-nav { gap: 20px 28px; }
 }
 
