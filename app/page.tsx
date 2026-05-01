@@ -12,7 +12,7 @@ import ShowroomExp from "@/components/ShowroomExp";
 import VisitSection from "@/components/VisitSection";
 import SiteFooter from "@/components/SiteFooter";
 
-const SCHEDULE = "https://10daykitchens.hbportal.co/schedule/698386a7bad8ce0037d6fb1c";
+const SCHEDULE = "https://10daykitchens.hbportal.co/public/69f4fca66910ddf27daf62b7";
 
 export default function Home() {
   return (
@@ -32,10 +32,11 @@ export default function Home() {
         id="cabinetry"
         eyebrow="Cabinetry"
         title={<>Crafted to Last <em>a Lifetime.</em></>}
-        body="From stock to fully custom — KCD, Lectus Cabinetry, and Showplace Cabinetry. Plywood boxes, soft-close hardware, hundreds of door styles."
+        body="From stock to fully custom, KCD, Lectus Cabinetry, and Showplace Cabinetry. Plywood boxes, soft-close hardware, hundreds of door styles."
         brands={[
           { label: "KCD", href: "https://www.kcdus.com/" },
           { label: "Lectus", href: "https://www.lectuscabinets.com/" },
+          { label: "Merit", href: "https://www.merit-kitchens.com/custom-kitchen-cabinetry/" },
           { label: "Showplace", href: "https://showplacecabinetry.com/" },
         ]}
         cta="Explore Cabinetry"
@@ -67,7 +68,7 @@ export default function Home() {
       <Showcase
         eyebrow="Tile & Stone"
         title={<>Texture, Pattern, <em>Character.</em></>}
-        body="Backsplash, floor, wall, and mosaic from MSI Surfaces — Zellige, subway, geometric, and stone slab."
+        body="Backsplash, floor, wall, and mosaic from MSI Surfaces, Zellige, subway, geometric, and stone slab."
         pills={["Zellige", "Subway", "Geometric", "Stone Slab"]}
         brands={[{ label: "MSI Surfaces", href: "https://www.msisurfaces.com/" }]}
         cta="Browse the Tile Library"
