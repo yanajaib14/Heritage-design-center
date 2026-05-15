@@ -18,9 +18,11 @@ export default function AudienceSplit() {
     const ctx = gsap.context(() => {
       el.querySelectorAll(".audience-col").forEach((col, i) => {
         gsap.fromTo(col,
-          { opacity: 0, scale: 0.97 },
-          { opacity: 1, scale: 1, duration: 1, ease: "power3.out",
-            scrollTrigger: { trigger: el, start: "top 78%" }, delay: i * 0.15 }
+          { opacity: 0, y: 24 },
+          {
+            opacity: 1, y: 0, duration: 1, ease: "power3.out",
+            scrollTrigger: { trigger: el, start: "top 78%" }, delay: i * 0.18,
+          }
         );
       });
     }, el);
@@ -29,27 +31,45 @@ export default function AudienceSplit() {
 
   return (
     <section className="audience" ref={sectionRef}>
+
+      {/* Homeowners */}
       <div className="audience-col ac-home">
+        <div className="audience-top-bar" />
         <div className="num">01</div>
-        <h2>Homeowners &amp; DIY Renovators</h2>
+        <h2>Homeowners &amp;<br />Renovators</h2>
         <p>
-          Whether you&apos;re tackling it yourself or working with a contractor, we handle every design decision and source every material, so your project starts with a clear plan and the right products in hand.
+          Whether you&apos;re tackling it yourself or working with a contractor, we handle every design decision and source every material — so your project starts with a clear plan and the right products in hand.
         </p>
-        <a className="link-arrow" href={SCHEDULE_URL} target="_blank" rel="noopener">
-          Book a Free Consultation <span className="arrow">→</span>
+        <div className="audience-tags">
+          {["Free Consultation", "Design Included", "All Materials Sourced"].map((tag) => (
+            <span key={tag} className="audience-tag">{tag}</span>
+          ))}
+        </div>
+        <a className="btn btn-solid" href={SCHEDULE_URL} target="_blank" rel="noopener">
+          Book a Free Consultation
         </a>
       </div>
+
       <div className="divider" />
+
+      {/* Builders */}
       <div className="audience-col ac-trade">
+        <div className="audience-top-bar" />
         <div className="num">02</div>
-        <h2>Builders &amp; Contractors</h2>
+        <h2>Builders &amp;<br />Contractors</h2>
         <p>
-          Bring your clients to our showroom. We handle the design, specification, and material supply, and you stay focused on the build. Trade pricing, reliable lead times, and a dedicated team that speaks your language.
+          Bring your clients to our showroom. We handle the design, specification, and material supply — you stay focused on the build. Trade pricing, reliable lead times, and a team that speaks your language.
         </p>
-        <a className="link-arrow" href={TRADE_URL} target="_blank" rel="noopener">
-          Partner with us <span className="arrow">→</span>
+        <div className="audience-tags">
+          {["Trade Pricing", "Fast Lead Times", "Dedicated Rep"].map((tag) => (
+            <span key={tag} className="audience-tag">{tag}</span>
+          ))}
+        </div>
+        <a className="btn btn-outline-gold" href={TRADE_URL} target="_blank" rel="noopener">
+          Partner with Us
         </a>
       </div>
+
     </section>
   );
 }

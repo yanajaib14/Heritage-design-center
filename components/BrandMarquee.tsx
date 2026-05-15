@@ -5,6 +5,9 @@ const brands = [
   { label: "Showplace Cabinetry", href: "https://showplacecabinetry.com/" },
   { label: "MSI Surfaces", href: "https://www.msisurfaces.com/" },
   { label: "Cambria", href: "https://www.cambriausa.com/" },
+  { label: "Caesarstone", href: "https://www.caesarstoneus.com" },
+  { label: "Vicostone", href: "https://us.vicostone.com/" },
+  { label: "Jaaron Wood Countertops", href: "https://www.jaaronwoodcountertops.com/" },
   { label: "Top Knobs", href: "https://www.topknobs.com/" },
 ];
 

@@ -1,15 +1,15 @@
+import Link from "next/link";
 import NavBar from "@/components/NavBar";
 import HeroSection from "@/components/HeroSection";
 import TrustBar from "@/components/TrustBar";
-import ProcessSection from "@/components/ProcessSection";
 import BrandMarquee from "@/components/BrandMarquee";
 import Showcase from "@/components/Showcase";
-import MaterialsSection from "@/components/MaterialsSection";
 import WhyHeritage from "@/components/WhyHeritage";
+import Testimonials from "@/components/Testimonials";
 import AudienceSplit from "@/components/AudienceSplit";
-import LeadCapture from "@/components/LeadCapture";
+import FeaturedProjects from "@/components/FeaturedProjects";
 import ShowroomExp from "@/components/ShowroomExp";
-import VisitSection from "@/components/VisitSection";
+import LeadCapture from "@/components/LeadCapture";
 import SiteFooter from "@/components/SiteFooter";
 
 const SCHEDULE = "https://10daykitchens.hbportal.co/public/69f4fca66910ddf27daf62b7";
@@ -23,8 +23,6 @@ export default function Home() {
 
       <TrustBar />
 
-      <ProcessSection />
-
       <BrandMarquee />
 
       {/* Cabinetry */}
@@ -32,14 +30,14 @@ export default function Home() {
         id="cabinetry"
         eyebrow="Cabinetry"
         title={<>Crafted to Last <em>a Lifetime.</em></>}
-        body="From stock to fully custom, KCD, Lectus Cabinetry, and Showplace Cabinetry. Plywood boxes, soft-close hardware, hundreds of door styles."
+        body="From stock to fully custom — KCD, Lectus, Merit, and Showplace Cabinetry. Plywood boxes, soft-close hardware, hundreds of door styles."
         brands={[
           { label: "KCD", href: "https://www.kcdus.com/" },
           { label: "Lectus", href: "https://www.lectuscabinets.com/" },
           { label: "Merit", href: "https://www.merit-kitchens.com/custom-kitchen-cabinetry/" },
           { label: "Showplace", href: "https://showplacecabinetry.com/" },
         ]}
-        cta="Explore Cabinetry"
+        cta="Book a Consultation"
         ctaHref={SCHEDULE}
         image="https://showplacecabinetry.com/wp-content/uploads/2025/12/New-England-Transitional-with-Beachy-Island-20.jpg"
         imageAlt="Showplace transitional cabinetry"
@@ -49,12 +47,15 @@ export default function Home() {
       <Showcase
         reverse
         eyebrow="Countertops"
-        title={<>Surfaces You&apos;ll Love, <em>Built for Everyday Function.</em></>}
-        body="Quartz, marble, quartzite, granite, and butcher block from MSI Surfaces and Cambria."
+        title={<>Surfaces You&apos;ll Love, <em>Built to Last.</em></>}
+        body="Quartz, marble, quartzite, granite, and butcher block from the industry's most trusted names."
         pills={["Quartz", "Marble", "Granite", "Butcher Block"]}
         brands={[
           { label: "MSI Surfaces", href: "https://www.msisurfaces.com/" },
           { label: "Cambria", href: "https://www.cambriausa.com/" },
+          { label: "Caesarstone", href: "https://www.caesarstoneus.com" },
+          { label: "Vicostone", href: "https://us.vicostone.com/" },
+          { label: "Jaaron Wood", href: "https://www.jaaronwoodcountertops.com/" },
         ]}
         cta="Request Stone Samples"
         ctaHref={SCHEDULE}
@@ -62,56 +63,33 @@ export default function Home() {
         imageAlt="Quartz slab – Whitendale"
       />
 
-      <MaterialsSection />
-
-      {/* Tile & Stone */}
-      <Showcase
-        eyebrow="Tile & Stone"
-        title={<>Texture, Pattern, <em>Character.</em></>}
-        body="Backsplash, floor, wall, and mosaic from MSI Surfaces, Zellige, subway, geometric, and stone slab."
-        pills={["Zellige", "Subway", "Geometric", "Stone Slab"]}
-        brands={[{ label: "MSI Surfaces", href: "https://www.msisurfaces.com/" }]}
-        cta="Browse the Tile Library"
-        ctaHref={SCHEDULE}
-        image="https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/0c09e194-781a-4b95-8986-697488e320d0/ChatGPT+Image+Apr+3%2C+2026%2C+12_06_18+PM.png?content-type=image%2Fpng"
-        imageAlt="Tile and stone selection"
-      />
-
-      {/* Fixtures & Hardware */}
-      <Showcase
-        reverse
-        eyebrow="Fixtures & Hardware"
-        title={<>The Details That Define <em>the Space.</em></>}
-        body="Premium faucets, fixtures, and cabinet hardware in every finish."
-        pills={["Brushed Gold", "Matte Black", "Polished Chrome"]}
-        brands={[{ label: "Top Knobs", href: "https://www.topknobs.com/" }]}
-        cta="See the Finish Collection"
-        ctaHref={SCHEDULE}
-        image="https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/74c2935e-ca5e-46b2-af5f-408e8b5c2837/43.png?content-type=image%2Fpng"
-        imageAlt="Fixtures and hardware"
-      />
-
-      {/* Shower & Bath */}
-      <Showcase
-        eyebrow="Shower & Bath"
-        title={<>Your Personal Retreat, <em>Designed Right.</em></>}
-        body="Shower systems, soaking tubs, bath fixtures, and surround tile."
-        pills={["Shower Systems", "Soaking Tubs", "Surround Tile"]}
-        cta="Design Your Retreat"
-        ctaHref={SCHEDULE}
-        image="https://images.squarespace-cdn.com/content/v1/6982349a56e1e46c7b2e0861/9e6294ff-bc6d-4a8e-a04d-11ac6bd6aa6c/Dark+Marble+Opulence.png?format=500w"
-        imageAlt="Dark marble bath"
-      />
+      {/* Collections bridge */}
+      <section style={{ background: "var(--bg-surface)", borderTop: "1px solid var(--gold-border)", borderBottom: "1px solid var(--gold-border)" }}>
+        <div style={{ maxWidth: "var(--max)", margin: "0 auto", padding: "48px var(--pad)", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "32px", flexWrap: "wrap" }}>
+          <p style={{ color: "var(--white-dim)", fontSize: "17px", fontWeight: 300, margin: 0, lineHeight: 1.6 }}>
+            We also carry tile &amp; stone, fixtures, hardware, and a full bath collection —
+            <span style={{ color: "var(--white)" }}> all on display in our showroom.</span>
+          </p>
+          <Link
+            href="/collections"
+            style={{ color: "var(--gold)", fontSize: "12px", letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 300, whiteSpace: "nowrap", borderBottom: "1px solid var(--gold-border)", paddingBottom: "2px", textDecoration: "none", transition: "border-color 200ms" }}
+          >
+            View All Collections ↗
+          </Link>
+        </div>
+      </section>
 
       <WhyHeritage />
 
+      <Testimonials />
+
       <AudienceSplit />
 
-      <LeadCapture />
+      <FeaturedProjects />
 
       <ShowroomExp />
 
-      <VisitSection />
+      <LeadCapture />
 
       <SiteFooter />
     </>

@@ -5,7 +5,15 @@ import Link from "next/link";
 import gsap from "gsap";
 
 const SCHEDULE_URL =
-  "https://10daykitchens.hbportal.co/schedule/698386a7bad8ce0037d6fb1c";
+  "https://10daykitchens.hbportal.co/public/69f4fca66910ddf27daf62b7";
+
+const NAV_LINKS = [
+  { href: "/", label: "Home" },
+  { href: "/process", label: "Process" },
+  { href: "/collections", label: "Collections" },
+  { href: "/showroom", label: "Showroom" },
+  { href: "/gallery", label: "Gallery" },
+];
 
 export default function NavBar() {
   const navRef = useRef<HTMLElement>(null);
@@ -42,24 +50,17 @@ export default function NavBar() {
   return (
     <>
       <nav ref={navRef} className={`nav${scrolled ? " scrolled" : ""}`} style={{ opacity: 0 }}>
-        <a href="#top" className="nav-logo" aria-label="Heritage Design Center">
+        <Link href="/" className="nav-logo" aria-label="Heritage Design Center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/0c15682d-817f-4508-b804-ad5aba6b200f/Heritage_Design_Center_email_signature_400px.png?content-type=image%2Fpng" alt="Heritage Design Center" height={74} style={{ height: 107, width: "auto" }} />
-        </a>
+        </Link>
         <div className="nav-center">
-          {[
-            { href: "#top", label: "Home" },
-            { href: "#process", label: "Process" },
-            { href: "#cabinetry", label: "Collections" },
-            { href: "#materials", label: "Showroom" },
-            { href: "#destination", label: "Visit" },
-            { href: "#lead", label: "Contact" },
-          ].map(({ href, label }) => (
-            <a key={href} href={href}>{label}</a>
+          {NAV_LINKS.map(({ href, label }) => (
+            <Link key={href} href={href}>{label}</Link>
           ))}
         </div>
         <a className="btn btn-solid nav-cta" href={SCHEDULE_URL} target="_blank" rel="noopener">
-          Schedule a Visit
+          Book a Consultation
         </a>
         <button
           className={`hamburger${menuOpen ? " open" : ""}`}
@@ -72,21 +73,13 @@ export default function NavBar() {
       </nav>
 
       <div ref={menuRef} className="mobile-menu">
-        {[
-          { href: "#top", label: "Home" },
-          { href: "#process", label: "Process" },
-          { href: "#cabinetry", label: "Collections" },
-          { href: "#materials", label: "Showroom" },
-          { href: "#destination", label: "Visit" },
-          { href: "#lead", label: "Contact" },
-        ].map(({ href, label }) => (
-          <a key={href} href={href} className="ml" onClick={close}>{label}</a>
+        {NAV_LINKS.map(({ href, label }) => (
+          <Link key={href} href={href} className="ml" onClick={close}>{label}</Link>
         ))}
         <a className="btn btn-solid" href={SCHEDULE_URL} target="_blank" rel="noopener" onClick={close}>
-          Schedule a Visit
+          Book a Consultation
         </a>
       </div>
     </>
   );
 }
-

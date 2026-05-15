@@ -3,8 +3,6 @@
 import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 
-const SCHEDULE_URL = "https://10daykitchens.hbportal.co/schedule/698386a7bad8ce0037d6fb1c";
-
 export default function PromoBar() {
   const [isVisible, setIsVisible] = useState(true);
   const promoRef = useRef<HTMLDivElement>(null);
@@ -57,24 +55,7 @@ export default function PromoBar() {
           <span className="promo-divider" aria-hidden="true">•</span>
           <span className="promo-hours">Saturday by appointment only</span>
           <span className="promo-divider" aria-hidden="true">•</span>
-          <span className="promo-hours">Closed Sunday</span>{" "}
-          <a href={SCHEDULE_URL} target="_blank" rel="noopener" className="promo-link">
-            Schedule now
-            <svg
-              width="12"
-              height="12"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="promo-arrow"
-            >
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </a>
+          <span className="promo-hours">Closed Sunday</span>
         </p>
         <button
           className="promo-close"

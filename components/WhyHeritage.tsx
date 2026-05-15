@@ -15,7 +15,7 @@ const items = [
   {
     num: "02",
     title: "A Remodeler's Instinct",
-    body: "We came from the build side. Every selection is vetted for durability, lead time, and how it will actually install — not just how it photographs.",
+    body: "We came from the build side. Every selection is vetted for durability, lead time, and how it will actually install, not just how it photographs.",
   },
   {
     num: "03",
@@ -25,7 +25,7 @@ const items = [
   {
     num: "04",
     title: "Built for Builders & Contractors",
-    body: "We handle design and supply so you can stay focused on what you do best — building. Bring your clients to the showroom and we take it from specification to delivery.",
+    body: "We handle design and supply so you can stay focused on what you do best, building. Bring your clients to the showroom and we take it from specification to delivery.",
   },
 ];
 
