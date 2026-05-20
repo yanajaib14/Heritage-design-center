@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const SCHEDULE_URL = "https://10daykitchens.hbportal.co/public/69f4fca66910ddf27daf62b7";
+const PHONE_URL = "tel:3605573441";
 
 const SLIDER_IMAGES = [
   "https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/66d7596b-2556-49cd-8f7f-7203a0ac9b63/Kitchen+-+Whistler+Flat+in+Frost.jpg?content-type=image%2Fjpeg",
@@ -100,9 +101,14 @@ export default function ShowroomExp() {
               </li>
             ))}
           </ul>
-          <a className="btn btn-outline-gold" href={SCHEDULE_URL} target="_blank" rel="noopener">
-            Schedule a Design Appointment
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a className="btn btn-outline-gold" href={SCHEDULE_URL} target="_blank" rel="noopener">
+              Schedule a Design Appointment
+            </a>
+            <a className="btn btn-solid" href={PHONE_URL}>
+              Call Us (360) 557-3441
+            </a>
+          </div>
         </div>
 
         <div className="showroom-slider-wrap">

@@ -66,8 +66,8 @@ export default function HeroSection() {
           <a className="btn btn-solid" href={GET_STARTED_URL} target="_blank" rel="noopener">
             Get Started
           </a>
-          <a className="btn btn-ghost" href="#cabinetry">
-            Explore the Showroom ↓
+          <a className="btn btn-ghost" href="tel:3605573441">
+            Call Us (360) 557-3441
           </a>
         </div>
       </div>

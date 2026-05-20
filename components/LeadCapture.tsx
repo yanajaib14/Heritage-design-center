@@ -8,6 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const SCHEDULE_URL = "https://10daykitchens.hbportal.co/public/69f4fca66910ddf27daf62b7";
+const PHONE_URL = "tel:3605573441";
 
 export default function LeadCapture() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -43,12 +44,14 @@ export default function LeadCapture() {
           <p>
             Free 30-minute consultation — no commitment required. We&apos;ll talk through your project, your timeline, and the materials that fit.
           </p>
-          <a className="btn btn-solid" href={SCHEDULE_URL} target="_blank" rel="noopener">
-            Schedule Appointment
-          </a>
-          <a className="btn btn-solid" href="tel:1234567890" target="_blank" rel="noopener">
-            Call Us: (123) 456-7890
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a className="btn btn-solid" href={SCHEDULE_URL} target="_blank" rel="noopener">
+              Schedule Appointment
+            </a>
+            <a className="btn btn-ghost" href={PHONE_URL}>
+              Call Us (360) 557-3441
+            </a>
+          </div>
         </div>
 
         <div className="divider" />
