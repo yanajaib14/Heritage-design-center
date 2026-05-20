@@ -46,6 +46,9 @@ export default function LeadCapture() {
           <a className="btn btn-solid" href={SCHEDULE_URL} target="_blank" rel="noopener">
             Schedule Appointment
           </a>
+          <a className="btn btn-solid" href="tel:1234567890" target="_blank" rel="noopener">
+            Call Us: (123) 456-7890
+          </a>
         </div>
 
         <div className="divider" />

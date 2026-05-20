@@ -86,6 +86,12 @@ export default function CTASection() {
               >
                 Our Story
               </Link>
+              <Link
+                href="tel:1234567890"
+                className="inline-flex items-center justify-center gap-3 bg-gold text-charcoal px-8 py-4 text-label hover:bg-charcoal hover:text-warm-white transition-all duration-500 magnetic-btn"
+              >
+                Call Us: (123) 456-7890
+              </Link>
             </div>
 
             {/* Small detail */}
