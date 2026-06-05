@@ -2,12 +2,13 @@ import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Jost } from "next/font/google";
 import "./globals.css";
 import PromoBar from "@/components/PromoBar";
+import ScrollAnimations from "@/components/ScrollAnimations";
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: "#1c1917",
+  themeColor: "#FAFAF8",
 };
 
 const cormorant = Cormorant_Garamond({
@@ -80,6 +81,10 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
   alternates: { canonical: SITE_URL },
+  icons: {
+    icon: "/H.png",
+    apple: "/H.png",
+  },
 };
 
 const localBusinessJsonLd = {
@@ -139,6 +144,7 @@ export default function RootLayout({
       </head>
       <body>
         <PromoBar />
+        <ScrollAnimations />
         {children}
       </body>
     </html>

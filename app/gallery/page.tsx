@@ -110,6 +110,7 @@ export default function GalleryPage() {
           className="page-hero-bg"
           style={{ backgroundImage: "url('https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/e2edde19-4fb4-4a28-920e-207d0ee8b444/ChatGPT+Image+Apr+2%2C+2026%2C+10_37_53+AM.png?content-type=image%2Fpng')" }}
         />
+        <div className="page-hero-overlay" aria-hidden="true" />
         <div className="page-hero-inner" ref={heroRef}>
           <span className="eyebrow h-item" style={{ opacity: 0 }}>Past Projects</span>
           <h1 style={{ opacity: 0 }} className="h-item">
@@ -137,7 +138,7 @@ export default function GalleryPage() {
                 {f === "all" ? "All Projects" : f === "kitchen" ? "Kitchens" : "Baths"}
               </button>
             ))}
-            <span style={{ marginLeft: "auto", alignSelf: "center", fontSize: "12px", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--white-faint)", paddingBottom: "2px" }}>
+            <span style={{ marginLeft: "auto", alignSelf: "center", fontSize: "13px", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--text-dim)", fontWeight: 500, paddingBottom: "2px" }}>
               {visible.length} {visible.length === 1 ? "project" : "projects"}
             </span>
           </div>
@@ -157,17 +158,25 @@ export default function GalleryPage() {
             ))}
           </div>
 
-          {/* CTA */}
-          <div className="gallery-cta">
-            <span className="eyebrow" style={{ display: "block", marginBottom: "20px" }}>Start Your Project</span>
-            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(36px, 4.5vw, 56px)", fontWeight: 500, marginBottom: "20px" }}>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section style={{ background: "var(--bg-dark)", position: "relative", overflow: "hidden", padding: "clamp(100px, 13vw, 160px) var(--pad)" }}>
+        <div aria-hidden="true" style={{ position: "absolute", bottom: -40, right: -20, fontFamily: "var(--font-display)", fontStyle: "italic", fontSize: "clamp(160px, 20vw, 300px)", fontWeight: 500, color: "rgba(197,160,89,0.04)", lineHeight: 1, userSelect: "none", pointerEvents: "none", zIndex: 0, whiteSpace: "nowrap" }}>Gallery</div>
+        <div style={{ maxWidth: "var(--max)", margin: "0 auto", position: "relative", zIndex: 1, display: "grid", gridTemplateColumns: "1fr auto", gap: "clamp(40px, 6vw, 80px)", alignItems: "center" }}>
+          <div>
+            <span className="eyebrow" style={{ display: "block", marginBottom: 20 }}>Start Your Project</span>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(52px, 7vw, 96px)", fontWeight: 400, lineHeight: 1.02, letterSpacing: "-0.03em", color: "var(--white)", margin: "0 0 28px" }}>
               Love What You See?<br />
-              <em style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 400 }}>Let&apos;s Build Yours.</em>
+              <em style={{ fontStyle: "italic", color: "var(--gold)" }}>Let&apos;s Build Yours.</em>
             </h2>
-            <p style={{ color: "var(--white-dim)", fontSize: "17px", lineHeight: 1.75, fontWeight: 300, maxWidth: "480px", margin: "0 auto 36px" }}>
+            <p style={{ color: "var(--white-dim)", fontSize: 18, lineHeight: 1.75, fontWeight: 400, maxWidth: 460, margin: 0 }}>
               Book a free consultation and bring your project to the showroom. We&apos;ll handle the design and supply every material.
             </p>
-            <a className="btn btn-solid" href={SCHEDULE_URL} target="_blank" rel="noopener">
+          </div>
+          <div style={{ minWidth: 220 }}>
+            <a className="btn btn-solid pulse-shimmer-btn" href={SCHEDULE_URL} target="_blank" rel="noopener">
               Book a Free Consultation
             </a>
           </div>

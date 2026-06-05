@@ -33,6 +33,10 @@ export default function FeaturedProjects() {
   useEffect(() => {
     const el = sectionRef.current;
     if (!el) return;
+    if (ScrollTrigger.isTouch === 1) {
+      gsap.set(el.querySelectorAll(".fp-head > *, .fp-card, .fp-cta > *"), { opacity: 1, y: 0, clipPath: "none", scale: 1 });
+      return;
+    }
     const ctx = gsap.context(() => {
       gsap.fromTo(
         el.querySelectorAll(".fp-head > *"),
@@ -92,7 +96,7 @@ export default function FeaturedProjects() {
         </div>
 
         <div className="fp-cta">
-          <p style={{ color: "var(--white-dim)", fontSize: "17px", fontWeight: 300, margin: "0 0 24px" }}>
+          <p style={{ color: "var(--text-dim)", fontSize: "17px", fontWeight: 400, margin: "0 0 24px" }}>
             Ready to start your own project?
           </p>
           <a className="btn btn-solid" href={SCHEDULE_URL} target="_blank" rel="noopener">

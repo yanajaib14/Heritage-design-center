@@ -65,14 +65,14 @@ export default function Home() {
 
       {/* Collections bridge */}
       <section style={{ background: "var(--bg-surface)", borderTop: "1px solid var(--gold-border)", borderBottom: "1px solid var(--gold-border)" }}>
-        <div style={{ maxWidth: "var(--max)", margin: "0 auto", padding: "48px var(--pad)", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "32px", flexWrap: "wrap" }}>
-          <p style={{ color: "var(--white-dim)", fontSize: "17px", fontWeight: 300, margin: 0, lineHeight: 1.6 }}>
+        <div style={{ maxWidth: "var(--max)", margin: "0 auto", padding: "56px var(--pad)", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "32px", flexWrap: "wrap" }}>
+          <p style={{ color: "var(--text)", fontSize: "19px", fontWeight: 400, margin: 0, lineHeight: 1.6 }}>
             We also carry tile &amp; stone, fixtures, hardware, and a full bath collection —
-            <span style={{ color: "var(--white)" }}> all on display in our showroom.</span>
+            <span style={{ color: "var(--gold-deep)", fontWeight: 500 }}> all on display in our showroom.</span>
           </p>
           <Link
             href="/collections"
-            style={{ color: "var(--gold)", fontSize: "12px", letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 300, whiteSpace: "nowrap", borderBottom: "1px solid var(--gold-border)", paddingBottom: "2px", textDecoration: "none", transition: "border-color 200ms" }}
+            style={{ color: "var(--gold-deep)", fontSize: "14px", letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 600, whiteSpace: "nowrap", borderBottom: "2px solid var(--gold-deep)", paddingBottom: "4px", textDecoration: "none", transition: "all 200ms var(--ease)" }}
           >
             View All Collections ↗
           </Link>

@@ -33,6 +33,10 @@ export default function Testimonials() {
   useEffect(() => {
     const section = sectionRef.current;
     if (!section) return;
+    if (ScrollTrigger.isTouch === 1) {
+      gsap.set(section.querySelectorAll(".testi-reveal"), { opacity: 1, y: 0 });
+      return;
+    }
     const ctx = gsap.context(() => {
       gsap.fromTo(
         section.querySelectorAll(".testi-reveal"),
@@ -108,7 +112,7 @@ export default function Testimonials() {
                 fontSize: "12px",
                 letterSpacing: "0.2em",
                 textTransform: "uppercase",
-                color: "var(--white-faint)",
+                color: "var(--text-faint)",
                 fontWeight: 300,
                 opacity: 0,
               }}

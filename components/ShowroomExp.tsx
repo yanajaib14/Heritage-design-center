@@ -61,6 +61,10 @@ export default function ShowroomExp() {
   useEffect(() => {
     const el = sectionRef.current;
     if (!el) return;
+    if (ScrollTrigger.isTouch === 1) {
+      gsap.set(el.querySelectorAll(".showroom-copy, .showroom-slider-wrap"), { opacity: 1, x: 0, clipPath: "none" });
+      return;
+    }
     const ctx = gsap.context(() => {
       gsap.fromTo(
         el.querySelector(".showroom-copy"),

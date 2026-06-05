@@ -15,6 +15,7 @@ export default function HeroSection() {
   const h1Ref = useRef<HTMLHeadingElement>(null);
   const subRef = useRef<HTMLParagraphElement>(null);
   const ctasRef = useRef<HTMLDivElement>(null);
+  const soonRef = useRef<HTMLDivElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
 
 
@@ -22,18 +23,21 @@ export default function HeroSection() {
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
     // Parallax bg
-    gsap.to(bgRef.current, {
-      yPercent: 25,
-      ease: "none",
-      scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true },
-    });
+    if (ScrollTrigger.isTouch !== 1) {
+      gsap.to(bgRef.current, {
+        yPercent: 25,
+        ease: "none",
+        scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true },
+      });
+    }
 
     tl.fromTo(pillRef.current,   { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7 }, 0.5)
       .fromTo(h1Ref.current,     { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9 }, 0.7)
       .fromTo(subRef.current,    { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8 }, 0.95)
       .fromTo(ctasRef.current,   { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7 }, 1.1)
+      .fromTo(soonRef.current,   { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7 }, 1.25)
       .fromTo(bottomRef.current?.querySelectorAll(".hero-bottom-item") ?? [],
-        { y: 20, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.15, duration: 0.7 }, 1.3);
+        { y: 20, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.15, duration: 0.7 }, 1.45);
 
     return () => { ScrollTrigger.getAll().forEach(t => t.kill()); };
   }, []);
@@ -70,14 +74,17 @@ export default function HeroSection() {
             Explore the Showroom ↓
           </a>
         </div>
+
+        <div ref={soonRef} className="mt-8 flex" style={{ opacity: 0 }}>
+          <div className="frosted-pill">
+            <span className="dot-live" />
+            Showroom Coming Soon! 8695 Martin Way E #101, Lacey WA
+          </div>
+        </div>
       </div>
 
       <div ref={bottomRef} className="hero-bottom">
-        <div className="hero-bottom-item frosted-pill" style={{ opacity: 0 }}>
-          <span className="dot-live" />
-          Showroom Coming Soon! 8695 Martin Way E #101, Lacey WA
-        </div>
-
+        <div /> {/* Dummy element to keep space-between pushing card to the right */}
         <div className="hero-bottom-item hero-card" style={{ opacity: 0 }}>
           <h4>Builders &amp; Contractors</h4>
           <p className="hero-card-sub">Design and supply support for the modern builder.</p>

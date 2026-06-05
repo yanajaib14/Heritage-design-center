@@ -28,6 +28,10 @@ export default function Showcase({
   useEffect(() => {
     const el = sectionRef.current;
     if (!el) return;
+    if (ScrollTrigger.isTouch === 1) {
+      gsap.set(el.querySelectorAll(".showcase-img, .showcase-content, .showcase-content .eyebrow, .showcase-content h2, .showcase-content p, .showcase-content .pill-row, .showcase-content .link-arrow"), { opacity: 1, y: 0, clipPath: "none", scale: 1 });
+      return;
+    }
     const ctx = gsap.context(() => {
       const imgWrap = el.querySelector(".showcase-img");
       const content = el.querySelector(".showcase-content");

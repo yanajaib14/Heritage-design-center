@@ -141,6 +141,10 @@ export default function CollectionsPage() {
   const sectionsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (ScrollTrigger.isTouch === 1) {
+      gsap.set(".h-item, .coll-item, .coll-img", { opacity: 1, y: 0, clipPath: "none", scale: 1 });
+      return;
+    }
     const ctx = gsap.context(() => {
       if (heroRef.current) {
         gsap.fromTo(
@@ -183,6 +187,7 @@ export default function CollectionsPage() {
           className="page-hero-bg"
           style={{ backgroundImage: "url('https://images.squarespace-cdn.com/content/v1/6982349a56e1e46c7b2e0861/b662f8dd-f7f8-490d-8cce-bbb2eefbc8b8/whitendale.webp')" }}
         />
+        <div className="page-hero-overlay" aria-hidden="true" />
         <div className="page-hero-inner" ref={heroRef}>
           <span className="eyebrow h-item" style={{ opacity: 0 }}>Materials &amp; Brands</span>
           <h1 className="h-item" style={{ opacity: 0 }}>
@@ -236,10 +241,10 @@ export default function CollectionsPage() {
                 </h2>
 
                 {/* Intro — larger lead paragraph */}
-                <p className="coll-item" style={{ color: "var(--white)", fontSize: "18px", lineHeight: 1.75, fontWeight: 300, margin: "0 0 16px", opacity: 0 }}>
+                <p className="coll-item" style={{ color: "var(--text)", fontSize: "18px", lineHeight: 1.75, fontWeight: 300, margin: "0 0 16px", opacity: 0 }}>
                   {intro}
                 </p>
-                <p className="coll-item" style={{ color: "var(--white-dim)", fontSize: "16px", lineHeight: 1.8, fontWeight: 300, margin: "0 0 24px", opacity: 0 }}>
+                <p className="coll-item" style={{ color: "var(--text-dim)", fontSize: "16px", lineHeight: 1.8, fontWeight: 300, margin: "0 0 24px", opacity: 0 }}>
                   {body}
                 </p>
 
@@ -279,7 +284,7 @@ export default function CollectionsPage() {
                         >
                           <span style={{ fontSize: "13px", letterSpacing: "0.1em", color: "var(--gold)", textTransform: "uppercase", fontWeight: 300 }}>{label}</span>
                           <span style={{ display: "flex", alignItems: "center", gap: "24px" }}>
-                            <span style={{ fontSize: "12px", color: "var(--white-faint)", fontWeight: 300 }}>{note}</span>
+                            <span style={{ fontSize: "12px", color: "var(--text-faint)", fontWeight: 300 }}>{note}</span>
                             <span style={{ color: "var(--gold)", opacity: 0.6, fontSize: "13px" }}>↗</span>
                           </span>
                         </a>
@@ -311,10 +316,10 @@ export default function CollectionsPage() {
               We Carry What<br />
               <em style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 400 }}>We Believe In.</em>
             </h2>
-            <p style={{ color: "var(--white-dim)", fontSize: "17px", lineHeight: 1.8, fontWeight: 300, margin: "0 0 20px" }}>
+            <p style={{ color: "var(--text-dim)", fontSize: "17px", lineHeight: 1.8, fontWeight: 300, margin: "0 0 20px" }}>
               We do not carry every brand available. We carry the ones we would specify for our own homes — brands with consistent quality, reliable lead times, and product that holds up over years of daily use.
             </p>
-            <p style={{ color: "var(--white-dim)", fontSize: "17px", lineHeight: 1.8, fontWeight: 300, margin: "0 0 36px" }}>
+            <p style={{ color: "var(--text-dim)", fontSize: "17px", lineHeight: 1.8, fontWeight: 300, margin: "0 0 36px" }}>
               Every brand in our showroom has been vetted for quality, support, and value. When we recommend something, it is because we have seen it perform — not because of the margin.
             </p>
             <a className="btn btn-solid" href={SCHEDULE_URL} target="_blank" rel="noopener">
@@ -330,7 +335,7 @@ export default function CollectionsPage() {
             ].map(({ title, body }) => (
               <div key={title} style={{ background: "var(--bg)", padding: "28px 32px" }}>
                 <h4 style={{ fontFamily: "var(--font-display)", fontSize: "18px", fontWeight: 500, marginBottom: "8px" }}>{title}</h4>
-                <p style={{ color: "var(--white-dim)", fontSize: "14px", lineHeight: 1.7, fontWeight: 300, margin: 0 }}>{body}</p>
+                <p style={{ color: "var(--text-dim)", fontSize: "14px", lineHeight: 1.7, fontWeight: 300, margin: 0 }}>{body}</p>
               </div>
             ))}
           </div>
@@ -338,19 +343,24 @@ export default function CollectionsPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section style={{ background: "var(--bg)", padding: "clamp(96px, 12vw, 148px) var(--pad)", textAlign: "center" }}>
-        <div style={{ maxWidth: "600px", margin: "0 auto" }}>
-          <span className="eyebrow" style={{ display: "block", marginBottom: "20px" }}>Come See It in Person</span>
-          <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(40px, 5vw, 60px)", fontWeight: 500, marginBottom: "20px" }}>
-            Touch the Materials<br />
-            <em style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 400 }}>Before You Decide.</em>
-          </h2>
-          <p style={{ color: "var(--white-dim)", fontSize: "17px", lineHeight: 1.75, fontWeight: 300, marginBottom: "40px" }}>
-            Nothing replaces seeing materials in real light. Visit our showroom and explore every collection with a designer by your side.
-          </p>
-          <a className="btn btn-solid" href={SCHEDULE_URL} target="_blank" rel="noopener">
-            Book a Showroom Visit
-          </a>
+      <section style={{ background: "var(--bg-dark)", position: "relative", overflow: "hidden", padding: "clamp(100px, 13vw, 160px) var(--pad)" }}>
+        <div aria-hidden="true" style={{ position: "absolute", bottom: -40, right: -20, fontFamily: "var(--font-display)", fontStyle: "italic", fontSize: "clamp(160px, 20vw, 300px)", fontWeight: 500, color: "rgba(197,160,89,0.04)", lineHeight: 1, userSelect: "none", pointerEvents: "none", zIndex: 0, whiteSpace: "nowrap" }}>Materials</div>
+        <div style={{ maxWidth: "var(--max)", margin: "0 auto", position: "relative", zIndex: 1, display: "grid", gridTemplateColumns: "1fr auto", gap: "clamp(40px, 6vw, 80px)", alignItems: "center" }}>
+          <div>
+            <span className="eyebrow" style={{ display: "block", marginBottom: 20 }}>Come See It in Person</span>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(52px, 7vw, 96px)", fontWeight: 400, lineHeight: 1.02, letterSpacing: "-0.03em", color: "var(--white)", margin: "0 0 28px" }}>
+              Touch the Materials<br />
+              <em style={{ fontStyle: "italic", color: "var(--gold)" }}>Before You Decide.</em>
+            </h2>
+            <p style={{ color: "var(--white-dim)", fontSize: 18, lineHeight: 1.75, fontWeight: 400, maxWidth: 460, margin: 0 }}>
+              Nothing replaces seeing materials in real light. Visit our showroom and explore every collection with a designer by your side.
+            </p>
+          </div>
+          <div style={{ minWidth: 220 }}>
+            <a className="btn btn-solid pulse-shimmer-btn" href={SCHEDULE_URL} target="_blank" rel="noopener">
+              Book a Showroom Visit
+            </a>
+          </div>
         </div>
       </section>
 

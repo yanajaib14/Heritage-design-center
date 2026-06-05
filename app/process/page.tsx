@@ -112,6 +112,10 @@ export default function ProcessPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   useEffect(() => {
+    if (ScrollTrigger.isTouch === 1) {
+      gsap.set(".h-item, .proc-stat-item, .proc-entry, .proc-deliver-item, .audience-two-col-item, .faq-item", { opacity: 1, y: 0, x: 0 });
+      return;
+    }
     const ctx = gsap.context(() => {
       if (heroRef.current) {
         gsap.fromTo(
@@ -183,6 +187,7 @@ export default function ProcessPage() {
           className="page-hero-bg"
           style={{ backgroundImage: "url('https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/561695ba-8683-4348-93fb-4067502ac4e9/Design+Review+Meeting.png?content-type=image%2Fpng')" }}
         />
+        <div className="page-hero-overlay" aria-hidden="true" />
         <div className="page-hero-inner" ref={heroRef}>
           <span className="eyebrow h-item" style={{ opacity: 0 }}>How It Works</span>
           <h1 className="h-item" style={{ opacity: 0 }}>
@@ -258,7 +263,7 @@ export default function ProcessPage() {
             What You&apos;ll{" "}
             <em style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 400 }}>Receive.</em>
           </h2>
-          <p style={{ color: "var(--white-dim)", fontSize: "17px", lineHeight: 1.75, fontWeight: 300, maxWidth: "540px", marginTop: "16px" }}>
+          <p style={{ color: "var(--text-dim)", fontSize: "17px", lineHeight: 1.75, fontWeight: 300, maxWidth: "540px", marginTop: "16px" }}>
             Every project produces a complete, builder-ready documentation package. Here is exactly what that includes.
           </p>
           <div className="proc-delivers-grid">
@@ -299,7 +304,7 @@ export default function ProcessPage() {
                   "Complete material specification",
                   "Coordinated delivery to your contractor",
                 ].map((item) => (
-                  <li key={item} style={{ display: "flex", gap: "16px", alignItems: "flex-start", fontSize: "15px", color: "var(--white-dim)", fontWeight: 300 }}>
+                  <li key={item} style={{ display: "flex", gap: "16px", alignItems: "flex-start", fontSize: "15px", color: "var(--text)", fontWeight: 400 }}>
                     <span style={{ color: "var(--gold)", fontFamily: "var(--font-display)", fontStyle: "italic", fontSize: "20px", lineHeight: 1, flexShrink: 0 }}>✓</span>
                     {item}
                   </li>
@@ -323,13 +328,13 @@ export default function ProcessPage() {
                   "Builder-ready documentation package",
                   "Reliable job-site delivery scheduling",
                 ].map((item) => (
-                  <li key={item} style={{ display: "flex", gap: "16px", alignItems: "flex-start", fontSize: "15px", color: "var(--white-dim)", fontWeight: 300 }}>
+                  <li key={item} style={{ display: "flex", gap: "16px", alignItems: "flex-start", fontSize: "15px", color: "var(--text)", fontWeight: 400 }}>
                     <span style={{ color: "var(--gold)", fontFamily: "var(--font-display)", fontStyle: "italic", fontSize: "20px", lineHeight: 1, flexShrink: 0 }}>✓</span>
                     {item}
                   </li>
                 ))}
               </ul>
-              <a className="btn btn-ghost" href={TRADE_URL} target="_blank" rel="noopener">
+              <a className="btn btn-outline-gold" href={TRADE_URL} target="_blank" rel="noopener">
                 Become a Trade Partner
               </a>
             </div>
@@ -364,22 +369,24 @@ export default function ProcessPage() {
         </div>
       </section>
 
-      {/* ── CTA ── */}
-      <section style={{ background: "var(--bg)", padding: "clamp(96px, 12vw, 148px) var(--pad)", textAlign: "center", borderTop: "1px solid var(--gold-border)" }}>
-        <div style={{ maxWidth: "640px", margin: "0 auto" }}>
-          <span className="eyebrow" style={{ display: "block", marginBottom: "20px" }}>Get Started Today</span>
-          <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(40px, 5vw, 64px)", fontWeight: 500, marginBottom: "20px" }}>
-            Let&apos;s Begin{" "}
-            <em style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 400 }}>Your Project.</em>
-          </h2>
-          <p style={{ color: "var(--white-dim)", fontSize: "17px", lineHeight: 1.75, fontWeight: 300, marginBottom: "40px" }}>
-            A free consultation is all it takes to get started. No pressure, no commitment — just a conversation about your project and how we can help.
-          </p>
-          <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
-            <a className="btn btn-solid" href={SCHEDULE_URL} target="_blank" rel="noopener">
+      <section style={{ background: "var(--bg-dark)", position: "relative", overflow: "hidden", padding: "clamp(100px, 13vw, 160px) var(--pad)" }}>
+        <div aria-hidden="true" style={{ position: "absolute", bottom: -40, right: -20, fontFamily: "var(--font-display)", fontStyle: "italic", fontSize: "clamp(160px, 20vw, 300px)", fontWeight: 500, color: "rgba(197,160,89,0.04)", lineHeight: 1, userSelect: "none", pointerEvents: "none", zIndex: 0, whiteSpace: "nowrap" }}>Process</div>
+        <div style={{ maxWidth: "var(--max)", margin: "0 auto", position: "relative", zIndex: 1, display: "grid", gridTemplateColumns: "1fr auto", gap: "clamp(40px, 6vw, 80px)", alignItems: "center" }}>
+          <div>
+            <span className="eyebrow" style={{ display: "block", marginBottom: 20 }}>Get Started Today</span>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(52px, 7vw, 96px)", fontWeight: 400, lineHeight: 1.02, letterSpacing: "-0.03em", color: "var(--white)", margin: "0 0 28px" }}>
+              Let&apos;s Begin<br />
+              <em style={{ fontStyle: "italic", color: "var(--gold)" }}>Your Project.</em>
+            </h2>
+            <p style={{ color: "var(--white-dim)", fontSize: 18, lineHeight: 1.75, fontWeight: 400, maxWidth: 460, margin: 0 }}>
+              A free consultation is all it takes. No pressure, no commitment — just a conversation about your project and how we can help.
+            </p>
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 16, minWidth: 220 }}>
+            <a className="btn btn-solid pulse-shimmer-btn" href={SCHEDULE_URL} target="_blank" rel="noopener">
               Book a Free Consultation
             </a>
-            <Link href="/showroom" className="btn btn-ghost">
+            <Link href="/showroom" className="btn btn-outline-gold" style={{ color: "var(--white-dim)", borderColor: "var(--gold-border-strong)" }}>
               Visit Our Showroom
             </Link>
           </div>

@@ -35,6 +35,10 @@ export default function WhyHeritage() {
   useEffect(() => {
     const el = sectionRef.current;
     if (!el) return;
+    if (ScrollTrigger.isTouch === 1) {
+      gsap.set(el.querySelectorAll(".why-head, .why-item"), { opacity: 1, y: 0, x: 0 });
+      return;
+    }
     const ctx = gsap.context(() => {
       gsap.fromTo(
         el.querySelector(".why-head"),
@@ -42,37 +46,55 @@ export default function WhyHeritage() {
         { y: 0, opacity: 1, duration: 0.9, ease: "power3.out",
           scrollTrigger: { trigger: el.querySelector(".why-head"), start: "top 80%" } }
       );
-      el.querySelectorAll(".why-item").forEach((item, i) => {
-        const fromX = i % 2 === 0 ? -20 : 20;
-        gsap.fromTo(item,
-          { x: fromX, opacity: 0 },
-          { x: 0, opacity: 1, duration: 0.8, ease: "power3.out",
-            scrollTrigger: { trigger: item, start: "top 82%" } }
-        );
-      });
+      gsap.fromTo(
+        el.querySelectorAll(".why-item"),
+        { y: 28, opacity: 0 },
+        { y: 0, opacity: 1, stagger: 0.12, duration: 0.8, ease: "power3.out",
+          scrollTrigger: { trigger: el.querySelector(".why-item"), start: "top 82%" } }
+      );
     }, el);
     return () => ctx.revert();
   }, []);
 
   return (
-    <section className="why" id="why" ref={sectionRef}>
-      <div className="why-head">
-        <span className="eyebrow">Why Heritage</span>
-        <h2>Not a Cabinet Dealer. <em>A Design House.</em></h2>
-        <p>
-          Most showrooms sell materials. We design with them. Whether you&apos;re a homeowner with a vision or a contractor who needs a reliable design and supply partner, Heritage gives you the expertise, the products, and the process to get it done right.
-        </p>
-      </div>
-      <div className="why-grid">
-        {items.map(({ num, title, body }) => (
-          <div key={num} className="why-item">
-            <div className="why-num">{num}</div>
-            <div>
-              <h3>{title}</h3>
-              <p>{body}</p>
+    <section className="why border-t border-[var(--gold-border)]" id="why" ref={sectionRef}>
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        
+        {/* Left Column: Sticky Head Info */}
+        <div className="lg:col-span-5 why-head lg:sticky lg:top-[140px] mb-0">
+          <span className="eyebrow block mb-4">Why Heritage</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-medium text-[var(--text)] leading-tight mb-6">
+            Not a Cabinet Dealer.<br />
+            <span className="italic text-[var(--gold)] font-light font-serif">A Design House.</span>
+          </h2>
+          <p className="text-[var(--text-dim)] text-base md:text-lg font-light leading-relaxed max-w-sm">
+            Most showrooms sell materials. We design with them. Whether you&apos;re a homeowner with a vision or a contractor who needs a reliable design and supply partner, Heritage gives you the expertise, the products, and the process to get it done right.
+          </p>
+        </div>
+
+        {/* Right Column: List of items */}
+        <div className="lg:col-span-7 flex flex-col gap-2">
+          {items.map(({ num, title, body }) => (
+            <div 
+              key={num} 
+              className="why-item border-b border-[var(--gold-border)] py-8 md:py-10 flex gap-6 md:gap-8 items-start hover:translate-x-2 transition-transform duration-300 ease-out"
+              style={{ display: "flex", borderBottom: "1px solid var(--gold-border)" }}
+            >
+              <span className="font-display italic text-2xl md:text-3xl text-[var(--gold)] font-medium leading-none shrink-0">
+                {num}
+              </span>
+              <div className="flex-1">
+                <h3 className="font-display text-lg md:text-xl text-[var(--text)] mb-3 font-semibold">
+                  {title}
+                </h3>
+                <p className="text-[var(--text-dim)] font-light text-sm md:text-base leading-relaxed">
+                  {body}
+                </p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+
       </div>
     </section>
   );

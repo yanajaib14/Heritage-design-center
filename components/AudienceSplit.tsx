@@ -15,6 +15,10 @@ export default function AudienceSplit() {
   useEffect(() => {
     const el = sectionRef.current;
     if (!el) return;
+    if (ScrollTrigger.isTouch === 1) {
+      gsap.set(el.querySelectorAll(".audience-col"), { opacity: 1, y: 0 });
+      return;
+    }
     const ctx = gsap.context(() => {
       el.querySelectorAll(".audience-col").forEach((col, i) => {
         gsap.fromTo(col,

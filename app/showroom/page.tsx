@@ -26,6 +26,10 @@ export default function ShowroomPage() {
   const infoRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (ScrollTrigger.isTouch === 1) {
+      gsap.set(".h-item, .a-item, .showroom-photo-slot, .showroom-video-slot, .showroom-info-item", { opacity: 1, y: 0 });
+      return;
+    }
     const ctx = gsap.context(() => {
       if (heroRef.current) {
         gsap.fromTo(
@@ -82,6 +86,7 @@ export default function ShowroomPage() {
           className="page-hero-bg"
           style={{ backgroundImage: "url('https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/e2edde19-4fb4-4a28-920e-207d0ee8b444/ChatGPT+Image+Apr+2%2C+2026%2C+10_37_53+AM.png?content-type=image%2Fpng')" }}
         />
+        <div className="page-hero-overlay" aria-hidden="true" />
         <div className="page-hero-inner" ref={heroRef}>
           <span className="eyebrow h-item" style={{ opacity: 0 }}>Lacey, Washington</span>
           <h1 style={{ opacity: 0 }} className="h-item">
@@ -106,10 +111,10 @@ export default function ShowroomPage() {
               Design, Supply &amp;<br />
               <em style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 400 }}>All Under One Roof.</em>
             </h2>
-            <p className="a-item" style={{ color: "var(--white-dim)", fontSize: "17px", lineHeight: 1.8, fontWeight: 300, margin: "0 0 20px", opacity: 0 }}>
+            <p className="a-item" style={{ color: "var(--text-dim)", fontSize: "17px", lineHeight: 1.8, fontWeight: 300, margin: "0 0 20px", opacity: 0 }}>
               Heritage Design Center is a kitchen and bath design showroom located at 8695 Martin Way E in Lacey, Washington. We built this space specifically to give homeowners and builders a place where design decisions feel easy — because everything they need is right in front of them.
             </p>
-            <p className="a-item" style={{ color: "var(--white-dim)", fontSize: "17px", lineHeight: 1.8, fontWeight: 300, margin: "0 0 36px", opacity: 0 }}>
+            <p className="a-item" style={{ color: "var(--text-dim)", fontSize: "17px", lineHeight: 1.8, fontWeight: 300, margin: "0 0 36px", opacity: 0 }}>
               From the moment you walk in, you&apos;re surrounded by real material samples — full cabinet displays, stone slabs, tile walls, and hardware in every finish. Our designers are on-site to walk you through the options and help you build a cohesive vision for your project.
             </p>
             <div className="a-item" style={{ opacity: 0 }}>
@@ -139,8 +144,8 @@ export default function ShowroomPage() {
                   }}>
                     <span style={{ color: "var(--gold)", fontFamily: "var(--font-display)", fontStyle: "italic", fontSize: "18px", paddingTop: "2px" }}>✓</span>
                     <div>
-                      <strong style={{ display: "block", fontSize: "14px", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--white)", fontWeight: 400, marginBottom: "6px" }}>{label}</strong>
-                      <span style={{ color: "var(--white-dim)", fontSize: "15px", fontWeight: 300, lineHeight: 1.6 }}>{desc}</span>
+                      <strong style={{ display: "block", fontSize: "14px", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--text)", fontWeight: 500, marginBottom: "6px" }}>{label}</strong>
+                      <span style={{ color: "var(--text-dim)", fontSize: "15px", fontWeight: 300, lineHeight: 1.6 }}>{desc}</span>
                     </div>
                   </li>
                 ))}
@@ -161,7 +166,7 @@ export default function ShowroomPage() {
             A Space Built for{" "}
             <em style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 400 }}>Discovery.</em>
           </h2>
-          <p style={{ color: "var(--white-dim)", fontSize: "17px", lineHeight: 1.75, fontWeight: 300, maxWidth: "480px", marginBottom: "0" }}>
+          <p style={{ color: "var(--text-dim)", fontSize: "17px", lineHeight: 1.75, fontWeight: 300, maxWidth: "480px", marginBottom: "0" }}>
             Photos and video coming soon. Stop by in person for the full experience.
           </p>
 
@@ -208,8 +213,11 @@ export default function ShowroomPage() {
             <div className="showroom-info-item">
               <span className="si-label">Address</span>
               <p>
-                8695 Martin Way E #101<br />
-                Lacey, WA 98516<br /><br />
+                <a href="https://maps.google.com/?q=8695+Martin+Way+E+Lacey+WA" target="_blank" rel="noopener" style={{ textDecoration: "none", color: "inherit", borderBottom: "none" }}>
+                  8695 Martin Way E #101<br />
+                  Lacey, WA 98516
+                </a>
+                <br /><br />
                 <a href="https://maps.google.com/?q=8695+Martin+Way+E+Lacey+WA" target="_blank" rel="noopener">
                   Get Directions ↗
                 </a>
@@ -249,19 +257,24 @@ export default function ShowroomPage() {
       </section>
 
       {/* CTA */}
-      <section style={{ background: "var(--bg-surface)", padding: "clamp(96px, 12vw, 148px) var(--pad)", textAlign: "center" }}>
-        <div style={{ maxWidth: "600px", margin: "0 auto" }}>
-          <span className="eyebrow" style={{ display: "block", marginBottom: "20px" }}>Ready to Visit?</span>
-          <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(40px, 5vw, 60px)", fontWeight: 500, marginBottom: "20px" }}>
-            Book Your<br />
-            <em style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 400 }}>Free Appointment.</em>
-          </h2>
-          <p style={{ color: "var(--white-dim)", fontSize: "17px", lineHeight: 1.75, fontWeight: 300, marginBottom: "40px" }}>
-            Schedule a design appointment and come see the showroom. We&apos;ll walk you through every material and start building your project vision together.
-          </p>
-          <a className="btn btn-solid" href={SCHEDULE_URL} target="_blank" rel="noopener">
-            Book an Appointment
-          </a>
+      <section style={{ background: "var(--bg-dark)", position: "relative", overflow: "hidden", padding: "clamp(100px, 13vw, 160px) var(--pad)" }}>
+        <div aria-hidden="true" style={{ position: "absolute", bottom: -40, right: -20, fontFamily: "var(--font-display)", fontStyle: "italic", fontSize: "clamp(160px, 20vw, 300px)", fontWeight: 500, color: "rgba(197,160,89,0.04)", lineHeight: 1, userSelect: "none", pointerEvents: "none", zIndex: 0, whiteSpace: "nowrap" }}>Showroom</div>
+        <div style={{ maxWidth: "var(--max)", margin: "0 auto", position: "relative", zIndex: 1, display: "grid", gridTemplateColumns: "1fr auto", gap: "clamp(40px, 6vw, 80px)", alignItems: "center" }}>
+          <div>
+            <span className="eyebrow" style={{ display: "block", marginBottom: 20 }}>Ready to Visit?</span>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(52px, 7vw, 96px)", fontWeight: 400, lineHeight: 1.02, letterSpacing: "-0.03em", color: "var(--white)", margin: "0 0 28px" }}>
+              Book Your<br />
+              <em style={{ fontStyle: "italic", color: "var(--gold)" }}>Free Appointment.</em>
+            </h2>
+            <p style={{ color: "var(--white-dim)", fontSize: 18, lineHeight: 1.75, fontWeight: 400, maxWidth: 460, margin: 0 }}>
+              Schedule a design appointment and come see the showroom. We&apos;ll walk you through every material and start building your vision together.
+            </p>
+          </div>
+          <div style={{ minWidth: 220 }}>
+            <a className="btn btn-solid pulse-shimmer-btn" href={SCHEDULE_URL} target="_blank" rel="noopener">
+              Book an Appointment
+            </a>
+          </div>
         </div>
       </section>
 
