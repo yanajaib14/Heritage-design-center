@@ -8,6 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const SCHEDULE_URL = "https://10daykitchens.hbportal.co/public/69f4fca66910ddf27daf62b7";
+const PHONE_URL = "tel:3605573441";
 
 export default function LeadCapture() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -143,6 +144,7 @@ export default function LeadCapture() {
               </div>
             </div>
           </div>
+
 
         </div>
 
