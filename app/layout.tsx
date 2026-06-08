@@ -82,8 +82,8 @@ export const metadata: Metadata = {
   },
   alternates: { canonical: SITE_URL },
   icons: {
-    icon: "/H.png",
-    apple: "/H.png",
+    icon: "/favicon.png",
+    apple: "/favicon.png",
   },
 };
 

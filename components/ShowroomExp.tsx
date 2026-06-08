@@ -106,10 +106,10 @@ export default function ShowroomExp() {
             ))}
           </ul>
           <div className="flex flex-col sm:flex-row gap-4">
-            <a className="btn btn-outline-gold" href={SCHEDULE_URL} target="_blank" rel="noopener">
+            <a className="btn btn-outline-gold w-full sm:w-auto justify-center" href={SCHEDULE_URL} target="_blank" rel="noopener">
               Schedule a Design Appointment
             </a>
-            <a className="btn btn-solid" href={PHONE_URL}>
+            <a className="btn btn-solid w-full sm:w-auto justify-center" href={PHONE_URL}>
               Call Us (360) 557-3441
             </a>
           </div>

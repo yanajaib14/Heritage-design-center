@@ -59,7 +59,7 @@ export default function WhyHeritage() {
   return (
     <section className="why border-t border-[var(--gold-border)]" id="why" ref={sectionRef}>
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-        
+
         {/* Left Column: Sticky Head Info */}
         <div className="lg:col-span-5 why-head lg:sticky lg:top-[140px] mb-0">
           <span className="eyebrow block mb-4">Why Heritage</span>
@@ -75,8 +75,8 @@ export default function WhyHeritage() {
         {/* Right Column: List of items */}
         <div className="lg:col-span-7 flex flex-col gap-2">
           {items.map(({ num, title, body }) => (
-            <div 
-              key={num} 
+            <div
+              key={num}
               className="why-item border-b border-[var(--gold-border)] py-8 md:py-10 flex gap-6 md:gap-8 items-start hover:translate-x-2 transition-transform duration-300 ease-out"
               style={{ display: "flex", borderBottom: "1px solid var(--gold-border)" }}
             >

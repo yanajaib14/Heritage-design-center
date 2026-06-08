@@ -18,56 +18,99 @@ export default function TrustBar() {
     }
     const ctx = gsap.context(() => {
       gsap.fromTo(
-        el.querySelectorAll(".trust-stat, .trust-quote"),
-        { y: 30, opacity: 0 },
-        { y: 0, opacity: 1, stagger: 0.15, duration: 0.9, ease: "power3.out",
-          scrollTrigger: { trigger: el, start: "top 82%", once: true } }
+        ".trust-quote",
+        { y: 28, opacity: 0 },
+        {
+          y: 0, opacity: 1, duration: 1.1, ease: "power3.out",
+          scrollTrigger: { trigger: el, start: "top 82%", once: true },
+        }
+      );
+      gsap.fromTo(
+        el.querySelectorAll(".trust-stat"),
+        { y: 32, opacity: 0 },
+        {
+          y: 0, opacity: 1, stagger: 0.13, duration: 0.9, ease: "power3.out", delay: 0.25,
+          scrollTrigger: { trigger: el, start: "top 82%", once: true },
+        }
       );
     }, el);
     return () => ctx.revert();
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-12 md:py-16 bg-[var(--bg)] border-b border-[var(--gold-border)]">
-      <div className="max-w-[var(--max)] mx-auto px-[var(--pad)]">
-        
-        {/* Center quote */}
-        <div className="trust-quote text-center font-display italic text-xl md:text-2xl lg:text-3xl text-[var(--text)] mb-10 leading-relaxed max-w-2xl mx-auto">
-          &ldquo;Every space tells a story. We help you write yours.&rdquo;
+    <section ref={sectionRef} className="bg-[var(--bg-surface)] border-b border-[var(--gold-border)]">
+
+      {/* Quote */}
+      <div className="trust-quote relative overflow-hidden max-w-[var(--max)] mx-auto px-[var(--pad)] pt-18 pb-16 text-center">
+        {/* Giant decorative open-quote behind text */}
+        <span
+          aria-hidden
+          className="pointer-events-none select-none absolute -top-4 left-1/2 -translate-x-1/2 font-display text-[180px] leading-none text-[var(--gold)] opacity-[0.07]"
+          style={{ fontStyle: "italic" }}
+        >
+          &ldquo;
+        </span>
+
+        {/* Thin gold rule above */}
+        <div className="flex items-center justify-center gap-4 mb-8">
+          <div className="h-px w-12 bg-[var(--gold)] opacity-60" />
+          <div className="h-1.5 w-1.5 rounded-full bg-[var(--gold)] opacity-60" />
+          <div className="h-px w-12 bg-[var(--gold)] opacity-60" />
         </div>
 
-        {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-[var(--gold-border)] bg-[var(--bg-surface)] shadow-sm rounded-none overflow-hidden max-w-3xl mx-auto">
-          
-          <div className="trust-stat text-center flex flex-col items-center justify-center p-6 md:p-8 hover:bg-[rgba(201,168,76,0.02)] transition-colors duration-300">
-            <div className="font-display italic text-3xl md:text-4xl lg:text-5xl text-[var(--gold)] mb-2.5 leading-none font-medium">
+        <p className="relative font-display italic text-2xl md:text-3xl lg:text-[2.6rem] text-[var(--text)] leading-[1.35] max-w-3xl mx-auto">
+          Every space tells a story.{" "}
+          <em className="not-italic text-[var(--gold-deep)]">We help you write yours.</em>
+        </p>
+      </div>
+
+      {/* Divider */}
+      <div className="max-w-[var(--max)] mx-auto px-[var(--pad)]">
+        <div className="h-px bg-[var(--gold-border)]" />
+      </div>
+
+      {/* Stats */}
+      <div className="max-w-[var(--max)] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3">
+
+          <div className="trust-stat group relative flex flex-col items-center justify-center py-14 px-10 text-center">
+            {/* Expanding gold accent line */}
+            <div className="mb-5 h-px w-8 bg-[var(--gold)] transition-all duration-500 ease-out group-hover:w-14" />
+            <div className="font-display italic text-[3.5rem] md:text-[4rem] leading-none text-[var(--gold)] mb-3 font-medium tracking-tight">
               35+
             </div>
-            <div className="text-[var(--text-dim)] font-body text-[13px] tracking-[0.2em] uppercase font-medium">
+            <div className="font-body text-[10.5px] tracking-[0.28em] uppercase text-[var(--text-dim)] font-semibold">
               Years Combined Experience
             </div>
+            {/* Vertical divider (desktop) */}
+            <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 h-20 w-px bg-[var(--gold-border)]" />
           </div>
 
-          <div className="trust-stat text-center flex flex-col items-center justify-center p-6 md:p-8 border-y md:border-y-0 md:border-x border-[var(--gold-border)] hover:bg-[rgba(201,168,76,0.02)] transition-colors duration-300">
-            <div className="font-display italic text-3xl md:text-4xl lg:text-5xl text-[var(--gold)] mb-2.5 leading-none font-medium">
+          <div className="trust-stat group relative flex flex-col items-center justify-center py-14 px-10 text-center border-y md:border-y-0 border-[var(--gold-border)]">
+            <div className="mb-5 h-px w-8 bg-[var(--gold)] transition-all duration-500 ease-out group-hover:w-14" />
+            <div className="font-display italic text-[3.5rem] md:text-[4rem] leading-none text-[var(--gold)] mb-3 font-medium tracking-tight">
               Curated
             </div>
-            <div className="text-[var(--text-dim)] font-body text-[13px] tracking-[0.2em] uppercase font-medium">
+            <div className="font-body text-[10.5px] tracking-[0.28em] uppercase text-[var(--text-dim)] font-semibold">
               Pro-Grade Selection
             </div>
+            {/* Vertical divider (desktop) */}
+            <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 h-20 w-px bg-[var(--gold-border)]" />
           </div>
 
-          <div className="trust-stat text-center flex flex-col items-center justify-center p-6 md:p-8 hover:bg-[rgba(201,168,76,0.02)] transition-colors duration-300">
-            <div className="font-display italic text-3xl md:text-4xl lg:text-5xl text-[var(--gold)] mb-2.5 leading-none font-medium">
+          <div className="trust-stat group relative flex flex-col items-center justify-center py-14 px-10 text-center">
+            <div className="mb-5 h-px w-8 bg-[var(--gold)] transition-all duration-500 ease-out group-hover:w-14" />
+            <div className="font-display italic text-[3.5rem] md:text-[4rem] leading-none text-[var(--gold)] mb-3 font-medium tracking-tight">
               100%
             </div>
-            <div className="text-[var(--text-dim)] font-body text-[13px] tracking-[0.2em] uppercase font-medium">
+            <div className="font-body text-[10.5px] tracking-[0.28em] uppercase text-[var(--text-dim)] font-semibold">
               Design-First Approach
             </div>
           </div>
 
         </div>
       </div>
+
     </section>
   );
 }

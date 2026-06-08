@@ -138,7 +138,7 @@ export default function GalleryPage() {
                 {f === "all" ? "All Projects" : f === "kitchen" ? "Kitchens" : "Baths"}
               </button>
             ))}
-            <span style={{ marginLeft: "auto", alignSelf: "center", fontSize: "13px", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--text-dim)", fontWeight: 500, paddingBottom: "2px" }}>
+            <span className="gallery-filter-count" style={{ marginLeft: "auto", alignSelf: "center", fontSize: "13px", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--text-dim)", fontWeight: 500, paddingBottom: "2px" }}>
               {visible.length} {visible.length === 1 ? "project" : "projects"}
             </span>
           </div>
@@ -164,7 +164,7 @@ export default function GalleryPage() {
       {/* CTA */}
       <section style={{ background: "var(--bg-dark)", position: "relative", overflow: "hidden", padding: "clamp(100px, 13vw, 160px) var(--pad)" }}>
         <div aria-hidden="true" style={{ position: "absolute", bottom: -40, right: -20, fontFamily: "var(--font-display)", fontStyle: "italic", fontSize: "clamp(160px, 20vw, 300px)", fontWeight: 500, color: "rgba(197,160,89,0.04)", lineHeight: 1, userSelect: "none", pointerEvents: "none", zIndex: 0, whiteSpace: "nowrap" }}>Gallery</div>
-        <div style={{ maxWidth: "var(--max)", margin: "0 auto", position: "relative", zIndex: 1, display: "grid", gridTemplateColumns: "1fr auto", gap: "clamp(40px, 6vw, 80px)", alignItems: "center" }}>
+        <div className="page-cta-inner" style={{ maxWidth: "var(--max)", margin: "0 auto", position: "relative", zIndex: 1, display: "grid", gridTemplateColumns: "1fr auto", gap: "clamp(40px, 6vw, 80px)", alignItems: "center" }}>
           <div>
             <span className="eyebrow" style={{ display: "block", marginBottom: 20 }}>Start Your Project</span>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(52px, 7vw, 96px)", fontWeight: 400, lineHeight: 1.02, letterSpacing: "-0.03em", color: "var(--white)", margin: "0 0 28px" }}>
@@ -175,7 +175,7 @@ export default function GalleryPage() {
               Book a free consultation and bring your project to the showroom. We&apos;ll handle the design and supply every material.
             </p>
           </div>
-          <div style={{ minWidth: 220 }}>
+          <div className="page-cta-btns" style={{ minWidth: 220 }}>
             <a className="btn btn-solid pulse-shimmer-btn" href={SCHEDULE_URL} target="_blank" rel="noopener">
               Book a Free Consultation
             </a>

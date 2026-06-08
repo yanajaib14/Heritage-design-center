@@ -89,16 +89,17 @@ const categories = [
     eyebrow: "04 — Fixtures & Hardware",
     title: "The Details That",
     titleItalic: "Define a Space.",
-    intro: "Hardware is what the hand touches every time someone uses the space. It is also the easiest way to shift a design from good to exceptional. We carry the full Top Knobs catalog — over 3,000 SKUs across every finish and style.",
+    intro: "Hardware is what the hand touches every time someone uses the space — and the easiest way to shift a design from good to exceptional. We carry the full Top Knobs catalog and Jeffrey Alexander's decorative hardware collection, giving you thousands of options across every finish and style.",
     body: "Our showroom has a dedicated hardware display wall showing pulls, knobs, and faucets across every available finish — side by side so you can see exactly how each reads against your chosen cabinetry and stone. We do not upsell. We help you find the right piece for the right project.",
     image: "https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/74c2935e-ca5e-46b2-af5f-408e8b5c2837/43.png?content-type=image%2Fpng",
     imageAlt: "Cabinet hardware and fixtures",
     brands: [
       { label: "Top Knobs", href: "https://www.topknobs.com/", note: "3,000+ SKUs, 15+ finishes" },
+      { label: "Jeffrey Alexander", href: "https://jeffrey-alexander-hardware.com/", note: "Decorative hardware & bath accessories" },
     ],
     pills: ["Brushed Gold", "Matte Black", "Polished Chrome", "Satin Nickel", "Unlacquered Brass", "Oil-Rubbed Bronze", "Pewter"],
     specs: [
-      { label: "Brand", val: "Top Knobs — full catalog available" },
+      { label: "Brands", val: "Top Knobs & Jeffrey Alexander" },
       { label: "SKUs Available", val: "3,000+" },
       { label: "Finishes", val: "15+ including specialty metals" },
       { label: "Categories", val: "Pulls, knobs, bar pulls, cup pulls, faucets" },
@@ -306,7 +307,7 @@ export default function CollectionsPage() {
 
       {/* ── Why we carry what we carry ── */}
       <section style={{ background: "var(--bg-surface)", padding: "clamp(80px, 10vw, 128px) var(--pad)", borderBottom: "1px solid var(--gold-border)" }}>
-        <div style={{ maxWidth: "var(--max)", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(48px, 8vw, 100px)", alignItems: "center" }}>
+        <div className="coll-why-grid" style={{ maxWidth: "var(--max)", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(48px, 8vw, 100px)", alignItems: "center" }}>
           <div>
             <div className="section-eyebrow-row">
               <div className="section-rule" />
@@ -345,7 +346,7 @@ export default function CollectionsPage() {
       {/* ── CTA ── */}
       <section style={{ background: "var(--bg-dark)", position: "relative", overflow: "hidden", padding: "clamp(100px, 13vw, 160px) var(--pad)" }}>
         <div aria-hidden="true" style={{ position: "absolute", bottom: -40, right: -20, fontFamily: "var(--font-display)", fontStyle: "italic", fontSize: "clamp(160px, 20vw, 300px)", fontWeight: 500, color: "rgba(197,160,89,0.04)", lineHeight: 1, userSelect: "none", pointerEvents: "none", zIndex: 0, whiteSpace: "nowrap" }}>Materials</div>
-        <div style={{ maxWidth: "var(--max)", margin: "0 auto", position: "relative", zIndex: 1, display: "grid", gridTemplateColumns: "1fr auto", gap: "clamp(40px, 6vw, 80px)", alignItems: "center" }}>
+        <div className="page-cta-inner" style={{ maxWidth: "var(--max)", margin: "0 auto", position: "relative", zIndex: 1, display: "grid", gridTemplateColumns: "1fr auto", gap: "clamp(40px, 6vw, 80px)", alignItems: "center" }}>
           <div>
             <span className="eyebrow" style={{ display: "block", marginBottom: 20 }}>Come See It in Person</span>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(52px, 7vw, 96px)", fontWeight: 400, lineHeight: 1.02, letterSpacing: "-0.03em", color: "var(--white)", margin: "0 0 28px" }}>
@@ -356,7 +357,7 @@ export default function CollectionsPage() {
               Nothing replaces seeing materials in real light. Visit our showroom and explore every collection with a designer by your side.
             </p>
           </div>
-          <div style={{ minWidth: 220 }}>
+          <div className="page-cta-btns" style={{ minWidth: 220 }}>
             <a className="btn btn-solid pulse-shimmer-btn" href={SCHEDULE_URL} target="_blank" rel="noopener">
               Book a Showroom Visit
             </a>
