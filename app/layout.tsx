@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     template: "%s · Heritage Design Center",
   },
   description:
-    "Kitchen and bath design showroom in Lacey, Washington. Cabinetry, countertops, tile, and fixtures — all under one roof. Free design consultations available.",
+    "Kitchen and bath design showroom in Lacey, Washington — serving all of Western Washington. Cabinetry, countertops, tile, and fixtures — all under one roof. Free design consultations available.",
   keywords: [
     "kitchen design Lacey WA",
     "bathroom design Olympia WA",
@@ -48,6 +48,16 @@ export const metadata: Metadata = {
     "kitchen remodel Olympia",
     "custom cabinetry Lacey",
     "tile showroom Lacey WA",
+    "kitchen showroom Western Washington",
+    "bath remodel Seattle WA",
+    "kitchen design Tacoma WA",
+    "kitchen remodel Bellevue WA",
+    "cabinetry Western Washington",
+    "countertops Tacoma",
+    "kitchen showroom Puget Sound",
+    "bath design Western WA",
+    "kitchen remodel Thurston County",
+    "design showroom Pacific Northwest",
   ],
   authors: [{ name: SITE_NAME }],
   creator: SITE_NAME,
@@ -58,7 +68,7 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: "Heritage Design Center · Kitchen & Bath Showroom · Lacey, WA",
     description:
-      "Kitchen and bath design showroom in Lacey, WA. Cabinetry, countertops, tile, and fixtures — all under one roof. Free design consultations.",
+      "Kitchen and bath design showroom in Lacey, WA — serving all of Western Washington. Cabinetry, countertops, tile, and fixtures — all under one roof. Free design consultations.",
     images: [
       {
         url: "/og-image.jpg",
@@ -92,7 +102,7 @@ const localBusinessJsonLd = {
   "@type": "HomeAndConstructionBusiness",
   name: SITE_NAME,
   description:
-    "Kitchen and bath design showroom offering cabinetry, countertops, tile, and fixtures in Lacey, Washington.",
+    "Kitchen and bath design showroom offering cabinetry, countertops, tile, and fixtures in Lacey, Washington — serving all of Western Washington including Seattle, Tacoma, Olympia, and the Puget Sound region.",
   url: SITE_URL,
   telephone: "+13605573441",
   email: "showroom@heritagedesignctr.com",
@@ -110,6 +120,19 @@ const localBusinessJsonLd = {
     latitude: 47.0558,
     longitude: -122.7987,
   },
+  areaServed: [
+    { "@type": "State", name: "Western Washington" },
+    { "@type": "City", name: "Lacey", containedInPlace: { "@type": "State", name: "Washington" } },
+    { "@type": "City", name: "Olympia", containedInPlace: { "@type": "State", name: "Washington" } },
+    { "@type": "City", name: "Tumwater", containedInPlace: { "@type": "State", name: "Washington" } },
+    { "@type": "City", name: "Tacoma", containedInPlace: { "@type": "State", name: "Washington" } },
+    { "@type": "City", name: "Seattle", containedInPlace: { "@type": "State", name: "Washington" } },
+    { "@type": "City", name: "Bellevue", containedInPlace: { "@type": "State", name: "Washington" } },
+    { "@type": "City", name: "Puyallup", containedInPlace: { "@type": "State", name: "Washington" } },
+    { "@type": "City", name: "Gig Harbor", containedInPlace: { "@type": "State", name: "Washington" } },
+    { "@type": "City", name: "Centralia", containedInPlace: { "@type": "State", name: "Washington" } },
+    { "@type": "City", name: "Chehalis", containedInPlace: { "@type": "State", name: "Washington" } },
+  ],
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
