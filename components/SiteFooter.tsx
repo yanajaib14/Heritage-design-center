@@ -50,7 +50,7 @@ export default function SiteFooter() {
               className="w-auto h-[64px] object-contain object-left mb-6" 
             />
             <p className="text-[var(--white-dim)] font-normal text-[15px] leading-relaxed max-w-sm">
-              Heritage is a kitchen and bath design house serving Lacey, Olympia, and Thurston County. We handle detailed specifications, supply luxury cabinetry and stone, and coordinate direct job-site deliveries.
+              Heritage is a kitchen and bath design house serving all of Western Washington — from Olympia to Seattle and everywhere in between. We handle detailed specifications, supply luxury cabinetry and stone, and coordinate direct job-site deliveries.
             </p>
           </div>
 
