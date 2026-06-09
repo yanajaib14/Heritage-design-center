@@ -37,7 +37,7 @@ export default function SiteFooter() {
   }, []);
 
   return (
-    <footer ref={footerRef} className="footer-layout bg-[#111009] border-t-2 border-[var(--gold)] text-[var(--white)]">
+    <footer ref={footerRef} className="footer-layout bg-[#1e1d1a] border-t-2 border-[var(--gold)] text-[var(--white)]">
       <div className="footer-container">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-16">
           
