@@ -369,9 +369,9 @@ export default function ProcessPage() {
         </div>
       </section>
 
-      <section style={{ background: "var(--bg-dark)", position: "relative", overflow: "hidden", padding: "clamp(100px, 13vw, 160px) var(--pad)" }}>
-        <div aria-hidden="true" style={{ position: "absolute", bottom: -40, right: -20, fontFamily: "var(--font-display)", fontStyle: "italic", fontSize: "clamp(160px, 20vw, 300px)", fontWeight: 500, color: "rgba(197,160,89,0.04)", lineHeight: 1, userSelect: "none", pointerEvents: "none", zIndex: 0, whiteSpace: "nowrap" }}>Process</div>
-        <div className="page-cta-inner" style={{ maxWidth: "var(--max)", margin: "0 auto", position: "relative", zIndex: 1, display: "grid", gridTemplateColumns: "1fr auto", gap: "clamp(40px, 6vw, 80px)", alignItems: "center" }}>
+      <section className="page-cta-section">
+        <div className="page-cta-watermark" aria-hidden="true">Process</div>
+        <div className="page-cta-content">
           <div>
             <span className="eyebrow" style={{ display: "block", marginBottom: 20 }}>Get Started Today</span>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(52px, 7vw, 96px)", fontWeight: 400, lineHeight: 1.02, letterSpacing: "-0.03em", color: "var(--white)", margin: "0 0 28px" }}>
@@ -382,7 +382,7 @@ export default function ProcessPage() {
               A free consultation is all it takes. No pressure, no commitment — just a conversation about your project and how we can help.
             </p>
           </div>
-          <div className="page-cta-btns" style={{ display: "flex", flexDirection: "column", gap: 16, minWidth: 220 }}>
+          <div className="page-cta-btn-card">
             <a className="btn btn-solid pulse-shimmer-btn" href={SCHEDULE_URL} target="_blank" rel="noopener noreferrer">
               Book a Free Consultation
             </a>

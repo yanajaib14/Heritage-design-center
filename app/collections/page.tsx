@@ -272,21 +272,13 @@ export default function CollectionsPage() {
                     </p>
                     <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
                       {brands.map(({ label, href, note }) => (
-                        <a key={label} href={href} target="_blank" rel="noopener noreferrer"
-                          style={{
-                            display: "flex", alignItems: "center", justifyContent: "space-between",
-                            padding: "12px 16px",
-                            border: "1px solid var(--gold-border)",
-                            transition: "background 220ms var(--ease), border-color 220ms var(--ease)",
-                            textDecoration: "none",
-                          }}
-                          onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = "rgba(201,168,76,0.06)"; (e.currentTarget as HTMLElement).style.borderColor = "var(--gold-border-strong)"; }}
-                          onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = "transparent"; (e.currentTarget as HTMLElement).style.borderColor = "var(--gold-border)"; }}
-                        >
-                          <span style={{ fontSize: "13px", letterSpacing: "0.1em", color: "var(--gold)", textTransform: "uppercase", fontWeight: 300 }}>{label}</span>
-                          <span style={{ display: "flex", alignItems: "center", gap: "24px" }}>
-                            <span style={{ fontSize: "12px", color: "var(--text-faint)", fontWeight: 300 }}>{note}</span>
-                            <span style={{ color: "var(--gold)", opacity: 0.6, fontSize: "13px" }}>↗</span>
+                        <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="coll-brand-link">
+                          <span className="coll-brand-link-left">
+                            <span className="coll-brand-link-name">{label}</span>
+                          </span>
+                          <span className="coll-brand-link-right">
+                            <span className="coll-brand-link-note">{note}</span>
+                            <span className="coll-brand-link-arrow">↗</span>
                           </span>
                         </a>
                       ))}
@@ -344,9 +336,9 @@ export default function CollectionsPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section style={{ background: "var(--bg-dark)", position: "relative", overflow: "hidden", padding: "clamp(100px, 13vw, 160px) var(--pad)" }}>
-        <div aria-hidden="true" style={{ position: "absolute", bottom: -40, right: -20, fontFamily: "var(--font-display)", fontStyle: "italic", fontSize: "clamp(160px, 20vw, 300px)", fontWeight: 500, color: "rgba(197,160,89,0.04)", lineHeight: 1, userSelect: "none", pointerEvents: "none", zIndex: 0, whiteSpace: "nowrap" }}>Materials</div>
-        <div className="page-cta-inner" style={{ maxWidth: "var(--max)", margin: "0 auto", position: "relative", zIndex: 1, display: "grid", gridTemplateColumns: "1fr auto", gap: "clamp(40px, 6vw, 80px)", alignItems: "center" }}>
+      <section className="page-cta-section">
+        <div className="page-cta-watermark" aria-hidden="true">Materials</div>
+        <div className="page-cta-content">
           <div>
             <span className="eyebrow" style={{ display: "block", marginBottom: 20 }}>Come See It in Person</span>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(52px, 7vw, 96px)", fontWeight: 400, lineHeight: 1.02, letterSpacing: "-0.03em", color: "var(--white)", margin: "0 0 28px" }}>
@@ -357,7 +349,7 @@ export default function CollectionsPage() {
               Nothing replaces seeing materials in real light. Visit our showroom and explore every collection with a designer by your side.
             </p>
           </div>
-          <div className="page-cta-btns" style={{ minWidth: 220 }}>
+          <div className="page-cta-btn-card">
             <a className="btn btn-solid pulse-shimmer-btn" href={SCHEDULE_URL} target="_blank" rel="noopener noreferrer">
               Book a Showroom Visit
             </a>
