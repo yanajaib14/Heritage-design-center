@@ -267,7 +267,7 @@ body.has-promo .hero {
 .nav {
   position: fixed;
   top: 0; left: 0; right: 0;
-  z-index: 100;
+  z-index: 115;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -373,6 +373,23 @@ body.has-promo .hero {
   transition: opacity 400ms var(--ease);
 }
 .mobile-menu.open { opacity: 1; pointer-events: auto; }
+.mobile-menu-close {
+  position: absolute;
+  top: 24px;
+  right: var(--pad);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  border: 1px solid var(--gold-border);
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+  transition: background 200ms var(--ease), color 200ms var(--ease);
+}
+.mobile-menu-close:hover { background: var(--gold); color: #1a1208; }
 .mobile-menu a.ml {
   font-family: var(--font-display);
   font-size: 48px;

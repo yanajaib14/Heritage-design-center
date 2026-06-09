@@ -78,7 +78,7 @@ export default function HeroSection() {
         <div ref={soonRef} className="mt-8 flex" style={{ opacity: 0 }}>
           <div className="frosted-pill">
             <span className="dot-live" />
-            Now Open · 8695 Martin Way E #101, Lacey WA
+            Showroom Coming Soon! 8695 Martin Way E #101, Lacey WA
           </div>
         </div>
       </div>
