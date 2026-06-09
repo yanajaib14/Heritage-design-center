@@ -196,10 +196,16 @@ export default function CollectionsScroll() {
             {/* Shimmer sweep on hover */}
             <div className="cscroll-shimmer" aria-hidden="true" />
 
+            {/* Dark tint on hover — improves text contrast */}
+            <div
+              className="absolute inset-0 z-[9] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              style={{ background: "rgba(0,0,0,0.32)" }}
+            />
+
             {/* Description — hidden by default, revealed on hover */}
             <p
-              className="relative z-10 m-0 p-6 pb-0 font-body text-[16px] leading-[1.7] max-w-[220px] opacity-0 group-hover:opacity-100 transition-opacity duration-400"
-              style={{ color: card.light ? "rgba(250,250,248,0.92)" : "rgba(10,9,8,0.82)", fontWeight: 400 }}
+              className="relative z-10 m-0 p-6 pb-0 font-body text-[18px] leading-[1.7] max-w-[220px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              style={{ color: card.light ? "rgba(250,250,248,0.95)" : "rgba(255,255,255,0.95)", fontWeight: 400 }}
             >
               {card.description}
             </p>
@@ -210,13 +216,13 @@ export default function CollectionsScroll() {
                 src={card.image}
                 alt={card.category}
                 draggable={false}
-                className="w-full h-full object-cover opacity-50 group-hover:opacity-70 group-hover:scale-[1.04] transition-all duration-700 ease-out"
+                className="w-full h-full object-cover opacity-60 group-hover:opacity-75 group-hover:scale-[1.04] transition-all duration-700 ease-out"
               />
-              {/* Gradient mask */}
+              {/* Gradient mask — smooth fade, no hard plateau */}
               <div
                 className="absolute inset-0"
                 style={{
-                  background: `linear-gradient(to bottom, ${card.bg} 0%, transparent 40%, transparent 52%, ${card.bg} 100%)`,
+                  background: `linear-gradient(to bottom, ${card.bg} 0%, transparent 48%, ${card.bg} 100%)`,
                 }}
               />
             </div>
