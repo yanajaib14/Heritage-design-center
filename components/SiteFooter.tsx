@@ -47,8 +47,8 @@ export default function SiteFooter() {
             <img
               src="https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/0c15682d-817f-4508-b804-ad5aba6b200f/Heritage_Design_Center_email_signature_400px.png?content-type=image%2Fpng"
               alt="Heritage Design Center"
-              className="footer-logo w-auto h-[90px] object-contain object-left mb-6"
-              style={{}}
+              className="w-auto h-[90px] object-contain object-left mb-6"
+              style={{ filter: "drop-shadow(0 2px 12px rgba(201,168,76,0.25))" }}
             />
             <p className="text-[var(--text-dim)] font-normal text-[17px] leading-relaxed max-w-sm">
               Heritage is a kitchen and bath design house serving all of Western Washington, from Olympia to Seattle and everywhere in between. We handle detailed specifications, supply luxury cabinetry and stone, and coordinate direct job-site deliveries.
