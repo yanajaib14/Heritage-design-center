@@ -111,7 +111,7 @@ export default function ShowroomExp() {
             <a className="btn btn-outline-gold w-full sm:w-auto justify-center" href={SCHEDULE_URL} target="_blank" rel="noopener noreferrer">
               Schedule a Design Appointment
             </a>
-            <a className="btn btn-solid w-full sm:w-auto justify-center" href={PHONE_URL}>
+            <a className="btn btn-solid pulse-shimmer-btn w-full sm:w-auto justify-center" href={PHONE_URL}>
               Call Us (360) 557-3441
             </a>
           </div>

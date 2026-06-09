@@ -59,7 +59,7 @@ export default function NavBar() {
             <Link key={href} href={href}>{label}</Link>
           ))}
         </div>
-        <a className="btn btn-solid nav-cta" href={SCHEDULE_URL} target="_blank" rel="noopener noreferrer">
+        <a className="btn btn-solid nav-cta pulse-shimmer-btn" href={SCHEDULE_URL} target="_blank" rel="noopener noreferrer">
           Book a Consultation
         </a>
         <button
@@ -86,7 +86,7 @@ export default function NavBar() {
         {NAV_LINKS.map(({ href, label }) => (
           <Link key={href} href={href} className="ml" onClick={close}>{label}</Link>
         ))}
-        <a className="btn btn-solid" href={SCHEDULE_URL} target="_blank" rel="noopener noreferrer" onClick={close}>
+        <a className="btn btn-solid pulse-shimmer-btn" href={SCHEDULE_URL} target="_blank" rel="noopener noreferrer" onClick={close}>
           Book a Consultation
         </a>
       </div>

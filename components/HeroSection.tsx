@@ -67,7 +67,7 @@ export default function HeroSection() {
         </p>
 
         <div ref={ctasRef} className="hero-ctas" style={{ opacity: 0 }}>
-          <a className="btn btn-solid" href={GET_STARTED_URL} target="_blank" rel="noopener noreferrer">
+          <a className="btn btn-solid pulse-shimmer-btn" href={GET_STARTED_URL} target="_blank" rel="noopener noreferrer">
             Get Started
           </a>
           <a className="btn btn-ghost" href="tel:3605573441">
