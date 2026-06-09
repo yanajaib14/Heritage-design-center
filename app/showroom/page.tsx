@@ -180,6 +180,9 @@ export default function ShowroomPage() {
                     <circle cx="8.5" cy="8.5" r="1.5" />
                     <path d="m21 15-5-5L5 21" />
                   </svg>
+                  <span style={{ display: "block", marginTop: "10px", fontSize: "11px", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--text-faint)", fontFamily: "var(--font-body)", fontWeight: 400 }}>
+                    Photo Coming Soon
+                  </span>
                 </div>
                 <span className="slot-label">{label}</span>
               </div>
