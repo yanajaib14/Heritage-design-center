@@ -44,13 +44,13 @@ export default function WhyHeritage() {
         el.querySelector(".why-head"),
         { y: 35, opacity: 0 },
         { y: 0, opacity: 1, duration: 0.9, ease: "power3.out",
-          scrollTrigger: { trigger: el.querySelector(".why-head"), start: "top 80%" } }
+          scrollTrigger: { trigger: el.querySelector(".why-head"), start: "top 80%", once: true } }
       );
       gsap.fromTo(
         el.querySelectorAll(".why-item"),
         { y: 28, opacity: 0 },
         { y: 0, opacity: 1, stagger: 0.12, duration: 0.8, ease: "power3.out",
-          scrollTrigger: { trigger: el.querySelector(".why-item"), start: "top 82%" } }
+          scrollTrigger: { trigger: el.querySelector(".why-item"), start: "top 82%", once: true } }
       );
     }, el);
     return () => ctx.revert();

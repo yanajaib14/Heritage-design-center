@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Jost } from "next/font/google";
 import "./globals.css";
 import PromoBar from "@/components/PromoBar";
 import ScrollAnimations from "@/components/ScrollAnimations";
+import SmoothScroll from "@/components/SmoothScroll";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -166,6 +167,7 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <SmoothScroll />
         <PromoBar />
         <ScrollAnimations />
         {children}

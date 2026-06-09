@@ -73,13 +73,13 @@ export default function ShowroomExp() {
         el.querySelector(".showroom-copy"),
         { x: -30, opacity: 0 },
         { x: 0, opacity: 1, duration: 1, ease: "power3.out",
-          scrollTrigger: { trigger: el, start: "top 78%" } }
+          scrollTrigger: { trigger: el, start: "top 78%", once: true } }
       );
       gsap.fromTo(
         el.querySelector(".showroom-slider-wrap"),
         { clipPath: "inset(0 100% 0 0)", opacity: 0 },
         { clipPath: "inset(0 0% 0 0)", opacity: 1, duration: 1.2, ease: "power4.inOut",
-          scrollTrigger: { trigger: el, start: "top 78%" }, delay: 0.2 }
+          scrollTrigger: { trigger: el, start: "top 78%", once: true }, delay: 0.2 }
       );
     }, el);
     return () => ctx.revert();

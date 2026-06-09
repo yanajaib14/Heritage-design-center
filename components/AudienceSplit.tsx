@@ -25,7 +25,7 @@ export default function AudienceSplit() {
           { opacity: 0, y: 24 },
           {
             opacity: 1, y: 0, duration: 1, ease: "power3.out",
-            scrollTrigger: { trigger: el, start: "top 78%" }, delay: i * 0.18,
+            scrollTrigger: { trigger: el, start: "top 78%", once: true }, delay: i * 0.18,
           }
         );
       });

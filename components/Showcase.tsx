@@ -39,14 +39,14 @@ export default function Showcase({
         gsap.fromTo(imgWrap,
           { clipPath: "inset(100% 0 0 0)", scale: 1.08 },
           { clipPath: "inset(0% 0 0 0)", scale: 1, duration: 1.3, ease: "power4.inOut",
-            scrollTrigger: { trigger: el, start: "top 78%" } }
+            scrollTrigger: { trigger: el, start: "top 78%", once: true } }
         );
       }
       if (content) {
         gsap.fromTo(content.querySelectorAll(".eyebrow, h2, p, .pill-row, .link-arrow"),
           { y: 28, opacity: 0 },
           { y: 0, opacity: 1, stagger: 0.1, duration: 0.8, ease: "power3.out",
-            scrollTrigger: { trigger: el, start: "top 78%" }, delay: 0.2 }
+            scrollTrigger: { trigger: el, start: "top 78%", once: true }, delay: 0.2 }
         );
       }
     }, el);

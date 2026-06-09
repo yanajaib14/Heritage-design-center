@@ -43,7 +43,7 @@ export default function Testimonials() {
         { y: 30, opacity: 0 },
         {
           y: 0, opacity: 1, stagger: 0.12, duration: 0.9, ease: "power3.out",
-          scrollTrigger: { trigger: section, start: "top 75%" },
+          scrollTrigger: { trigger: section, start: "top 75%", once: true },
         }
       );
     }, section);
