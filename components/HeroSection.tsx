@@ -7,7 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const GET_STARTED_URL = "https://10daykitchens.hbportal.co/public/69936e5e0e854c002ad50a5f";
-const TRADE_CONTACT_URL = "https://10daykitchens.hbportal.co/public/69f50cd056cf56fd0dd4c172";
+const TRADE_CONTACT_URL = "https://10daykitchens.hbportal.co/public/69f50cd056cf56fd0dd4c172/1-form";
 
 export default function HeroSection() {
   const bgRef = useRef<HTMLDivElement>(null);

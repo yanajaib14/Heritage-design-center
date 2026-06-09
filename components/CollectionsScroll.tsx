@@ -55,7 +55,7 @@ const cards = [
     image: "/design.jpn.png",
     bg: "#1a1f18",
     light: true,
-    href: "/collections",
+    href: "/showroom",
   },
 ];
 
