@@ -272,7 +272,7 @@ export default function CollectionsPage() {
                     </p>
                     <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
                       {brands.map(({ label, href, note }) => (
-                        <a key={label} href={href} target="_blank" rel="noopener"
+                        <a key={label} href={href} target="_blank" rel="noopener noreferrer"
                           style={{
                             display: "flex", alignItems: "center", justifyContent: "space-between",
                             padding: "12px 16px",
@@ -295,7 +295,7 @@ export default function CollectionsPage() {
                 )}
 
                 <div className="coll-item" style={{ opacity: 0 }}>
-                  <a className="link-arrow" href={SCHEDULE_URL} target="_blank" rel="noopener">
+                  <a className="link-arrow" href={SCHEDULE_URL} target="_blank" rel="noopener noreferrer">
                     Request Samples in Showroom <span className="arrow">→</span>
                   </a>
                 </div>
@@ -323,7 +323,7 @@ export default function CollectionsPage() {
             <p style={{ color: "var(--text-dim)", fontSize: "17px", lineHeight: 1.8, fontWeight: 300, margin: "0 0 36px" }}>
               Every brand in our showroom has been vetted for quality, support, and value. When we recommend something, it is because we have seen it perform — not because of the margin.
             </p>
-            <a className="btn btn-solid" href={SCHEDULE_URL} target="_blank" rel="noopener">
+            <a className="btn btn-solid" href={SCHEDULE_URL} target="_blank" rel="noopener noreferrer">
               Book a Showroom Visit
             </a>
           </div>
@@ -358,7 +358,7 @@ export default function CollectionsPage() {
             </p>
           </div>
           <div className="page-cta-btns" style={{ minWidth: 220 }}>
-            <a className="btn btn-solid pulse-shimmer-btn" href={SCHEDULE_URL} target="_blank" rel="noopener">
+            <a className="btn btn-solid pulse-shimmer-btn" href={SCHEDULE_URL} target="_blank" rel="noopener noreferrer">
               Book a Showroom Visit
             </a>
           </div>

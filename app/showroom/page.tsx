@@ -118,7 +118,7 @@ export default function ShowroomPage() {
               From the moment you walk in, you&apos;re surrounded by real material samples — full cabinet displays, stone slabs, tile walls, and hardware in every finish. Our designers are on-site to walk you through the options and help you build a cohesive vision for your project.
             </p>
             <div className="a-item" style={{ opacity: 0 }}>
-              <a className="btn btn-solid" href={SCHEDULE_URL} target="_blank" rel="noopener">
+              <a className="btn btn-solid" href={SCHEDULE_URL} target="_blank" rel="noopener noreferrer">
                 Book an Appointment
               </a>
             </div>
@@ -213,12 +213,12 @@ export default function ShowroomPage() {
             <div className="showroom-info-item">
               <span className="si-label">Address</span>
               <p>
-                <a href="https://maps.google.com/?q=8695+Martin+Way+E+Lacey+WA" target="_blank" rel="noopener" style={{ textDecoration: "none", color: "inherit", borderBottom: "none" }}>
+                <a href="https://maps.google.com/?q=8695+Martin+Way+E+Lacey+WA" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "inherit", borderBottom: "none" }}>
                   8695 Martin Way E #101<br />
                   Lacey, WA 98516
                 </a>
                 <br /><br />
-                <a href="https://maps.google.com/?q=8695+Martin+Way+E+Lacey+WA" target="_blank" rel="noopener">
+                <a href="https://maps.google.com/?q=8695+Martin+Way+E+Lacey+WA" target="_blank" rel="noopener noreferrer">
                   Get Directions ↗
                 </a>
               </p>
@@ -271,7 +271,7 @@ export default function ShowroomPage() {
             </p>
           </div>
           <div className="page-cta-btns" style={{ minWidth: 220 }}>
-            <a className="btn btn-solid pulse-shimmer-btn" href={SCHEDULE_URL} target="_blank" rel="noopener">
+            <a className="btn btn-solid pulse-shimmer-btn" href={SCHEDULE_URL} target="_blank" rel="noopener noreferrer">
               Book an Appointment
             </a>
           </div>

@@ -78,7 +78,7 @@ export default function SiteFooter() {
               Showroom
             </h4>
             <p className="text-[var(--white-dim)] font-normal text-[15px] leading-relaxed mb-4">
-              <a href="https://maps.google.com/?q=8695+Martin+Way+E+Lacey+WA" target="_blank" rel="noopener" className="hover:text-[var(--gold)] transition-colors duration-200">
+              <a href="https://maps.google.com/?q=8695+Martin+Way+E+Lacey+WA" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--gold)] transition-colors duration-200">
                 8695 Martin Way E #101<br />
                 Lacey, WA 98516
               </a>

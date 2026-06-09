@@ -310,7 +310,7 @@ export default function ProcessPage() {
                   </li>
                 ))}
               </ul>
-              <a className="btn btn-solid" href={SCHEDULE_URL} target="_blank" rel="noopener">
+              <a className="btn btn-solid" href={SCHEDULE_URL} target="_blank" rel="noopener noreferrer">
                 Schedule Your Consultation
               </a>
             </div>
@@ -334,7 +334,7 @@ export default function ProcessPage() {
                   </li>
                 ))}
               </ul>
-              <a className="btn btn-outline-gold" href={TRADE_URL} target="_blank" rel="noopener">
+              <a className="btn btn-outline-gold" href={TRADE_URL} target="_blank" rel="noopener noreferrer">
                 Become a Trade Partner
               </a>
             </div>
@@ -383,7 +383,7 @@ export default function ProcessPage() {
             </p>
           </div>
           <div className="page-cta-btns" style={{ display: "flex", flexDirection: "column", gap: 16, minWidth: 220 }}>
-            <a className="btn btn-solid pulse-shimmer-btn" href={SCHEDULE_URL} target="_blank" rel="noopener">
+            <a className="btn btn-solid pulse-shimmer-btn" href={SCHEDULE_URL} target="_blank" rel="noopener noreferrer">
               Book a Free Consultation
             </a>
             <Link href="/showroom" className="btn btn-outline-gold" style={{ color: "var(--white-dim)", borderColor: "var(--gold-border-strong)" }}>

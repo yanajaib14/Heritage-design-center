@@ -67,7 +67,7 @@ export default function HeroSection() {
         </p>
 
         <div ref={ctasRef} className="hero-ctas" style={{ opacity: 0 }}>
-          <a className="btn btn-solid" href={GET_STARTED_URL} target="_blank" rel="noopener">
+          <a className="btn btn-solid" href={GET_STARTED_URL} target="_blank" rel="noopener noreferrer">
             Get Started
           </a>
           <a className="btn btn-ghost" href="tel:3605573441">
@@ -78,7 +78,7 @@ export default function HeroSection() {
         <div ref={soonRef} className="mt-8 flex" style={{ opacity: 0 }}>
           <div className="frosted-pill">
             <span className="dot-live" />
-            Showroom Coming Soon! 8695 Martin Way E #101, Lacey WA
+            Now Open · 8695 Martin Way E #101, Lacey WA
           </div>
         </div>
       </div>
@@ -88,7 +88,7 @@ export default function HeroSection() {
         <div className="hero-bottom-item hero-card" style={{ opacity: 0 }}>
           <h4>Builders &amp; Contractors</h4>
           <p className="hero-card-sub">Design and supply support for the modern builder.</p>
-          <a className="link-arrow" href={TRADE_CONTACT_URL} target="_blank" rel="noopener">
+          <a className="link-arrow" href={TRADE_CONTACT_URL} target="_blank" rel="noopener noreferrer">
             <span>BECOME A PARTNER WITH US</span>
             <span className="arrow">→</span>
           </a>

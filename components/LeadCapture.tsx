@@ -69,7 +69,7 @@ export default function LeadCapture() {
               <div className="lc-location-item">
                 <h4>Address</h4>
                 <p className="font-light">
-                  <a href="https://maps.google.com/?q=8695+Martin+Way+E+Lacey+WA" target="_blank" rel="noopener" className="hover:text-[var(--gold)] transition-colors duration-200">
+                  <a href="https://maps.google.com/?q=8695+Martin+Way+E+Lacey+WA" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--gold)] transition-colors duration-200">
                     8695 Martin Way E #101<br />
                     Lacey, WA 98516
                   </a>
@@ -129,7 +129,7 @@ export default function LeadCapture() {
                 className="btn btn-solid pulse-shimmer-btn w-full text-center py-4" 
                 href={SCHEDULE_URL} 
                 target="_blank" 
-                rel="noopener"
+                rel="noopener noreferrer"
               >
                 Schedule Now
               </a>

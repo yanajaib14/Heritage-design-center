@@ -47,9 +47,9 @@ export default function PromoBar() {
   return (
     <div ref={promoRef} className="promo-bar-container">
       <div className="promo-bar-inner">
-        <span className="promo-badge">Coming Soon</span>
+        <span className="promo-badge">Now Open</span>
         <p className="promo-text">
-          <strong>Our showroom in Lacey is opening soon.</strong>
+          <strong>Visit our showroom at 8695 Martin Way E #101, Lacey, WA.</strong>
           <span className="promo-divider" aria-hidden="true">•</span>
           <span className="promo-hours">Monday-Friday 9am-5:30pm</span>
           <span className="promo-divider" aria-hidden="true">•</span>

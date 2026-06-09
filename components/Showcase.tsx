@@ -72,13 +72,13 @@ export default function Showcase({
           {brandList && (
             <div className="pill-row brands">
               {brandList.map((b) => (
-                <a key={b.label} className="pill brand" href={b.href} target="_blank" rel="noopener">
+                <a key={b.label} className="pill brand" href={b.href} target="_blank" rel="noopener noreferrer">
                   {b.label}
                 </a>
               ))}
             </div>
           )}
-          <a className="link-arrow" href={ctaHref} target="_blank" rel="noopener">
+          <a className="link-arrow" href={ctaHref} target="_blank" rel="noopener noreferrer">
             {cta} <span className="arrow">→</span>
           </a>
         </div>

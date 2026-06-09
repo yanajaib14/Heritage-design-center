@@ -49,7 +49,7 @@ export default function AudienceSplit() {
             <span key={tag} className="audience-tag">{tag}</span>
           ))}
         </div>
-        <a className="btn btn-solid audience-btn" href={SCHEDULE_URL} target="_blank" rel="noopener">
+        <a className="btn btn-solid audience-btn" href={SCHEDULE_URL} target="_blank" rel="noopener noreferrer">
           Book a Free Consultation
         </a>
       </div>
@@ -69,7 +69,7 @@ export default function AudienceSplit() {
             <span key={tag} className="audience-tag">{tag}</span>
           ))}
         </div>
-        <a className="btn btn-outline-gold audience-btn" href={TRADE_URL} target="_blank" rel="noopener">
+        <a className="btn btn-outline-gold audience-btn" href={TRADE_URL} target="_blank" rel="noopener noreferrer">
           Partner with Us
         </a>
       </div>

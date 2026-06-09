@@ -19,7 +19,7 @@ export default function BrandMarquee() {
       <div className="marquee-row">
         <div className="marquee-track">
           {[...brands, ...brands].map((b, i) => (
-            <a key={i} className="brand-pill" href={b.href} target="_blank" rel="noopener">
+            <a key={i} className="brand-pill" href={b.href} target="_blank" rel="noopener noreferrer">
               {b.label}
             </a>
           ))}
@@ -29,7 +29,7 @@ export default function BrandMarquee() {
       <div className="marquee-row reverse">
         <div className="marquee-track">
           {[...brands.slice().reverse(), ...brands.slice().reverse()].map((b, i) => (
-            <a key={i} className="brand-pill" href={b.href} target="_blank" rel="noopener">
+            <a key={i} className="brand-pill" href={b.href} target="_blank" rel="noopener noreferrer">
               {b.label}
             </a>
           ))}

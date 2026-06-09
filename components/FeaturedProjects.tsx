@@ -99,7 +99,7 @@ export default function FeaturedProjects() {
           <p style={{ color: "var(--text-dim)", fontSize: "17px", fontWeight: 400, margin: "0 0 24px" }}>
             Ready to start your own project?
           </p>
-          <a className="btn btn-solid" href={SCHEDULE_URL} target="_blank" rel="noopener">
+          <a className="btn btn-solid" href={SCHEDULE_URL} target="_blank" rel="noopener noreferrer">
             Book a Free Consultation
           </a>
         </div>

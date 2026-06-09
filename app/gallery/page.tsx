@@ -176,7 +176,7 @@ export default function GalleryPage() {
             </p>
           </div>
           <div className="page-cta-btns" style={{ minWidth: 220 }}>
-            <a className="btn btn-solid pulse-shimmer-btn" href={SCHEDULE_URL} target="_blank" rel="noopener">
+            <a className="btn btn-solid pulse-shimmer-btn" href={SCHEDULE_URL} target="_blank" rel="noopener noreferrer">
               Book a Free Consultation
             </a>
           </div>

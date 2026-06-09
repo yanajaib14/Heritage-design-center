@@ -36,8 +36,10 @@ export default function ShowroomExp() {
 
   const resetTimer = useCallback(() => {
     if (timerRef.current) clearInterval(timerRef.current);
-    timerRef.current = setInterval(() => go(current + 1), 5000);
-  }, [current, go]);
+    timerRef.current = setInterval(() => {
+      setCurrent((c) => (c + 1) % SLIDER_IMAGES.length);
+    }, 5000);
+  }, []);
 
   useEffect(() => {
     timerRef.current = setInterval(() => {
@@ -106,7 +108,7 @@ export default function ShowroomExp() {
             ))}
           </ul>
           <div className="flex flex-col sm:flex-row gap-4">
-            <a className="btn btn-outline-gold w-full sm:w-auto justify-center" href={SCHEDULE_URL} target="_blank" rel="noopener">
+            <a className="btn btn-outline-gold w-full sm:w-auto justify-center" href={SCHEDULE_URL} target="_blank" rel="noopener noreferrer">
               Schedule a Design Appointment
             </a>
             <a className="btn btn-solid w-full sm:w-auto justify-center" href={PHONE_URL}>
