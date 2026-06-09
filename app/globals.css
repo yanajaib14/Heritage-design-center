@@ -40,6 +40,11 @@ body {
   overflow-x: hidden;
 }
 img { max-width: 100%; display: block; }
+
+/* Footer logo — force to gold regardless of source image colors */
+.footer-logo {
+  filter: brightness(0) invert(1) sepia(1) saturate(6) hue-rotate(8deg) brightness(0.85) !important;
+}
 a { color: inherit; text-decoration: none; }
 button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
 
