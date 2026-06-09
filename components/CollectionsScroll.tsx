@@ -195,8 +195,8 @@ export default function CollectionsScroll() {
 
             {/* Description */}
             <p
-              className="relative z-10 m-0 p-6 pb-0 font-body text-[14px] leading-[1.65] max-w-[210px]"
-              style={{ color: card.light ? "rgba(250,250,248,0.62)" : "rgba(10,9,8,0.52)" }}
+              className="relative z-10 m-0 p-6 pb-0 font-body text-[16px] leading-[1.7] max-w-[220px]"
+              style={{ color: card.light ? "rgba(250,250,248,0.90)" : "rgba(10,9,8,0.80)", fontWeight: 400 }}
             >
               {card.description}
             </p>
@@ -221,7 +221,7 @@ export default function CollectionsScroll() {
             {/* Category label + hover arrow */}
             <div className="relative z-10 p-5 pt-0 flex items-center justify-between">
               <span
-                className="inline-block font-body text-[12px] tracking-[0.2em] uppercase font-semibold px-4 py-[9px]"
+                className="inline-block font-body text-[13px] tracking-[0.22em] uppercase font-bold px-4 py-[10px]"
                 style={{ background: "var(--gold)", color: "#1a1208" }}
               >
                 {card.category}
@@ -245,14 +245,14 @@ export default function CollectionsScroll() {
         <div className="marquee-section" style={{ padding: "64px 0 72px" }}>
 
           {/* Decorated heading */}
-          <div className="flex items-center justify-center gap-5 mb-2 px-[var(--pad)]">
-            <div className="h-px flex-1 max-w-[80px] bg-[var(--gold-border)]" />
-            <div className="h-1 w-1 rounded-full bg-[var(--gold)] opacity-60" />
-            <span className="eyebrow">Our Trusted Partners</span>
-            <div className="h-1 w-1 rounded-full bg-[var(--gold)] opacity-60" />
-            <div className="h-px flex-1 max-w-[80px] bg-[var(--gold-border)]" />
+          <div className="flex items-center justify-center gap-5 mb-3 px-[var(--pad)]">
+            <div className="h-px flex-1 max-w-[100px] bg-[var(--gold-border)]" />
+            <div className="h-[5px] w-[5px] rounded-full bg-[var(--gold)] opacity-80" />
+            <span style={{ fontFamily: "var(--font-body)", fontSize: "13px", letterSpacing: "0.26em", textTransform: "uppercase", color: "var(--gold)", fontWeight: 600 }}>Our Trusted Partners</span>
+            <div className="h-[5px] w-[5px] rounded-full bg-[var(--gold)] opacity-80" />
+            <div className="h-px flex-1 max-w-[100px] bg-[var(--gold-border)]" />
           </div>
-          <p className="text-center font-body text-[12px] text-[var(--text-faint)] tracking-[0.14em] mb-12">
+          <p className="text-center font-body text-[15px] text-[var(--text-dim)] tracking-[0.06em] mb-12">
             Curated brands we stand behind — on display in our showroom.
           </p>
 

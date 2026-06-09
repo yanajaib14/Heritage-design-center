@@ -43,13 +43,14 @@ export default function SiteFooter() {
           
           {/* Column 1: Logo & Brand Intro */}
           <div className="lg:col-span-5 flex flex-col justify-start footer-reveal">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/0c15682d-817f-4508-b804-ad5aba6b200f/Heritage_Design_Center_email_signature_400px.png?content-type=image%2Fpng"
-              alt="Heritage Design Center"
-              className="w-auto h-[100px] object-contain object-left mb-6"
-              style={{ filter: "brightness(0) saturate(100%)" }}
-            />
+            <div style={{ display: "inline-flex", background: "var(--bg-dark)", padding: "14px 22px", marginBottom: "24px" }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/0c15682d-817f-4508-b804-ad5aba6b200f/Heritage_Design_Center_email_signature_400px.png?content-type=image%2Fpng"
+                alt="Heritage Design Center"
+                className="w-auto h-[90px] object-contain object-left"
+              />
+            </div>
             <p className="text-[var(--text-dim)] font-normal text-[17px] leading-relaxed max-w-sm">
               Heritage is a kitchen and bath design house serving all of Western Washington — from Olympia to Seattle and everywhere in between. We handle detailed specifications, supply luxury cabinetry and stone, and coordinate direct job-site deliveries.
             </p>
@@ -57,7 +58,7 @@ export default function SiteFooter() {
 
           {/* Column 2: Quick Links */}
           <div className="lg:col-span-2 flex flex-col justify-start footer-reveal">
-            <h4 className="text-[var(--text)] font-body text-[17px] tracking-[0.18em] uppercase font-semibold mb-6">
+            <h4 className="text-[var(--gold)] font-body text-[15px] tracking-[0.18em] uppercase font-semibold mb-6">
               Explore
             </h4>
             <nav className="flex flex-col gap-4">
@@ -75,7 +76,7 @@ export default function SiteFooter() {
 
           {/* Column 3: Contact */}
           <div className="lg:col-span-3 flex flex-col justify-start footer-reveal">
-            <h4 className="text-[var(--text)] font-body text-[17px] tracking-[0.18em] uppercase font-semibold mb-6">
+            <h4 className="text-[var(--gold)] font-body text-[15px] tracking-[0.18em] uppercase font-semibold mb-6">
               Showroom
             </h4>
             <p className="text-[var(--text-dim)] font-normal text-[17px] leading-relaxed mb-4">
@@ -96,7 +97,7 @@ export default function SiteFooter() {
 
           {/* Column 4: Hours */}
           <div className="lg:col-span-2 flex flex-col justify-start footer-reveal">
-            <h4 className="text-[var(--text)] font-body text-[17px] tracking-[0.18em] uppercase font-semibold mb-6">
+            <h4 className="text-[var(--gold)] font-body text-[15px] tracking-[0.18em] uppercase font-semibold mb-6">
               Hours
             </h4>
             <p className="text-[var(--text-dim)] font-normal text-[17px] leading-relaxed">
