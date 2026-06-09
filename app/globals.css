@@ -428,9 +428,9 @@ body.has-promo .hero {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(10, 9, 8, 0.30),
-              linear-gradient(to right, rgba(10, 9, 8, 0.72) 45%, rgba(10, 9, 8, 0.15) 100%),
-              linear-gradient(to top, rgba(10, 9, 8, 0.35), rgba(245, 240, 232, 0.06) 60%, rgba(245, 240, 232, 0.10));
+  background: rgba(10, 9, 8, 0.18),
+              linear-gradient(to right, rgba(10, 9, 8, 0.55) 45%, rgba(10, 9, 8, 0.08) 100%),
+              linear-gradient(to top, rgba(10, 9, 8, 0.25), rgba(245, 240, 232, 0.04) 60%, rgba(245, 240, 232, 0.06));
   z-index: 1;
   pointer-events: none;
 }
@@ -2326,9 +2326,9 @@ footer {
 .page-hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(10, 9, 8, 0.35),
-              linear-gradient(to right, rgba(10, 9, 8, 0.75) 45%, rgba(10, 9, 8, 0.18) 100%),
-              linear-gradient(to top, rgba(10, 9, 8, 0.40), rgba(245, 240, 232, 0.05) 60%, rgba(245, 240, 232, 0.08));
+  background: rgba(10, 9, 8, 0.20),
+              linear-gradient(to right, rgba(10, 9, 8, 0.58) 45%, rgba(10, 9, 8, 0.10) 100%),
+              linear-gradient(to top, rgba(10, 9, 8, 0.28), rgba(245, 240, 232, 0.04) 60%, rgba(245, 240, 232, 0.06));
   z-index: 1;
 }
 .page-hero-inner {
