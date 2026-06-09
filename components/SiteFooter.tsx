@@ -44,19 +44,20 @@ export default function SiteFooter() {
           {/* Column 1: Logo & Brand Intro */}
           <div className="lg:col-span-5 flex flex-col justify-start footer-reveal">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img 
-              src="https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/0c15682d-817f-4508-b804-ad5aba6b200f/Heritage_Design_Center_email_signature_400px.png?content-type=image%2Fpng" 
-              alt="Heritage Design Center" 
-              className="w-auto h-[90px] object-contain object-left mb-6" 
+            <img
+              src="https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/0c15682d-817f-4508-b804-ad5aba6b200f/Heritage_Design_Center_email_signature_400px.png?content-type=image%2Fpng"
+              alt="Heritage Design Center"
+              className="w-auto h-[100px] object-contain object-left mb-6"
+              style={{ filter: "brightness(0) saturate(100%)" }}
             />
-            <p className="text-[var(--text-dim)] font-normal text-[15px] leading-relaxed max-w-sm">
+            <p className="text-[var(--text-dim)] font-normal text-[17px] leading-relaxed max-w-sm">
               Heritage is a kitchen and bath design house serving all of Western Washington — from Olympia to Seattle and everywhere in between. We handle detailed specifications, supply luxury cabinetry and stone, and coordinate direct job-site deliveries.
             </p>
           </div>
 
           {/* Column 2: Quick Links */}
           <div className="lg:col-span-2 flex flex-col justify-start footer-reveal">
-            <h4 className="text-[var(--gold)] font-body text-[13px] tracking-[0.2em] uppercase font-bold mb-6">
+            <h4 className="text-[var(--text)] font-body text-[17px] tracking-[0.18em] uppercase font-semibold mb-6">
               Explore
             </h4>
             <nav className="flex flex-col gap-4">
@@ -64,7 +65,7 @@ export default function SiteFooter() {
                 <Link 
                   key={href} 
                   href={href} 
-                  className="text-[var(--text-dim)] hover:text-[var(--gold)] font-medium text-[15px] tracking-wide transition-colors duration-200"
+                  className="text-[var(--text-dim)] hover:text-[var(--gold)] font-medium text-[17px] tracking-wide transition-colors duration-200"
                 >
                   {label}
                 </Link>
@@ -74,16 +75,16 @@ export default function SiteFooter() {
 
           {/* Column 3: Contact */}
           <div className="lg:col-span-3 flex flex-col justify-start footer-reveal">
-            <h4 className="text-[var(--gold)] font-body text-[13px] tracking-[0.2em] uppercase font-bold mb-6">
+            <h4 className="text-[var(--text)] font-body text-[17px] tracking-[0.18em] uppercase font-semibold mb-6">
               Showroom
             </h4>
-            <p className="text-[var(--text-dim)] font-normal text-[15px] leading-relaxed mb-4">
+            <p className="text-[var(--text-dim)] font-normal text-[17px] leading-relaxed mb-4">
               <a href="https://maps.google.com/?q=8695+Martin+Way+E+Lacey+WA" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--gold)] transition-colors duration-200">
                 8695 Martin Way E #101<br />
                 Lacey, WA 98516
               </a>
             </p>
-            <div className="flex flex-col gap-2 font-medium text-[15px]">
+            <div className="flex flex-col gap-2 font-medium text-[17px]">
               <a href="tel:3605573441" className="text-[var(--text-dim)] hover:text-[var(--gold)] transition-colors duration-200">
                 (360) 557-3441
               </a>
@@ -95,10 +96,10 @@ export default function SiteFooter() {
 
           {/* Column 4: Hours */}
           <div className="lg:col-span-2 flex flex-col justify-start footer-reveal">
-            <h4 className="text-[var(--gold)] font-body text-[13px] tracking-[0.2em] uppercase font-bold mb-6">
+            <h4 className="text-[var(--text)] font-body text-[17px] tracking-[0.18em] uppercase font-semibold mb-6">
               Hours
             </h4>
-            <p className="text-[var(--text-dim)] font-normal text-[15px] leading-relaxed">
+            <p className="text-[var(--text-dim)] font-normal text-[17px] leading-relaxed">
               Mon – Fri: 9:00 AM – 5:30 PM<br />
               Sat: By appointment only<br />
               Sun: Closed
@@ -108,11 +109,11 @@ export default function SiteFooter() {
         </div>
 
         {/* Fine Print */}
-        <div className="mt-16 pt-8 border-t border-[var(--gold-border)] flex flex-col sm:flex-row justify-between items-center gap-4 text-[14px] text-[var(--text-dim)] font-normal footer-reveal">
+        <div className="mt-16 pt-8 border-t border-[var(--gold-border)] flex flex-col sm:flex-row justify-between items-center gap-4 text-[15px] text-[var(--text-dim)] font-normal footer-reveal">
           <div>
             © {new Date().getFullYear()} Heritage Design Center. All rights reserved.
           </div>
-          <div className="tracking-wider uppercase text-[13px] font-medium text-[var(--gold)]">
+          <div className="tracking-wider uppercase text-[14px] font-medium text-[var(--gold)]">
             Design. Supply. Delivered right.
           </div>
         </div>
