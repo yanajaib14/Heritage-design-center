@@ -382,7 +382,7 @@ export default function ProcessPage() {
               A free consultation is all it takes. No pressure, no commitment — just a conversation about your project and how we can help.
             </p>
           </div>
-          <div className="page-cta-btn-card">
+          <div style={{ display: "flex", flexDirection: "column", gap: 16, minWidth: 220 }}>
             <a className="btn btn-solid pulse-shimmer-btn" href={SCHEDULE_URL} target="_blank" rel="noopener noreferrer">
               Book a Free Consultation
             </a>

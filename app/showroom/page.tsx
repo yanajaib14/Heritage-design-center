@@ -270,7 +270,7 @@ export default function ShowroomPage() {
               Schedule a design appointment and come see the showroom. We&apos;ll walk you through every material and start building your vision together.
             </p>
           </div>
-          <div className="page-cta-btn-card">
+          <div style={{ display: "flex", flexDirection: "column", gap: 16, minWidth: 220 }}>
             <a className="btn btn-solid pulse-shimmer-btn" href={SCHEDULE_URL} target="_blank" rel="noopener noreferrer">
               Book an Appointment
             </a>

@@ -349,7 +349,7 @@ export default function CollectionsPage() {
               Nothing replaces seeing materials in real light. Visit our showroom and explore every collection with a designer by your side.
             </p>
           </div>
-          <div className="page-cta-btn-card">
+          <div style={{ display: "flex", flexDirection: "column", gap: 16, minWidth: 220 }}>
             <a className="btn btn-solid pulse-shimmer-btn" href={SCHEDULE_URL} target="_blank" rel="noopener noreferrer">
               Book a Showroom Visit
             </a>

@@ -175,7 +175,7 @@ export default function GalleryPage() {
               Book a free consultation and bring your project to the showroom. We&apos;ll handle the design and supply every material.
             </p>
           </div>
-          <div className="page-cta-btn-card">
+          <div style={{ display: "flex", flexDirection: "column", gap: 16, minWidth: 220 }}>
             <a className="btn btn-solid pulse-shimmer-btn" href={SCHEDULE_URL} target="_blank" rel="noopener noreferrer">
               Book a Free Consultation
             </a>

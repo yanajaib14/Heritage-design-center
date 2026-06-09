@@ -2123,7 +2123,7 @@ footer {
 
 /* ── Page CTA section (shared across all pages) ── */
 .page-cta-section {
-  background: var(--bg-dark);
+  background: #1e1d1a;
   position: relative;
   overflow: hidden;
   padding: clamp(100px, 13vw, 160px) var(--pad);
