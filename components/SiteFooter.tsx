@@ -43,14 +43,13 @@ export default function SiteFooter() {
           
           {/* Column 1: Logo & Brand Intro */}
           <div className="lg:col-span-5 flex flex-col justify-start footer-reveal">
-            <div style={{ display: "inline-flex", background: "var(--bg-dark)", padding: "14px 22px", marginBottom: "24px" }}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/0c15682d-817f-4508-b804-ad5aba6b200f/Heritage_Design_Center_email_signature_400px.png?content-type=image%2Fpng"
-                alt="Heritage Design Center"
-                className="w-auto h-[90px] object-contain object-left"
-              />
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/0c15682d-817f-4508-b804-ad5aba6b200f/Heritage_Design_Center_email_signature_400px.png?content-type=image%2Fpng"
+              alt="Heritage Design Center"
+              className="w-auto h-[90px] object-contain object-left mb-6"
+              style={{ filter: "sepia(1) saturate(5) hue-rotate(5deg) brightness(0.78)" }}
+            />
             <p className="text-[var(--text-dim)] font-normal text-[17px] leading-relaxed max-w-sm">
               Heritage is a kitchen and bath design house serving all of Western Washington — from Olympia to Seattle and everywhere in between. We handle detailed specifications, supply luxury cabinetry and stone, and coordinate direct job-site deliveries.
             </p>

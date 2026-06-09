@@ -193,10 +193,13 @@ export default function CollectionsScroll() {
             {/* Hover: top gold bar */}
             <div className="absolute top-0 left-0 right-0 h-[2px] bg-[var(--gold)] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 z-20" />
 
-            {/* Description */}
+            {/* Shimmer sweep on hover */}
+            <div className="cscroll-shimmer" aria-hidden="true" />
+
+            {/* Description — hidden by default, revealed on hover */}
             <p
-              className="relative z-10 m-0 p-6 pb-0 font-body text-[16px] leading-[1.7] max-w-[220px]"
-              style={{ color: card.light ? "rgba(250,250,248,0.90)" : "rgba(10,9,8,0.80)", fontWeight: 400 }}
+              className="relative z-10 m-0 p-6 pb-0 font-body text-[16px] leading-[1.7] max-w-[220px] opacity-0 group-hover:opacity-100 transition-opacity duration-400"
+              style={{ color: card.light ? "rgba(250,250,248,0.92)" : "rgba(10,9,8,0.82)", fontWeight: 400 }}
             >
               {card.description}
             </p>
@@ -207,7 +210,7 @@ export default function CollectionsScroll() {
                 src={card.image}
                 alt={card.category}
                 draggable={false}
-                className="w-full h-full object-cover opacity-50 group-hover:opacity-65 group-hover:scale-[1.04] transition-all duration-700 ease-out"
+                className="w-full h-full object-cover opacity-50 group-hover:opacity-70 group-hover:scale-[1.04] transition-all duration-700 ease-out"
               />
               {/* Gradient mask */}
               <div
@@ -218,19 +221,13 @@ export default function CollectionsScroll() {
               />
             </div>
 
-            {/* Category label + hover arrow */}
-            <div className="relative z-10 p-5 pt-0 flex items-center justify-between">
+            {/* Category label */}
+            <div className="relative z-10 p-5 pt-0">
               <span
                 className="inline-block font-body text-[13px] tracking-[0.22em] uppercase font-bold px-4 py-[10px]"
                 style={{ background: "var(--gold)", color: "#1a1208" }}
               >
                 {card.category}
-              </span>
-              <span
-                className="font-body text-[13px] tracking-[0.14em] uppercase opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 transition-all duration-300"
-                style={{ color: card.light ? "rgba(250,250,248,0.7)" : "rgba(10,9,8,0.5)" }}
-              >
-                View →
               </span>
             </div>
           </div>

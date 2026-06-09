@@ -590,6 +590,29 @@ body.has-promo .hero {
 .cscroll-track::-webkit-scrollbar { display: none; }
 .cscroll-track { -ms-overflow-style: none; scrollbar-width: none; }
 
+/* Collections card — shimmer sweep on hover */
+.cscroll-shimmer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 25;
+  overflow: hidden;
+}
+.cscroll-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.18), transparent);
+  transform: skewX(-20deg);
+}
+.cscroll-card:hover .cscroll-shimmer::after {
+  left: 160%;
+  transition: left 0.85s ease;
+}
+
 /* ---------- Brand marquee ---------- */
 .marquee-section {
   background: var(--bg-surface);
