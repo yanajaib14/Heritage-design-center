@@ -42,7 +42,7 @@ export default function AudienceSplit() {
         <div className="num">01</div>
         <h2>Homeowners &amp;<br />Renovators</h2>
         <p>
-          Whether you&apos;re tackling it yourself or working with a contractor, we handle every design decision and source every material — so your project starts with a clear plan and the right products in hand.
+          Whether you&apos;re tackling it yourself or working with a contractor, we handle every design decision and source every material so your project starts with a clear plan and the right products in hand.
         </p>
         <div className="audience-tags">
           {["Free Consultation", "Design Included", "All Materials Sourced"].map((tag) => (
@@ -62,7 +62,7 @@ export default function AudienceSplit() {
         <div className="num">02</div>
         <h2>Builders &amp;<br />Contractors</h2>
         <p>
-          Bring your clients to our showroom. We handle the design, specification, and material supply — you stay focused on the build. Trade pricing, reliable lead times, and a team that speaks your language.
+          Bring your clients to our showroom. We handle the design, specification, and material supply. You stay focused on the build. Trade pricing, reliable lead times, and a team that speaks your language.
         </p>
         <div className="audience-tags">
           {["Trade Pricing", "Fast Lead Times", "Dedicated Rep"].map((tag) => (

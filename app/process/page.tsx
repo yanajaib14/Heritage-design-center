@@ -17,14 +17,14 @@ const steps = [
     num: "01",
     title: "Book a Free Consultation",
     badge: "30–60 min · Free · No commitment",
-    body: "Schedule your appointment online or give us a call. We block 30 to 60 minutes to hear about your project, your timeline, and what you want your space to feel like. Come with inspiration photos and rough dimensions — or come with nothing at all. We know how to get a project started.",
+    body: "Schedule your appointment online or give us a call. We block 30 to 60 minutes to hear about your project, your timeline, and what you want your space to feel like. Come with inspiration photos and rough dimensions, or come with nothing at all. We know how to get a project started.",
     tags: ["Online scheduling", "By phone", "In person at the showroom"],
   },
   {
     num: "02",
     title: "Visit Our Showroom",
     badge: "60–90 min · Lacey, WA",
-    body: "Come in and experience materials in person — full-size cabinetry displays, stone slabs, tile walls, and hardware in every finish, all under one roof. Our designers walk you through every option so you can touch, compare, and decide with confidence. This is not a sales presentation. It is a focused discovery session built around your project.",
+    body: "Come in and experience materials in person: full-size cabinetry displays, stone slabs, tile walls, and hardware in every finish, all under one roof. Our designers walk you through every option so you can touch, compare, and decide with confidence. This is not a sales presentation. It is a focused discovery session built around your project.",
     tags: ["Full cabinetry displays", "Stone & tile samples", "Hardware finish wall", "Designer-guided walkthrough"],
   },
   {
@@ -38,7 +38,7 @@ const steps = [
     num: "04",
     title: "We Supply Everything",
     badge: "4–8 weeks · Coordinated delivery",
-    body: "From cabinetry to countertops to the last piece of hardware, we source, coordinate, and deliver every specified material. One vendor. One contact. One delivery schedule coordinated directly with your contractor so the right materials arrive at the right time — and nothing falls through the cracks.",
+    body: "From cabinetry to countertops to the last piece of hardware, we source, coordinate, and deliver every specified material. One vendor. One contact. One delivery schedule coordinated directly with your contractor so the right materials arrive at the right time. Nothing falls through the cracks.",
     tags: ["Cabinetry & countertops", "Tile & stone", "Fixtures & hardware", "Job-site delivery"],
   },
 ];
@@ -67,7 +67,7 @@ const deliverables = [
   {
     num: "V",
     title: "In-Showroom Sample Board",
-    body: "A curated set of physical samples — stone, tile, hardware finishes — assembled to represent your approved material palette.",
+    body: "A curated set of physical samples: stone, tile, and hardware finishes assembled to represent your approved material palette.",
   },
   {
     num: "VI",
@@ -99,7 +99,7 @@ const faqs = [
   },
   {
     q: "What if I am already working with my own interior designer?",
-    a: "We work alongside other designers regularly. If your designer has a concept or a material board, we can source and supply those materials — or we can provide detailed drawings and specifications that complement their work. We are flexible and happy to play whatever role is most useful.",
+    a: "We work alongside other designers regularly. If your designer has a concept or a material board, we can source and supply those materials, or we can provide detailed drawings and specifications that complement their work. We are flexible and happy to play whatever role is most useful.",
   },
 ];
 
@@ -195,7 +195,7 @@ export default function ProcessPage() {
             <em>Process</em>
           </h1>
           <p className="page-hero-sub h-item" style={{ opacity: 0 }}>
-            Whether you&apos;re a homeowner with a vision or a builder who needs a trusted design-and-supply partner — we make the path from first idea to finished space as clear and smooth as possible.
+            Whether you&apos;re a homeowner with a vision or a builder who needs a trusted design and supply partner, we make the path from first idea to finished space as clear and smooth as possible.
           </p>
         </div>
       </section>
@@ -294,7 +294,7 @@ export default function ProcessPage() {
               <span className="eyebrow">Homeowners</span>
               <h3>Your Dream Space,<br /><em>Designed with You.</em></h3>
               <p>
-                You have a vision — we help you find the materials that bring it to life. Whether you&apos;re renovating a kitchen, remodeling a bath, or building from scratch, our designers sit with you at every step. No guesswork. No surprises.
+                You have a vision. We help you find the materials that bring it to life. Whether you&apos;re renovating a kitchen, remodeling a bath, or building from scratch, our designers sit with you at every step. No guesswork. No surprises.
               </p>
               <ul style={{ listStyle: "none", padding: 0, margin: "0 0 36px", display: "flex", flexDirection: "column", gap: "14px", borderTop: "1px solid var(--gold-border)", paddingTop: "24px" }}>
                 {[
@@ -318,7 +318,7 @@ export default function ProcessPage() {
               <span className="eyebrow">Builders &amp; Contractors</span>
               <h3>A Design Partner You<br /><em>Can Count On.</em></h3>
               <p>
-                We work directly with builders and contractors to simplify the design and supply chain. Bring us your client early — we handle the selections, produce the spec sheet, and deliver everything on schedule so your job site never waits on materials.
+                We work directly with builders and contractors to simplify the design and supply chain. Bring us your client early. We handle the selections, produce the spec sheet, and deliver everything on schedule so your job site never waits on materials.
               </p>
               <ul style={{ listStyle: "none", padding: 0, margin: "0 0 36px", display: "flex", flexDirection: "column", gap: "14px", borderTop: "1px solid var(--gold-border)", paddingTop: "24px" }}>
                 {[
@@ -379,7 +379,7 @@ export default function ProcessPage() {
               <em style={{ fontStyle: "italic", color: "var(--gold)" }}>Your Project.</em>
             </h2>
             <p style={{ color: "var(--white-dim)", fontSize: 18, lineHeight: 1.75, fontWeight: 400, maxWidth: 460, margin: 0 }}>
-              A free consultation is all it takes. No pressure, no commitment — just a conversation about your project and how we can help.
+              A free consultation is all it takes. No pressure, no commitment. Just a conversation about your project and how we can help.
             </p>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 16, minWidth: 220 }}>

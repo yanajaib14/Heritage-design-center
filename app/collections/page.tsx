@@ -16,7 +16,7 @@ const categories = [
     eyebrow: "01 — Cabinetry",
     title: "Built to Last",
     titleItalic: "a Lifetime.",
-    intro: "The cabinet is the backbone of any kitchen or bath design. We carry four trusted cabinet lines — each with a different price point and lead time — so every project has an option that fits without compromise.",
+    intro: "The cabinet is the backbone of any kitchen or bath design. We carry four trusted cabinet lines, each at a different price point and lead time, so every project has an option that fits without compromise.",
     body: "All of our cabinet lines ship with plywood box construction, soft-close hinges and slides, and dovetail drawer boxes as standard. Door styles range from classic five-piece shaker to flat-panel slab to raised panel traditional, in hundreds of painted and stained finishes.",
     image: "https://showplacecabinetry.com/wp-content/uploads/2025/12/New-England-Transitional-with-Beachy-Island-20.jpg",
     imageAlt: "Showplace transitional cabinetry",
@@ -41,7 +41,7 @@ const categories = [
     eyebrow: "02 — Countertops",
     title: "Surfaces You Live On,",
     titleItalic: "Built for Every Day.",
-    intro: "The countertop is the surface you touch every day. We carry the full range — from engineered quartz that performs without maintenance to natural stone with a character that only improves with time.",
+    intro: "The countertop is the surface you touch every day. We carry the full range, from engineered quartz that performs without maintenance to natural stone with a character that only improves with time.",
     body: "We stock samples from five countertop brands in the showroom including quartz, marble, quartzite, granite, and butcher block. Every sample is available in person so you can see how the material looks in real light before committing. We also offer a measure-and-quote service for all slab materials.",
     image: "https://images.squarespace-cdn.com/content/v1/6982349a56e1e46c7b2e0861/b662f8dd-f7f8-490d-8cce-bbb2eefbc8b8/whitendale.webp",
     imageAlt: "Quartz slab countertop",
@@ -56,7 +56,7 @@ const categories = [
     specs: [
       { label: "Materials", val: "Quartz, marble, quartzite, granite, butcher block" },
       { label: "Edges", val: "Eased, beveled, mitered, waterfall, ogee" },
-      { label: "Samples", val: "In-showroom — view in real light" },
+      { label: "Samples", val: "In-showroom. View in real light." },
       { label: "Quartz Lead Time", val: "1–2 weeks in-stock slabs" },
       { label: "Natural Stone", val: "2–3 weeks, subject to slab availability" },
       { label: "Butcher Block", val: "Custom-cut, typically 1–3 weeks" },
@@ -67,7 +67,7 @@ const categories = [
     eyebrow: "03 — Tile & Stone",
     title: "Texture, Pattern,",
     titleItalic: "Character.",
-    intro: "Tile is the layer of your design that adds the most visual texture and personality. From handmade Zellige to large-format stone slab, our tile library covers every application — backsplash, floor, shower, and feature wall.",
+    intro: "Tile is the layer of your design that adds the most visual texture and personality. From handmade Zellige to large-format stone slab, our tile library covers every application: backsplash, floor, shower, and feature wall.",
     body: "We partner with MSI Surfaces, one of the most comprehensive tile and stone distributors in North America. Their catalog covers glazed ceramic, porcelain, natural stone, mosaic, and specialty formats. Samples of our most-specified collections are available to view in the showroom.",
     image: "https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/0c09e194-781a-4b95-8986-697488e320d0/ChatGPT+Image+Apr+3%2C+2026%2C+12_06_18+PM.png?content-type=image%2Fpng",
     imageAlt: "Tile and stone selection",
@@ -89,8 +89,8 @@ const categories = [
     eyebrow: "04 — Fixtures & Hardware",
     title: "The Details That",
     titleItalic: "Define a Space.",
-    intro: "Hardware is what the hand touches every time someone uses the space — and the easiest way to shift a design from good to exceptional. We carry the full Top Knobs catalog and Jeffrey Alexander's decorative hardware collection, giving you thousands of options across every finish and style.",
-    body: "Our showroom has a dedicated hardware display wall showing pulls, knobs, and faucets across every available finish — side by side so you can see exactly how each reads against your chosen cabinetry and stone. We do not upsell. We help you find the right piece for the right project.",
+    intro: "Hardware is what the hand touches every time someone uses the space, and the easiest way to shift a design from good to exceptional. We carry the full Top Knobs catalog and Jeffrey Alexander's decorative hardware collection, giving you thousands of options across every finish and style.",
+    body: "Our showroom has a dedicated hardware display wall showing pulls, knobs, and faucets across every available finish, side by side, so you can see exactly how each reads against your chosen cabinetry and stone. We do not upsell. We help you find the right piece for the right project.",
     image: "https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/74c2935e-ca5e-46b2-af5f-408e8b5c2837/43.png?content-type=image%2Fpng",
     imageAlt: "Cabinet hardware and fixtures",
     brands: [
@@ -103,7 +103,7 @@ const categories = [
       { label: "SKUs Available", val: "3,000+" },
       { label: "Finishes", val: "15+ including specialty metals" },
       { label: "Categories", val: "Pulls, knobs, bar pulls, cup pulls, faucets" },
-      { label: "Showroom Display", val: "Full finish wall — compare side by side" },
+      { label: "Showroom Display", val: "Full finish wall, compare side by side" },
       { label: "Lead Time", val: "In-stock to 1–2 weeks" },
     ],
   },
@@ -112,8 +112,8 @@ const categories = [
     eyebrow: "05 — Shower & Bath",
     title: "Your Personal Retreat,",
     titleItalic: "Designed Right.",
-    intro: "A well-designed bathroom functions as both a practical space and a private retreat. We design bath spaces from the ground up — shower layout, tile selection, vanity, plumbing fixtures, and every finish in between.",
-    body: "Our bath design process follows the same four-step model as kitchens. We create the layout, specify every material, and supply the full package. Shower systems, soaking tubs, vanities, tile surrounds — all of it coordinated by our team so your contractor receives one complete, ready-to-install spec.",
+    intro: "A well-designed bathroom functions as both a practical space and a private retreat. We design bath spaces from the ground up: shower layout, tile selection, vanity, plumbing fixtures, and every finish in between.",
+    body: "Our bath design process follows the same four-step model as kitchens. We create the layout, specify every material, and supply the full package. Shower systems, soaking tubs, vanities, tile surrounds. All of it coordinated by our team so your contractor receives one complete, ready-to-install spec.",
     image: "https://images.squarespace-cdn.com/content/v1/6982349a56e1e46c7b2e0861/9e6294ff-bc6d-4a8e-a04d-11ac6bd6aa6c/Dark+Marble+Opulence.png?format=500w",
     imageAlt: "Dark marble bath design",
     brands: [],
@@ -310,10 +310,10 @@ export default function CollectionsPage() {
               <em style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 400 }}>We Believe In.</em>
             </h2>
             <p style={{ color: "var(--text-dim)", fontSize: "17px", lineHeight: 1.8, fontWeight: 300, margin: "0 0 20px" }}>
-              We do not carry every brand available. We carry the ones we would specify for our own homes — brands with consistent quality, reliable lead times, and product that holds up over years of daily use.
+              We do not carry every brand available. We carry the ones we would specify for our own homes: brands with consistent quality, reliable lead times, and product that holds up over years of daily use.
             </p>
             <p style={{ color: "var(--text-dim)", fontSize: "17px", lineHeight: 1.8, fontWeight: 300, margin: "0 0 36px" }}>
-              Every brand in our showroom has been vetted for quality, support, and value. When we recommend something, it is because we have seen it perform — not because of the margin.
+              Every brand in our showroom has been vetted for quality, support, and value. When we recommend something, it is because we have seen it perform. Not because of the margin.
             </p>
             <a className="btn btn-solid" href={SCHEDULE_URL} target="_blank" rel="noopener noreferrer">
               Book a Showroom Visit
@@ -323,7 +323,7 @@ export default function CollectionsPage() {
             {[
               { title: "Quality verified", body: "Every product in our catalog has been tested or installed by our team before it earns a spot in the showroom." },
               { title: "Samples in person", body: "Nothing is sold sight-unseen. Every material category has physical samples available for you to see in real light." },
-              { title: "Honest recommendations", body: "We match you to the right product for your project and budget — not the highest-margin option." },
+              { title: "Honest recommendations", body: "We match you to the right product for your project and budget. Not the highest-margin option." },
               { title: "Backed by lead-time data", body: "We track real delivery times so your project schedule is built on reliable information, not optimistic estimates." },
             ].map(({ title, body }) => (
               <div key={title} style={{ background: "var(--bg)", padding: "28px 32px" }}>

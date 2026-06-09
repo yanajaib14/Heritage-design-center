@@ -94,7 +94,7 @@ export default function ShowroomPage() {
             <em>Showroom</em>
           </h1>
           <p className="page-hero-sub h-item" style={{ opacity: 0 }}>
-            A dedicated design space where every material we carry is on display — cabinetry, stone, tile, and hardware — all under one roof so you can see and touch your choices before you commit.
+            A dedicated design space where every material we carry is on display: cabinetry, stone, tile, and hardware. All under one roof so you can see and touch your choices before you commit.
           </p>
         </div>
       </section>
@@ -112,10 +112,10 @@ export default function ShowroomPage() {
               <em style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 400 }}>All Under One Roof.</em>
             </h2>
             <p className="a-item" style={{ color: "var(--text-dim)", fontSize: "17px", lineHeight: 1.8, fontWeight: 300, margin: "0 0 20px", opacity: 0 }}>
-              Heritage Design Center is a kitchen and bath design showroom located at 8695 Martin Way E in Lacey, Washington. We built this space specifically to give homeowners and builders a place where design decisions feel easy — because everything they need is right in front of them.
+              Heritage Design Center is a kitchen and bath design showroom located at 8695 Martin Way E in Lacey, Washington. We built this space specifically to give homeowners and builders a place where design decisions feel easy, because everything they need is right in front of them.
             </p>
             <p className="a-item" style={{ color: "var(--text-dim)", fontSize: "17px", lineHeight: 1.8, fontWeight: 300, margin: "0 0 36px", opacity: 0 }}>
-              From the moment you walk in, you&apos;re surrounded by real material samples — full cabinet displays, stone slabs, tile walls, and hardware in every finish. Our designers are on-site to walk you through the options and help you build a cohesive vision for your project.
+              From the moment you walk in, you&apos;re surrounded by real material samples: full cabinet displays, stone slabs, tile walls, and hardware in every finish. Our designers are on-site to walk you through the options and help you build a cohesive vision for your project.
             </p>
             <div className="a-item" style={{ opacity: 0 }}>
               <a className="btn btn-solid" href={SCHEDULE_URL} target="_blank" rel="noopener noreferrer">
@@ -193,7 +193,7 @@ export default function ShowroomPage() {
                 <polygon points="5 3 19 12 5 21 5 3" fill="currentColor" strokeLinejoin="round" />
               </svg>
             </div>
-            <span className="eyebrow">Showroom Tour — Video Coming Soon</span>
+            <span className="eyebrow">Showroom Tour · Video Coming Soon</span>
           </div>
         </div>
       </section>

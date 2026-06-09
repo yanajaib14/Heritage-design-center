@@ -51,7 +51,7 @@ export default function SiteFooter() {
               style={{ filter: "sepia(1) saturate(5) hue-rotate(5deg) brightness(0.78)" }}
             />
             <p className="text-[var(--text-dim)] font-normal text-[17px] leading-relaxed max-w-sm">
-              Heritage is a kitchen and bath design house serving all of Western Washington — from Olympia to Seattle and everywhere in between. We handle detailed specifications, supply luxury cabinetry and stone, and coordinate direct job-site deliveries.
+              Heritage is a kitchen and bath design house serving all of Western Washington, from Olympia to Seattle and everywhere in between. We handle detailed specifications, supply luxury cabinetry and stone, and coordinate direct job-site deliveries.
             </p>
           </div>
 

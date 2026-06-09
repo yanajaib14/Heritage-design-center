@@ -11,7 +11,7 @@ const SCHEDULE = "https://10daykitchens.hbportal.co/public/69f4fca66910ddf27daf6
 const cards = [
   {
     category: "Cabinetry",
-    description: "From stock to fully custom — plywood construction, soft-close hardware, and hundreds of door styles.",
+    description: "From stock to fully custom: plywood construction, soft-close hardware, and hundreds of door styles.",
     image: "https://showplacecabinetry.com/wp-content/uploads/2025/12/New-England-Transitional-with-Beachy-Island-20.jpg",
     bg: "#1c1812",
     light: true,
@@ -27,7 +27,7 @@ const cards = [
   },
   {
     category: "Tile & Stone",
-    description: "Floor, wall, backsplash, and shower tile — every style from classic subway to bold statement.",
+    description: "Floor, wall, backsplash, and shower tile in every style from classic subway to bold statement.",
     image: "/tile-blue.jpg.png",
     bg: "#0d1a2e",
     light: true,
@@ -35,7 +35,7 @@ const cards = [
   },
   {
     category: "Bath Collection",
-    description: "Vanities, tubs, showers, and fixtures — everything for a complete bathroom renovation.",
+    description: "Vanities, tubs, showers, and fixtures for a complete bathroom renovation.",
     image: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=80",
     bg: "#2c1f16",
     light: true,
@@ -51,7 +51,7 @@ const cards = [
   },
   {
     category: "Design Services",
-    description: "Expert guidance from concept to installation — our designers handle every detail.",
+    description: "Expert guidance from concept to installation. Our designers handle every detail.",
     image: "/design.jpn.png",
     bg: "#1a1f18",
     light: true,
@@ -259,7 +259,7 @@ export default function CollectionsScroll() {
             <div className="h-px flex-1 max-w-[100px] bg-[var(--gold-border)]" />
           </div>
           <p className="text-center font-body text-[15px] text-[var(--text-dim)] tracking-[0.06em] mb-12">
-            Curated brands we stand behind — on display in our showroom.
+            Curated brands we stand behind, on display in our showroom.
           </p>
 
           <div className="marquee-row">
