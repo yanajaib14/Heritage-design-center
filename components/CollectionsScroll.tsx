@@ -210,20 +210,23 @@ export default function CollectionsScroll() {
               {card.description}
             </p>
 
-            {/* Photo */}
-            <div className="absolute inset-0 top-[32%]">
+            {/* Photo — full card, two separate fades to avoid midpoint line */}
+            <div className="absolute inset-0">
               <img
                 src={card.image}
                 alt={card.category}
                 draggable={false}
                 className="w-full h-full object-cover opacity-60 group-hover:opacity-75 group-hover:scale-[1.04] transition-all duration-700 ease-out"
               />
-              {/* Gradient mask — smooth fade, no hard plateau */}
+              {/* Top fade — covers text area */}
               <div
                 className="absolute inset-0"
-                style={{
-                  background: `linear-gradient(to bottom, ${card.bg} 0%, transparent 48%, ${card.bg} 100%)`,
-                }}
+                style={{ background: `linear-gradient(to bottom, ${card.bg} 0%, transparent 60%)` }}
+              />
+              {/* Bottom fade — covers label area */}
+              <div
+                className="absolute inset-0"
+                style={{ background: `linear-gradient(to top, ${card.bg} 0%, transparent 38%)` }}
               />
             </div>
 
