@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import NavBar from "@/components/NavBar";
 import SiteFooter from "@/components/SiteFooter";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -128,25 +129,30 @@ export default function ShowroomPage() {
             <div className="a-item" style={{ opacity: 0 }}>
               <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 0, border: "1px solid var(--gold-border)" }}>
                 {[
-                  { label: "Cabinetry", desc: "Full-size cabinet displays in multiple styles and finishes" },
-                  { label: "Countertops", desc: "Stone slabs, quartz samples, and butcher block swatches" },
-                  { label: "Tile & Stone", desc: "Backsplash, floor, and wall tile across every category" },
-                  { label: "Fixtures & Hardware", desc: "Faucets, pulls, and knobs in every available finish" },
-                  { label: "Design Consultation", desc: "Sit with a designer and map out your entire project" },
-                ].map(({ label, desc }, i) => (
+                  { label: "Cabinetry", desc: "Full-size cabinet displays in multiple styles and finishes", href: "/collections#cabinetry" },
+                  { label: "Countertops", desc: "Stone slabs, quartz samples, and butcher block swatches", href: "/collections#countertops" },
+                  { label: "Tile & Stone", desc: "Backsplash, floor, and wall tile across every category", href: "/collections#tile" },
+                  { label: "Fixtures & Hardware", desc: "Faucets, pulls, and knobs in every available finish", href: "/collections#hardware" },
+                  { label: "Design Consultation", desc: "Sit with a designer and map out your entire project", href: "/process" },
+                ].map(({ label, desc, href }, i) => (
                   <li key={label} style={{
-                    padding: "24px 28px",
                     borderBottom: i < 4 ? "1px solid var(--gold-border)" : "none",
-                    display: "grid",
-                    gridTemplateColumns: "28px 1fr",
-                    gap: "16px",
-                    alignItems: "start",
                   }}>
-                    <span style={{ color: "var(--gold)", fontFamily: "var(--font-display)", fontStyle: "italic", fontSize: "18px", paddingTop: "2px" }}>✓</span>
-                    <div>
-                      <strong style={{ display: "block", fontSize: "14px", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--text)", fontWeight: 500, marginBottom: "6px" }}>{label}</strong>
-                      <span style={{ color: "var(--text-dim)", fontSize: "15px", fontWeight: 300, lineHeight: 1.6 }}>{desc}</span>
-                    </div>
+                    <Link href={href} style={{
+                      display: "grid",
+                      gridTemplateColumns: "28px 1fr",
+                      gap: "16px",
+                      alignItems: "start",
+                      padding: "24px 28px",
+                      textDecoration: "none",
+                      color: "inherit"
+                    }} className="showroom-list-link">
+                      <span style={{ color: "var(--gold)", fontFamily: "var(--font-display)", fontStyle: "italic", fontSize: "18px", paddingTop: "2px" }}>✓</span>
+                      <div>
+                        <strong style={{ display: "block", fontSize: "14px", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--text)", fontWeight: 500, marginBottom: "6px", transition: "color 0.25s ease" }} className="showroom-list-label">{label}</strong>
+                        <span style={{ color: "var(--text-dim)", fontSize: "15px", fontWeight: 300, lineHeight: 1.6 }}>{desc}</span>
+                      </div>
+                    </Link>
                   </li>
                 ))}
               </ul>

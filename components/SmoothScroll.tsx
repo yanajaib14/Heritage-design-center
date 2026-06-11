@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 import Lenis from "lenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -13,6 +14,9 @@ gsap.registerPlugin(ScrollTrigger);
  * Mobile / touch devices use native momentum scroll (smoothTouch: false default).
  */
 export default function SmoothScroll() {
+  const pathname = usePathname();
+  const lenisRef = useRef<Lenis | null>(null);
+
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.15,
@@ -20,6 +24,7 @@ export default function SmoothScroll() {
       smoothWheel: true,
       touchMultiplier: 2,
     });
+    lenisRef.current = lenis;
 
     // Keep GSAP ScrollTrigger positions in sync with Lenis
     lenis.on("scroll", () => ScrollTrigger.update());
@@ -33,8 +38,17 @@ export default function SmoothScroll() {
       lenis.off("scroll", () => ScrollTrigger.update());
       gsap.ticker.remove(tick);
       lenis.destroy();
+      lenisRef.current = null;
     };
   }, []);
+
+  useEffect(() => {
+    if (lenisRef.current) {
+      lenisRef.current.scrollTo(0, { immediate: true });
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname]);
 
   return null;
 }
