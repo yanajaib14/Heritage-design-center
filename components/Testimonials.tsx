@@ -72,6 +72,23 @@ export default function Testimonials() {
 
   return (
     <section ref={sectionRef} className="testi-section">
+      <style>{`
+        .testi-section {
+          padding: clamp(64px, 8vw, 96px) var(--pad) !important;
+        }
+        .testi-quote {
+          font-size: clamp(18px, 2.2vw, 24px) !important;
+          margin-bottom: 24px !important;
+        }
+        .testi-mark {
+          font-size: clamp(48px, 6vw, 72px) !important;
+          margin-bottom: 4px !important;
+        }
+        .testi-grid {
+          gap: clamp(32px, 5vw, 64px) !important;
+        }
+      `}</style>
+
       <div className="testi-inner">
         <div className="testi-grid">
 
@@ -85,10 +102,10 @@ export default function Testimonials() {
               className="testi-reveal"
               style={{
                 fontFamily: "var(--font-display)",
-                fontSize: "clamp(36px, 4.5vw, 52px)",
+                fontSize: "clamp(30px, 3.5vw, 40px)",
                 fontWeight: 500,
                 lineHeight: 1.08,
-                marginBottom: "40px",
+                marginBottom: "30px",
                 opacity: 0,
               }}
             >

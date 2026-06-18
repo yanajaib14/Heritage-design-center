@@ -34,7 +34,42 @@ export default function AudienceSplit() {
   }, []);
 
   return (
-    <section className="audience" ref={sectionRef}>
+    <section className="audience" ref={sectionRef} style={{ background: "transparent" }}>
+      <style>{`
+        .audience {
+          border-top: none !important;
+          border-bottom: none !important;
+          background: transparent !important;
+          display: grid !important;
+          grid-template-columns: 1fr 1fr !important;
+          gap: 32px !important;
+          max-width: var(--max) !important;
+          margin: 0 auto !important;
+          padding: 80px var(--pad) !important;
+        }
+        .audience-col {
+          border-radius: 20px !important;
+          border: 1px solid var(--gold-border) !important;
+          background: var(--bg-surface) !important;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
+          min-height: 520px !important;
+          padding: 60px 48px !important;
+        }
+        .audience .divider {
+          display: none !important;
+        }
+        @media (max-width: 768px) {
+          .audience {
+            grid-template-columns: 1fr !important;
+            gap: 24px !important;
+            padding: 48px var(--pad) !important;
+          }
+          .audience-col {
+            padding: 40px 24px !important;
+            min-height: auto !important;
+          }
+        }
+      `}</style>
 
       {/* Homeowners */}
       <div className="audience-col ac-home">
