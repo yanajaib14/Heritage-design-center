@@ -64,17 +64,17 @@ const cards = [
 // 2. Set the logo path below (e.g. "/assets/brands/msi.png")
 // 3. Leave logo as null for brands where you don't have a file — they'll show as text
 const brands: { label: string; logo: string | null }[] = [
-  { label: "KCD Kitchen Cabinet Distributors", logo: null },
-  { label: "Lectus Cabinetry",                  logo: null },
-  { label: "Merit Cabinetry",                   logo: null },
-  { label: "Showplace Cabinetry",               logo: null },
-  { label: "MSI Surfaces",                      logo: null },
-  { label: "Cambria",                           logo: null },
-  { label: "Caesarstone",                       logo: null },
-  { label: "Vicostone",                         logo: null },
-  { label: "Jaaron Wood Countertops",           logo: null },
+  { label: "KCD Kitchen Cabinet Distributors", logo: "/kcd.png" },
+  { label: "Lectus Cabinetry",                  logo: "/luctus.png" },
+  { label: "Merit Cabinetry",                   logo: "/Merit logo.png" },
+  { label: "Showplace Cabinetry",               logo: "/showplce logo.jpg" },
+  { label: "MSI Surfaces",                      logo: "/MSI logo.png" },
+  { label: "Cambria",                           logo: "/CAMBRIA logo.png" },
+  { label: "Caesarstone",                       logo: "/CAESARSTONE logo.png" },
+  { label: "Vicostone",                         logo: "/VICOSTONE logo.png" },
+  { label: "Jaaron Wood Countertops",           logo: "/J-Aaron-Logo1.png" },
   { label: "Top Knobs",                         logo: null },
-  { label: "Jeffrey Alexander Hardware",        logo: null },
+  { label: "Jeffrey Alexander Hardware",        logo: "/JEFFREY ALEXANDER logo.png" },
 ];
 
 export default function CollectionsScroll() {
