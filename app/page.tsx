@@ -20,11 +20,11 @@ export default function Home() {
 
       <WhyHeritage />
 
+      <AudienceSplit />
+
       <FeaturedProjects />
 
       <Testimonials />
-
-      <AudienceSplit />
 
       <ShowroomExp />
 

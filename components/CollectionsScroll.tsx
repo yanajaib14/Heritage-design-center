@@ -201,7 +201,7 @@ export default function CollectionsScroll() {
         {cards.map((card) => (
           <div
             key={card.category}
-            className="cscroll-card relative overflow-hidden flex flex-col justify-between group h-[240px] md:h-[450px] rounded-xl border border-[var(--gold-border)]"
+            className="cscroll-card relative overflow-hidden flex flex-col justify-between group h-[240px] md:h-[450px] rounded-lg border border-[var(--gold-border)]"
             style={{ background: card.bg, cursor: "pointer" }}
             onClick={() => { window.location.href = card.href; }}
             role="link"

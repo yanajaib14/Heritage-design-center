@@ -85,7 +85,7 @@ export default function FeaturedProjects() {
       <style>{`
         .fp-grid .fp-card {
           aspect-ratio: auto !important;
-          border-radius: 18px !important;
+          border-radius: 10px !important;
           overflow: hidden !important;
         }
       `}</style>
@@ -96,7 +96,7 @@ export default function FeaturedProjects() {
           {/* Card 1: Top Left */}
           <Link 
             href="/gallery" 
-            className="fp-card relative group md:col-span-2 md:row-span-1 h-[250px] md:h-[320px] rounded-2xl overflow-hidden border border-[var(--gold-border)] bg-black"
+            className="fp-card relative group md:col-span-2 md:row-span-1 h-[250px] md:h-[320px] rounded-lg overflow-hidden border border-[var(--gold-border)] bg-black"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={projects[0].src} alt={projects[0].title} className="h-full w-full object-cover object-center transition-transform duration-1000 group-hover:scale-105" draggable={false} />
@@ -125,7 +125,7 @@ export default function FeaturedProjects() {
           {/* Card 2: Bottom Left */}
           <Link 
             href="/gallery" 
-            className="fp-card relative group md:col-span-1 md:row-span-2 h-[300px] md:h-auto rounded-2xl overflow-hidden border border-[var(--gold-border)] bg-black"
+            className="fp-card relative group md:col-span-1 md:row-span-2 h-[300px] md:h-auto rounded-lg overflow-hidden border border-[var(--gold-border)] bg-black"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={projects[1].src} alt={projects[1].title} className="h-full w-full object-cover object-center transition-transform duration-1000 group-hover:scale-105" draggable={false} />
@@ -142,7 +142,7 @@ export default function FeaturedProjects() {
           {/* Card 3: Bottom Middle-Left */}
           <Link 
             href="/gallery" 
-            className="fp-card relative group md:col-span-1 md:row-span-2 h-[300px] md:h-auto rounded-2xl overflow-hidden border border-[var(--gold-border)] bg-black"
+            className="fp-card relative group md:col-span-1 md:row-span-2 h-[300px] md:h-auto rounded-lg overflow-hidden border border-[var(--gold-border)] bg-black"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={projects[2].src} alt={projects[2].title} className="h-full w-full object-cover object-center transition-transform duration-1000 group-hover:scale-105" draggable={false} />
@@ -159,7 +159,7 @@ export default function FeaturedProjects() {
           {/* Card 4: Middle Right */}
           <Link 
             href="/gallery" 
-            className="fp-card relative group md:col-span-2 md:row-span-1 h-[230px] md:h-[240px] rounded-2xl overflow-hidden border border-[var(--gold-border)] bg-black"
+            className="fp-card relative group md:col-span-2 md:row-span-1 h-[230px] md:h-[240px] rounded-lg overflow-hidden border border-[var(--gold-border)] bg-black"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={projects[3].src} alt={projects[3].title} className="h-full w-full object-cover object-center transition-transform duration-1000 group-hover:scale-105" draggable={false} />
@@ -176,7 +176,7 @@ export default function FeaturedProjects() {
           {/* Card 5: Bottom Middle-Right */}
           <Link 
             href="/gallery" 
-            className="fp-card relative group md:col-span-1 md:row-span-1 h-[170px] md:h-[180px] rounded-2xl overflow-hidden border border-[var(--gold-border)] bg-black"
+            className="fp-card relative group md:col-span-1 md:row-span-1 h-[170px] md:h-[180px] rounded-lg overflow-hidden border border-[var(--gold-border)] bg-black"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={projects[4].src} alt={projects[4].title} className="h-full w-full object-cover object-center transition-transform duration-1000 group-hover:scale-105" draggable={false} />
@@ -193,7 +193,7 @@ export default function FeaturedProjects() {
           {/* Card 6: Bottom Right */}
           <Link 
             href="/gallery" 
-            className="fp-card relative group md:col-span-1 md:row-span-1 h-[170px] md:h-[180px] rounded-2xl overflow-hidden border border-[var(--gold-border)] bg-black"
+            className="fp-card relative group md:col-span-1 md:row-span-1 h-[170px] md:h-[180px] rounded-lg overflow-hidden border border-[var(--gold-border)] bg-black"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={projects[5].src} alt={projects[5].title} className="h-full w-full object-cover object-center transition-transform duration-1000 group-hover:scale-105" draggable={false} />

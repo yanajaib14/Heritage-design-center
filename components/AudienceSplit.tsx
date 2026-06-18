@@ -48,7 +48,7 @@ export default function AudienceSplit() {
           padding: 80px var(--pad) !important;
         }
         .audience-col {
-          border-radius: 20px !important;
+          border-radius: 10px !important;
           border: 1px solid var(--gold-border) !important;
           background: var(--bg-surface) !important;
           box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
