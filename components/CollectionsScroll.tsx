@@ -262,30 +262,16 @@ export default function CollectionsScroll() {
             Curated brands we stand behind, on display in our showroom.
           </p>
 
-          <div className="marquee-row">
+          <div className="marquee-row" style={{ marginBottom: 0 }}>
             <div className="marquee-track">
-              {[...brands, ...brands].map((b, i) =>
-                b.logo ? (
+              {(() => {
+                const logoBrands = brands.filter((b) => b.logo !== null);
+                return [...logoBrands, ...logoBrands, ...logoBrands].map((b, i) => (
                   <div key={i} className="brand-logo-wrap">
-                    <img src={b.logo} alt={b.label} className="brand-logo-img" />
+                    <img src={b.logo!} alt={b.label} className="brand-logo-img" draggable={false} />
                   </div>
-                ) : (
-                  <span key={i} className="brand-pill">{b.label}</span>
-                )
-              )}
-            </div>
-          </div>
-          <div className="marquee-row reverse" style={{ marginBottom: 0 }}>
-            <div className="marquee-track">
-              {[...brands.slice().reverse(), ...brands.slice().reverse()].map((b, i) =>
-                b.logo ? (
-                  <div key={i} className="brand-logo-wrap">
-                    <img src={b.logo} alt={b.label} className="brand-logo-img" />
-                  </div>
-                ) : (
-                  <span key={i} className="brand-pill">{b.label}</span>
-                )
-              )}
+                ));
+              })()}
             </div>
           </div>
 

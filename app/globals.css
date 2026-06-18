@@ -687,16 +687,18 @@ a.brand-pill:hover {
   flex-shrink: 0;
 }
 .brand-logo-img {
-  height: 32px;
+  height: 36px;
   width: auto;
   max-width: 140px;
   object-fit: contain;
   display: block;
-  filter: grayscale(0.85) opacity(0.6) brightness(0.85);
-  transition: filter 400ms ease;
+  filter: none;
+  opacity: 0.9;
+  transition: opacity 300ms ease, transform 300ms ease;
 }
-.marquee-row:hover .brand-logo-img {
-  filter: grayscale(0.3) opacity(0.9) brightness(1);
+.brand-logo-img:hover {
+  opacity: 1;
+  transform: scale(1.05);
 }
 
 /* ---------- Showcase sections ---------- */
