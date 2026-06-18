@@ -174,18 +174,36 @@ export default function CollectionsScroll() {
         </a>
       </div>
 
-      {/* Scrollable cards */}
+      <style>{`
+        .cscroll-track .cscroll-card {
+          width: 100% !important;
+          max-width: none !important;
+          aspect-ratio: auto !important;
+          flex: 1 1 0% !important;
+          transition: flex-grow 750ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+        }
+        @media (min-width: 768px) {
+          .cscroll-track .cscroll-card {
+            height: 450px !important;
+          }
+          .cscroll-track .cscroll-card:hover {
+            flex-grow: 3.5 !important;
+          }
+        }
+      `}</style>
+
+      {/* Scrollable cards transformed to accordion */}
       <div
         ref={trackRef}
-        className="cscroll-track flex gap-4 overflow-x-auto pb-14 select-none"
-        style={{ paddingLeft: "var(--pad)", scrollSnapType: "x mandatory", cursor: "grab" }}
+        className="cscroll-track flex flex-col md:flex-row gap-3 w-full max-w-[var(--max)] mx-auto px-[var(--pad)] pb-14 select-none"
+        style={{ cursor: "default" }}
       >
         {cards.map((card) => (
           <div
             key={card.category}
-            className="cscroll-card flex-none w-[76vw] max-w-[260px] sm:w-[260px] md:w-[285px] h-[420px] md:h-[400px] relative overflow-hidden flex flex-col justify-between group"
-            style={{ background: card.bg, scrollSnapAlign: "start", cursor: "pointer" }}
-            onClick={() => { if (!didDrag.current) window.location.href = card.href; }}
+            className="cscroll-card relative overflow-hidden flex flex-col justify-between group h-[240px] md:h-[450px] rounded-xl border border-[var(--gold-border)]"
+            style={{ background: card.bg, cursor: "pointer" }}
+            onClick={() => { window.location.href = card.href; }}
             role="link"
             tabIndex={0}
             onKeyDown={(e) => { if (e.key === "Enter") window.location.href = card.href; }}
@@ -204,7 +222,7 @@ export default function CollectionsScroll() {
 
             {/* Description — hidden by default, revealed on hover */}
             <p
-              className="relative z-10 m-0 p-6 pb-0 font-body text-[18px] leading-[1.7] max-w-[220px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              className="relative z-10 m-0 p-6 pb-0 font-body text-[15px] md:text-[17px] leading-[1.6] max-w-[280px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
               style={{ color: card.light ? "rgba(250,250,248,0.95)" : "rgba(255,255,255,0.95)", fontWeight: 400 }}
             >
               {card.description}
@@ -241,9 +259,6 @@ export default function CollectionsScroll() {
             </div>
           </div>
         ))}
-
-        {/* Trailing spacer */}
-        <div className="flex-none w-8" aria-hidden />
       </div>
 
       {/* Brand marquee */}
