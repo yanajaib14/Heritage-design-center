@@ -82,6 +82,19 @@ export default function FeaturedProjects() {
 
   return (
     <section ref={sectionRef} className="fp-section">
+      <style>{`
+        .fp-grid .fp-card {
+          aspect-ratio: auto !important;
+          flex: 1 1 0% !important;
+          transition: flex-grow 750ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+        }
+        @media (min-width: 768px) {
+          .fp-grid .fp-card:hover {
+            flex-grow: 4 !important;
+          }
+        }
+      `}</style>
+
       <div className="fp-inner">
         <div className="fp-head" style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", marginBottom: "48px" }}>
           <span className="eyebrow" style={{ display: "block", marginBottom: "12px" }}>Our Work</span>
@@ -98,13 +111,7 @@ export default function FeaturedProjects() {
             <Link 
               key={title} 
               href="/gallery" 
-              className="fp-card relative group flex-grow w-full md:w-28 h-[240px] md:h-full rounded-xl overflow-hidden hover:flex-[3.5] md:hover:w-full border border-[var(--gold-border)] bg-black"
-              style={{ 
-                aspectRatio: "auto",
-                transitionProperty: "flex-grow, width",
-                transitionDuration: "750ms",
-                transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)"
-              }}
+              className="fp-card relative group w-full h-[240px] md:h-full rounded-xl overflow-hidden border border-[var(--gold-border)] bg-black"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img 
