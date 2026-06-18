@@ -25,6 +25,21 @@ const projects = [
     title: "Dark Marble Bath",
     cat: "Bath",
   },
+  {
+    src: "https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=900&q=85",
+    title: "Contemporary Island",
+    cat: "Kitchen",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=900&q=85",
+    title: "Modern Open Kitchen",
+    cat: "Kitchen",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=900&q=85",
+    title: "Spa Master Bath",
+    cat: "Bath",
+  },
 ];
 
 export default function FeaturedProjects() {
@@ -68,28 +83,48 @@ export default function FeaturedProjects() {
   return (
     <section ref={sectionRef} className="fp-section">
       <div className="fp-inner">
-        <div className="fp-head">
-          <div>
-            <span className="eyebrow" style={{ display: "block", marginBottom: "16px" }}>Our Work</span>
-            <h2>
-              Projects We&apos;re{" "}
-              <em style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 400 }}>Proud Of.</em>
-            </h2>
-          </div>
-          <Link href="/gallery" className="link-arrow" style={{ whiteSpace: "nowrap" }}>
-            View All Projects <span className="arrow">→</span>
-          </Link>
+        <div className="fp-head" style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", marginBottom: "48px" }}>
+          <span className="eyebrow" style={{ display: "block", marginBottom: "12px" }}>Our Work</span>
+          <h2 style={{ fontSize: "clamp(32px, 4.5vw, 48px)", fontWeight: 500, margin: "0 0 12px", letterSpacing: "-0.02em" }}>
+            Projects We&apos;re <em style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 400 }}>Proud Of.</em>
+          </h2>
+          <p className="text-sm text-[var(--text-dim)] max-w-lg mx-auto leading-relaxed">
+            A visual collection of our most recent works — each piece crafted with intention, dedication, and timeless style.
+          </p>
         </div>
 
-        <div className="fp-grid">
+        <div className="fp-grid flex flex-col md:flex-row items-center gap-3 w-full max-w-5xl mt-10 mx-auto h-auto md:h-[450px]" style={{ display: "flex", gridTemplateColumns: "none", marginBottom: "64px" }}>
           {projects.map(({ src, title, cat }) => (
-            <Link key={title} href="/gallery" className="fp-card">
+            <Link 
+              key={title} 
+              href="/gallery" 
+              className="fp-card relative group flex-grow w-full md:w-28 h-[240px] md:h-full rounded-xl overflow-hidden hover:flex-[3.5] md:hover:w-full border border-[var(--gold-border)] bg-black"
+              style={{ 
+                aspectRatio: "auto",
+                transitionProperty: "flex-grow, width",
+                transitionDuration: "750ms",
+                transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)"
+              }}
+            >
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={src} alt={title} loading="lazy" className="fp-card-img" />
-              <div className="fp-card-overlay" />
-              <div className="fp-card-info">
-                <span className="fp-cat">{cat}</span>
-                <p className="fp-title">{title}</p>
+              <img 
+                src={src} 
+                alt={title} 
+                className="h-full w-full object-cover object-center transition-transform duration-1000 group-hover:scale-105" 
+                draggable={false} 
+              />
+              
+              {/* Dark Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent transition-opacity duration-500 opacity-70 group-hover:opacity-90" />
+              
+              {/* Project Details */}
+              <div className="absolute bottom-6 left-6 right-6 transition-all duration-500 md:opacity-0 md:translate-y-4 group-hover:opacity-100 group-hover:translate-y-0">
+                <span className="inline-block px-2.5 py-1 mb-2 text-[10px] tracking-[0.2em] uppercase text-[var(--gold)] border border-[var(--gold-border)] bg-black/50 backdrop-blur-sm">
+                  {cat}
+                </span>
+                <h3 className="font-display text-lg md:text-xl text-white font-medium">
+                  {title}
+                </h3>
               </div>
             </Link>
           ))}
