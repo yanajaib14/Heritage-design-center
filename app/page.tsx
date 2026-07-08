@@ -44,7 +44,6 @@ export default async function Home() {
   }
 
   const heroTitle = cmsLanding?.hero?.title || undefined;
-  const heroImage = cmsLanding?.hero?.image?.src || undefined;
   const heroSubtitle = cmsLanding?.bodyText
     ? portableTextToPlainText(cmsLanding.bodyText).slice(0, 220) || undefined
     : undefined;
@@ -56,7 +55,6 @@ export default async function Home() {
       <HeroSection
         titleOverride={heroTitle}
         subtitleOverride={heroSubtitle}
-        backgroundImageOverride={heroImage}
       />
 
       {cmsLanding ? (

@@ -22,57 +22,50 @@ const projects = [
     type: "kitchen" as const,
     title: "Transitional White Kitchen",
     src: "/project-university-place.png",
-    tall: true,
   },
   {
     type: "kitchen" as const,
     title: "Slab Backsplash Kitchen",
     src: "/gallery-quartz-backsplash.jpg",
-    tall: false,
   },
   {
     type: "bath" as const,
     title: "Dark Marble Retreat",
     src: "/gallery-luxury-bath.png",
-    tall: true,
   },
   {
     type: "kitchen" as const,
     title: "Contemporary Island",
     src: "/project-forest-kitchen.jpg",
-    tall: false,
   },
   {
     type: "kitchen" as const,
     title: "Modern Open Kitchen",
     src: "/gallery-whistler-frost.jpg",
-    tall: false,
   },
   {
     type: "bath" as const,
     title: "Spa Master Bath",
     src: "/gallery-essential-white-bath.jpg",
-    tall: false,
   },
   {
     type: "kitchen" as const,
     title: "Craftsman Transitional",
     src: "/project-midnight-blue.jpg",
-    tall: true,
   },
   {
     type: "bath" as const,
     title: "Wet Room Suite",
     src: "/gallery-oslo-white-bath.jpg",
-    tall: false,
   },
   {
     type: "kitchen" as const,
     title: "Transitional Chef Kitchen",
     src: "/project-coastal-calm.jpg",
-    tall: false,
   },
 ];
+
+const BENTO_PATTERN = ["bento-xl", "bento-tall", "bento-wide", "bento-square", "bento-square", "bento-wide", "bento-tall", "bento-square", "bento-wide"] as const;
 
 export default function GalleryPage() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -131,7 +124,7 @@ export default function GalleryPage() {
   const heroSubtitle = cmsLanding?.bodyText
     ? portableTextToPlainText(cmsLanding.bodyText).slice(0, 220)
     : "";
-  const heroBackground = cmsLanding?.hero?.image?.src || "/hero-kitchen-custom.png";
+  const heroBackground = "/Gemini_Generated_Image_qci0g7qci0g7qci0.png";
 
   return (
     <>
@@ -143,7 +136,7 @@ export default function GalleryPage() {
           className="page-hero-bg"
           style={{ backgroundImage: `url('${heroBackground}')` }}
         />
-        <div className="page-hero-overlay" aria-hidden="true" />
+        <div className="page-hero-overlay gallery-hero-overlay" aria-hidden="true" />
         <div className="page-hero-inner" ref={heroRef}>
           <span className="eyebrow h-item" style={{ opacity: 0 }}>Past Projects</span>
           <h1 style={{ opacity: 0 }} className="h-item">
@@ -185,9 +178,9 @@ export default function GalleryPage() {
           </div>
 
           {/* Grid */}
-          <div className="gallery-grid" ref={gridRef}>
-            {visible.map(({ type, title, src, tall }) => (
-              <div key={title} className={`gallery-item${tall ? " tall" : " wide"}`}>
+          <div className="gallery-grid gallery-bento-grid" ref={gridRef}>
+            {visible.map(({ type, title, src }, i) => (
+              <div key={title} className={`gallery-item gallery-bento ${BENTO_PATTERN[i % BENTO_PATTERN.length]}`}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={src} alt={title} loading="lazy" />
                 <div className="gallery-item-overlay" />

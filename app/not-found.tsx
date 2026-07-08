@@ -19,7 +19,7 @@ export default function NotFound() {
         <Link href="/" aria-label="Heritage Design Center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/logo.webp"
+            src="/assets/logo.png"
             alt="Heritage Design Center"
             style={{ height: 52, width: "auto", display: "block" }}
           />

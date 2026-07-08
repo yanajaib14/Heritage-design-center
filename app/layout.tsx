@@ -167,7 +167,7 @@ const websiteJsonLd = {
     url: SITE_URL,
     logo: {
       "@type": "ImageObject",
-      url: `${SITE_URL}/logo.webp`,
+      url: `${SITE_URL}/assets/logo.png`,
     },
   },
 };

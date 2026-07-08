@@ -52,7 +52,7 @@ export default function NavBar() {
       <nav ref={navRef} className={`nav${scrolled ? " scrolled" : ""}`} style={{ opacity: 0 }}>
         <Link href="/" className="nav-logo" aria-label="Heritage Design Center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.webp" alt="Heritage Design Center" height={74} style={{ height: 118, width: "auto", filter: "drop-shadow(0 2px 12px rgba(201,168,76,0.25))" }} />
+          <img src="/assets/logo.png" alt="Heritage Design Center" height={74} style={{ height: 118, width: "auto", filter: "drop-shadow(0 2px 12px rgba(201,168,76,0.25))" }} />
         </Link>
         <div className="nav-center">
           {NAV_LINKS.map(({ href, label }) => (

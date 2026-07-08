@@ -45,7 +45,7 @@ export default function SiteFooter() {
           <div className="lg:col-span-5 flex flex-col justify-start footer-reveal">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/logo.webp"
+              src="/assets/logo.png"
               alt="Heritage Design Center"
               className="w-auto h-[90px] object-contain object-left mb-6"
               style={{ filter: "drop-shadow(0 2px 12px rgba(201,168,76,0.25))" }}

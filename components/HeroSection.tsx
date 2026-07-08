@@ -57,7 +57,7 @@ export default function HeroSection({
       <div
         ref={bgRef}
         className="hero-bg"
-        style={{ backgroundImage: `url('${backgroundImageOverride || "/hero-kitchen-custom.png"}')` }}
+        style={{ backgroundImage: `url('${backgroundImageOverride || "/assets/hero-bg.jpg.png"}')` }}
         aria-hidden="true"
       />
       <div className="hero-overlay" aria-hidden="true" />
