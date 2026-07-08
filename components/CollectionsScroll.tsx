@@ -12,7 +12,7 @@ const cards = [
   {
     category: "Cabinetry",
     description: "From stock to fully custom: plywood construction, soft-close hardware, and hundreds of door styles.",
-    image: "https://showplacecabinetry.com/wp-content/uploads/2025/12/New-England-Transitional-with-Beachy-Island-20.jpg",
+    image: "/project-university-place.png",
     bg: "#1c1812",
     light: true,
     href: "/collections",
@@ -20,7 +20,7 @@ const cards = [
   {
     category: "Countertops",
     description: "Quartz, marble, quartzite, granite, and butcher block from the industry's most trusted names.",
-    image: "https://images.squarespace-cdn.com/content/v1/6982349a56e1e46c7b2e0861/b662f8dd-f7f8-490d-8cce-bbb2eefbc8b8/whitendale.webp",
+    image: "/whitendale.webp",
     bg: "#f0ebe3",
     light: false,
     href: "/collections",
@@ -36,7 +36,7 @@ const cards = [
   {
     category: "Bath Collection",
     description: "Vanities, tubs, showers, and fixtures for a complete bathroom renovation.",
-    image: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=80",
+    image: "/gallery-luxury-bath.png",
     bg: "#2c1f16",
     light: true,
     href: "/collections",

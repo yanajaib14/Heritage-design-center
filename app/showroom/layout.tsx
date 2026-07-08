@@ -10,6 +10,21 @@ export const metadata: Metadata = {
     description:
       "Visit us at 8695 Martin Way E, Lacey, WA. Full cabinetry displays, stone slabs, tile, and hardware. Mon–Fri 9am–5:30pm.",
     url: "https://heritagedesignctr.com/showroom",
+    images: [
+      {
+        url: "/hero-bathroom-custom.png",
+        width: 1200,
+        height: 630,
+        alt: "Heritage Design Center showroom in Lacey, Washington",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Showroom · Heritage Design Center",
+    description:
+      "Visit our Lacey showroom to explore cabinetry, stone, tile, and hardware in person.",
+    images: ["/hero-bathroom-custom.png"],
   },
 };
 

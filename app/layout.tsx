@@ -72,7 +72,7 @@ export const metadata: Metadata = {
       "Kitchen and bath design showroom in Lacey, WA — serving all of Western Washington. Cabinetry, countertops, tile, and fixtures — all under one roof. Free design consultations.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/hero-kitchen-custom.png",
         width: 1200,
         height: 630,
         alt: "Heritage Design Center showroom — Lacey, WA",
@@ -84,7 +84,7 @@ export const metadata: Metadata = {
     title: "Heritage Design Center · Kitchen & Bath Showroom · Lacey, WA",
     description:
       "Kitchen and bath design showroom in Lacey, WA. Cabinetry, countertops, tile, and fixtures all under one roof.",
-    images: ["/og-image.jpg"],
+    images: ["/hero-kitchen-custom.png"],
   },
   robots: {
     index: true,
@@ -153,6 +153,25 @@ const localBusinessJsonLd = {
   sameAs: [],
 };
 
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE_NAME,
+  url: SITE_URL,
+  inLanguage: "en-US",
+  description:
+    "Kitchen and bath design showroom in Lacey, WA serving Western Washington with cabinetry, countertops, tile, and fixtures.",
+  publisher: {
+    "@type": "Organization",
+    name: SITE_NAME,
+    url: SITE_URL,
+    logo: {
+      "@type": "ImageObject",
+      url: `${SITE_URL}/logo.webp`,
+    },
+  },
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -164,6 +183,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
       </head>
       <body>

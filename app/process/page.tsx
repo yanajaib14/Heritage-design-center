@@ -6,6 +6,11 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import NavBar from "@/components/NavBar";
 import SiteFooter from "@/components/SiteFooter";
+import SanityLandingContent from "@/components/SanityLandingContent";
+import { fetchSanity } from "@/src/sanity/client";
+import { getLandingPageParams, landingPageBySlugQuery } from "@/src/sanity/queries";
+import { mapLandingPageToComponentProps } from "@/src/sanity/contentMapper";
+import { portableTextToPlainText } from "@/src/sanity/plainText";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -110,6 +115,7 @@ export default function ProcessPage() {
   const audienceRef = useRef<HTMLDivElement>(null);
   const faqRef = useRef<HTMLDivElement>(null);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [cmsLanding, setCmsLanding] = useState<ReturnType<typeof mapLandingPageToComponentProps> | null>(null);
 
   useEffect(() => {
     if (ScrollTrigger.isTouch === 1) {
@@ -177,6 +183,33 @@ export default function ProcessPage() {
     return () => ctx.revert();
   }, []);
 
+  useEffect(() => {
+    let isMounted = true;
+
+    const loadCms = async () => {
+      try {
+        const landingData = await fetchSanity(landingPageBySlugQuery, getLandingPageParams("process"));
+        if (!isMounted) return;
+        setCmsLanding(landingData ? mapLandingPageToComponentProps(landingData) : null);
+      } catch {
+        if (isMounted) {
+          setCmsLanding(null);
+        }
+      }
+    };
+
+    loadCms();
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  const heroTitle = cmsLanding?.hero?.title || "";
+  const heroSubtitle = cmsLanding?.bodyText
+    ? portableTextToPlainText(cmsLanding.bodyText).slice(0, 240)
+    : "";
+  const heroBackground = cmsLanding?.hero?.image?.src || "/Design%20Review%20Meeting.png";
+
   return (
     <>
       <NavBar />
@@ -185,20 +218,28 @@ export default function ProcessPage() {
       <section className="page-hero">
         <div
           className="page-hero-bg"
-          style={{ backgroundImage: "url('https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/561695ba-8683-4348-93fb-4067502ac4e9/Design+Review+Meeting.png?content-type=image%2Fpng')" }}
+          style={{ backgroundImage: `url('${heroBackground}')` }}
         />
         <div className="page-hero-overlay" aria-hidden="true" />
         <div className="page-hero-inner" ref={heroRef}>
           <span className="eyebrow h-item" style={{ opacity: 0 }}>How It Works</span>
           <h1 className="h-item" style={{ opacity: 0 }}>
-            The Heritage<br />
-            <em>Process</em>
+            {heroTitle || (
+              <>
+                The Heritage<br />
+                <em>Process</em>
+              </>
+            )}
           </h1>
           <p className="page-hero-sub h-item" style={{ opacity: 0 }}>
-            Whether you&apos;re a homeowner with a vision or a builder who needs a trusted design and supply partner, we make the path from first idea to finished space as clear and smooth as possible.
+            {heroSubtitle || "Whether you're a homeowner with a vision or a builder who needs a trusted design and supply partner, we make the path from first idea to finished space as clear and smooth as possible."}
           </p>
         </div>
       </section>
+
+      {cmsLanding ? (
+        <SanityLandingContent bodyText={cmsLanding.bodyText} features={cmsLanding.features} />
+      ) : null}
 
       {/* ── Stats bar ── */}
       <div className="proc-stats">

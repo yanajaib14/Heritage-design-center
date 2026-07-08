@@ -1,10 +1,15 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import NavBar from "@/components/NavBar";
 import SiteFooter from "@/components/SiteFooter";
+import SanityLandingContent from "@/components/SanityLandingContent";
+import { fetchSanity } from "@/src/sanity/client";
+import { getLandingPageParams, landingPageBySlugQuery } from "@/src/sanity/queries";
+import { mapLandingPageToComponentProps } from "@/src/sanity/contentMapper";
+import { portableTextToPlainText } from "@/src/sanity/plainText";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,7 +23,7 @@ const categories = [
     titleItalic: "a Lifetime.",
     intro: "The cabinet is the backbone of any kitchen or bath design. We carry four trusted cabinet lines, each at a different price point and lead time, so every project has an option that fits without compromise.",
     body: "All of our cabinet lines ship with plywood box construction, soft-close hinges and slides, and dovetail drawer boxes as standard. Door styles range from classic five-piece shaker to flat-panel slab to raised panel traditional, in hundreds of painted and stained finishes.",
-    image: "https://showplacecabinetry.com/wp-content/uploads/2025/12/New-England-Transitional-with-Beachy-Island-20.jpg",
+    image: "/project-university-place.png",
     imageAlt: "Showplace transitional cabinetry",
     brands: [
       { label: "KCD Cabinetry", href: "https://www.kcdus.com/", note: "Stock to semi-custom" },
@@ -43,7 +48,7 @@ const categories = [
     titleItalic: "Built for Every Day.",
     intro: "The countertop is the surface you touch every day. We carry the full range, from engineered quartz that performs without maintenance to natural stone with a character that only improves with time.",
     body: "We stock samples from five countertop brands in the showroom including quartz, marble, quartzite, granite, and butcher block. Every sample is available in person so you can see how the material looks in real light before committing. We also offer a measure-and-quote service for all slab materials.",
-    image: "https://images.squarespace-cdn.com/content/v1/6982349a56e1e46c7b2e0861/b662f8dd-f7f8-490d-8cce-bbb2eefbc8b8/whitendale.webp",
+    image: "/whitendale.webp",
     imageAlt: "Quartz slab countertop",
     brands: [
       { label: "MSI Surfaces", href: "https://www.msisurfaces.com/", note: "Quartz, marble, quartzite, granite" },
@@ -69,7 +74,7 @@ const categories = [
     titleItalic: "Character.",
     intro: "Tile is the layer of your design that adds the most visual texture and personality. From handmade Zellige to large-format stone slab, our tile library covers every application: backsplash, floor, shower, and feature wall.",
     body: "We partner with MSI Surfaces, one of the most comprehensive tile and stone distributors in North America. Their catalog covers glazed ceramic, porcelain, natural stone, mosaic, and specialty formats. Samples of our most-specified collections are available to view in the showroom.",
-    image: "https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/0c09e194-781a-4b95-8986-697488e320d0/ChatGPT+Image+Apr+3%2C+2026%2C+12_06_18+PM.png?content-type=image%2Fpng",
+    image: "/gallery-quartz-backsplash.jpg",
     imageAlt: "Tile and stone selection",
     brands: [
       { label: "MSI Surfaces", href: "https://www.msisurfaces.com/", note: "Ceramic, porcelain, natural stone, mosaic" },
@@ -91,7 +96,7 @@ const categories = [
     titleItalic: "Define a Space.",
     intro: "Hardware is what the hand touches every time someone uses the space, and the easiest way to shift a design from good to exceptional. We carry the full Top Knobs catalog and Jeffrey Alexander's decorative hardware collection, giving you thousands of options across every finish and style.",
     body: "Our showroom has a dedicated hardware display wall showing pulls, knobs, and faucets across every available finish, side by side, so you can see exactly how each reads against your chosen cabinetry and stone. We do not upsell. We help you find the right piece for the right project.",
-    image: "https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/74c2935e-ca5e-46b2-af5f-408e8b5c2837/43.png?content-type=image%2Fpng",
+    image: "/43.png",
     imageAlt: "Cabinet hardware and fixtures",
     brands: [
       { label: "Top Knobs", href: "https://www.topknobs.com/", note: "3,000+ SKUs, 15+ finishes" },
@@ -114,7 +119,7 @@ const categories = [
     titleItalic: "Designed Right.",
     intro: "A well-designed bathroom functions as both a practical space and a private retreat. We design bath spaces from the ground up: shower layout, tile selection, vanity, plumbing fixtures, and every finish in between.",
     body: "Our bath design process follows the same four-step model as kitchens. We create the layout, specify every material, and supply the full package. Shower systems, soaking tubs, vanities, tile surrounds. All of it coordinated by our team so your contractor receives one complete, ready-to-install spec.",
-    image: "https://images.squarespace-cdn.com/content/v1/6982349a56e1e46c7b2e0861/9e6294ff-bc6d-4a8e-a04d-11ac6bd6aa6c/Dark+Marble+Opulence.png?format=500w",
+    image: "/gallery-luxury-bath.png",
     imageAlt: "Dark marble bath design",
     brands: [],
     pills: ["Shower Systems", "Freestanding Tubs", "Vanities", "Surround Tile", "Heated Floors", "Frameless Glass"],
@@ -140,6 +145,7 @@ const navLinks = [
 export default function CollectionsPage() {
   const heroRef = useRef<HTMLDivElement>(null);
   const sectionsRef = useRef<HTMLDivElement>(null);
+  const [cmsLanding, setCmsLanding] = useState<ReturnType<typeof mapLandingPageToComponentProps> | null>(null);
 
   useEffect(() => {
     if (ScrollTrigger.isTouch === 1) {
@@ -178,6 +184,33 @@ export default function CollectionsPage() {
     return () => ctx.revert();
   }, []);
 
+  useEffect(() => {
+    let isMounted = true;
+
+    const loadCms = async () => {
+      try {
+        const landingData = await fetchSanity(landingPageBySlugQuery, getLandingPageParams("collections"));
+        if (!isMounted) return;
+        setCmsLanding(landingData ? mapLandingPageToComponentProps(landingData) : null);
+      } catch {
+        if (isMounted) {
+          setCmsLanding(null);
+        }
+      }
+    };
+
+    loadCms();
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  const heroTitle = cmsLanding?.hero?.title || "";
+  const heroSubtitle = cmsLanding?.bodyText
+    ? portableTextToPlainText(cmsLanding.bodyText).slice(0, 240)
+    : "";
+  const heroBackground = cmsLanding?.hero?.image?.src || "/whitendale.webp";
+
   return (
     <>
       <NavBar />
@@ -186,20 +219,28 @@ export default function CollectionsPage() {
       <section className="page-hero">
         <div
           className="page-hero-bg"
-          style={{ backgroundImage: "url('https://images.squarespace-cdn.com/content/v1/6982349a56e1e46c7b2e0861/b662f8dd-f7f8-490d-8cce-bbb2eefbc8b8/whitendale.webp')" }}
+          style={{ backgroundImage: `url('${heroBackground}')` }}
         />
         <div className="page-hero-overlay" aria-hidden="true" />
         <div className="page-hero-inner" ref={heroRef}>
           <span className="eyebrow h-item" style={{ opacity: 0 }}>Materials &amp; Brands</span>
           <h1 className="h-item" style={{ opacity: 0 }}>
-            Our<br />
-            <em>Collections</em>
+            {heroTitle || (
+              <>
+                Our<br />
+                <em>Collections</em>
+              </>
+            )}
           </h1>
           <p className="page-hero-sub h-item" style={{ opacity: 0 }}>
-            Five material categories. Brands we believe in. Every sample available to touch in the showroom before you decide. This is what we carry and why we carry it.
+            {heroSubtitle || "Five material categories. Brands we believe in. Every sample available to touch in the showroom before you decide. This is what we carry and why we carry it."}
           </p>
         </div>
       </section>
+
+      {cmsLanding ? (
+        <SanityLandingContent bodyText={cmsLanding.bodyText} features={cmsLanding.features} />
+      ) : null}
 
       {/* ── Category nav ── */}
       <nav className="coll-nav-bar" aria-label="Material categories">
@@ -267,7 +308,7 @@ export default function CollectionsPage() {
                 {/* Brand links */}
                 {brands.length > 0 && (
                   <div className="coll-item" style={{ opacity: 0, marginBottom: "28px" }}>
-                    <p style={{ fontSize: "10px", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--gold)", marginBottom: "12px", fontWeight: 300 }}>
+                    <p style={{ fontSize: "10px", letterSpacing: "0.22em", textTransform: "uppercase", color: "#7a5c1a", marginBottom: "12px", fontWeight: 500 }}>
                       Browse Their Websites
                     </p>
                     <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>

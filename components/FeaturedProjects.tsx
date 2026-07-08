@@ -11,32 +11,32 @@ const SCHEDULE_URL = "https://10daykitchens.hbportal.co/public/69f4fca66910ddf27
 
 const projects = [
   {
-    src: "https://showplacecabinetry.com/wp-content/uploads/2025/12/New-England-Transitional-with-Beachy-Island-20.jpg",
+    src: "/project-university-place.png",
     title: "Transitional Kitchen",
     cat: "Kitchen",
   },
   {
-    src: "https://images.squarespace-cdn.com/content/v1/6982349a56e1e46c7b2e0861/d7463ac6-a87c-4cd2-877a-304026df15ea/kitchen+with+slab+backsplash.jpg",
+    src: "/gallery-quartz-backsplash.jpg",
     title: "Slab Backsplash Kitchen",
     cat: "Kitchen",
   },
   {
-    src: "https://images.squarespace-cdn.com/content/v1/6982349a56e1e46c7b2e0861/9e6294ff-bc6d-4a8e-a04d-11ac6bd6aa6c/Dark+Marble+Opulence.png",
+    src: "/gallery-luxury-bath.png",
     title: "Dark Marble Bath",
     cat: "Bath",
   },
   {
-    src: "https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=900&q=85",
+    src: "/project-forest-kitchen.jpg",
     title: "Contemporary Island",
     cat: "Kitchen",
   },
   {
-    src: "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=900&q=85",
+    src: "/gallery-whistler-frost.jpg",
     title: "Modern Open Kitchen",
     cat: "Kitchen",
   },
   {
-    src: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=900&q=85",
+    src: "/gallery-essential-white-bath.jpg",
     title: "Spa Master Bath",
     cat: "Bath",
   },

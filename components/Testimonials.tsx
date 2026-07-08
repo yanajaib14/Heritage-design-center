@@ -68,6 +68,10 @@ export default function Testimonials() {
     });
   };
 
+  const goNext = () => {
+    switchTo((active + 1) % testimonials.length);
+  };
+
   const t = testimonials[active];
 
   return (
@@ -86,6 +90,48 @@ export default function Testimonials() {
         }
         .testi-grid {
           gap: clamp(32px, 5vw, 64px) !important;
+        }
+        .testi-stage {
+          position: relative;
+          border: 1px solid var(--gold-border);
+          background: linear-gradient(180deg, rgba(250,250,248,0.8), rgba(245,240,232,0.96));
+          padding: clamp(26px, 3.4vw, 40px);
+          box-shadow: 0 20px 50px rgba(10, 9, 8, 0.08);
+        }
+        .testi-next {
+          position: absolute;
+          right: clamp(12px, 1.8vw, 16px);
+          top: 50%;
+          transform: translateY(-50%);
+          width: 46px;
+          height: 46px;
+          border-radius: 999px;
+          border: 1px solid var(--gold-border-strong);
+          background: rgba(255,255,255,0.92);
+          color: var(--text);
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          transition: transform 260ms var(--ease), background 260ms var(--ease), border-color 260ms var(--ease);
+        }
+        .testi-next:hover {
+          transform: translateY(-50%) translateX(2px);
+          background: var(--gold);
+          border-color: var(--gold);
+        }
+        .testi-next:focus-visible {
+          outline: 2px solid var(--gold);
+          outline-offset: 2px;
+        }
+        @media (max-width: 960px) {
+          .testi-next {
+            position: static;
+            transform: none;
+            margin-top: 12px;
+          }
+          .testi-next:hover {
+            transform: translateX(2px);
+          }
         }
       `}</style>
 
@@ -140,13 +186,21 @@ export default function Testimonials() {
 
           {/* Right: quote */}
           <div className="testi-right">
-            <div className="testi-mark testi-reveal" style={{ opacity: 0 }}>&ldquo;</div>
-            <blockquote ref={quoteRef} className="testi-quote">
-              {t.quote}
-            </blockquote>
-            <div ref={authorRef} className="testi-author-wrap">
-              <p className="testi-author">{t.author}</p>
-              <p className="testi-project">{t.project}</p>
+            <div className="testi-stage testi-reveal" style={{ opacity: 0 }}>
+              <div className="testi-mark">&ldquo;</div>
+              <blockquote ref={quoteRef} className="testi-quote">
+                {t.quote}
+              </blockquote>
+              <div ref={authorRef} className="testi-author-wrap">
+                <p className="testi-author">{t.author}</p>
+                <p className="testi-project">{t.project}</p>
+              </div>
+              <button className="testi-next" onClick={goNext} aria-label="Next review">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M5 12h14" />
+                  <path d="m13 6 6 6-6 6" />
+                </svg>
+              </button>
             </div>
           </div>
 

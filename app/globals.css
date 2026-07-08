@@ -855,10 +855,10 @@ a.pill.brand:hover {
 }
 .audience-col:hover::before { opacity: 0.68; transform: scale(1.03); }
 .audience-col.ac-home::before {
-  background-image: url('https://showplacecabinetry.com/wp-content/uploads/2025/12/New-England-Transitional-with-Beachy-Island-20.jpg');
+  background-image: url('/project-university-place.png');
 }
 .audience-col.ac-trade::before {
-  background-image: url('https://images.squarespace-cdn.com/content/v1/6982349a56e1e46c7b2e0861/d7463ac6-a87c-4cd2-877a-304026df15ea/kitchen+with+slab+backsplash.jpg');
+  background-image: url('/gallery-quartz-backsplash.jpg');
 }
 .audience .divider { background: var(--gold-border); }
 .audience-col {
@@ -2097,11 +2097,11 @@ footer {
   font-size: 10px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: #7a5c1a;
   margin-bottom: 6px;
-  font-weight: 300;
+  font-weight: 500;
   display: block;
-  opacity: 0.8;
+  opacity: 0.95;
 }
 .coll-spec-val {
   font-size: 14px;
@@ -2146,7 +2146,7 @@ footer {
 .coll-brand-link-name {
   font-size: 13px;
   letter-spacing: 0.12em;
-  color: var(--gold);
+  color: #7a5c1a;
   text-transform: uppercase;
   font-weight: 500;
   transition: color 300ms var(--ease);
@@ -2169,7 +2169,7 @@ footer {
 .coll-brand-link:hover .coll-brand-link-note { color: rgba(26, 18, 8, 0.65); }
 .coll-brand-link-arrow {
   font-size: 16px;
-  color: var(--gold);
+  color: #7a5c1a;
   opacity: 0.7;
   transition: color 300ms var(--ease), opacity 300ms var(--ease), transform 300ms var(--ease);
   line-height: 1;
@@ -2567,6 +2567,12 @@ body.has-promo .page-hero-inner {
   color: var(--gold);
   font-weight: 300;
 }
+.showroom-photo-slot .showroom-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 .showroom-photo-slot .slot-placeholder {
   width: 40px;
   height: 40px;
@@ -2576,6 +2582,16 @@ body.has-promo .page-hero-inner {
   align-items: center;
   justify-content: center;
   color: var(--gold);
+}
+.showroom-photo-slot .slot-label {
+  position: absolute;
+  left: 12px;
+  bottom: 10px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  padding: 6px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(2px);
 }
 .showroom-video-slot {
   width: 100%;

@@ -5,6 +5,11 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import NavBar from "@/components/NavBar";
 import SiteFooter from "@/components/SiteFooter";
+import SanityLandingContent from "@/components/SanityLandingContent";
+import { fetchSanity } from "@/src/sanity/client";
+import { getLandingPageParams, landingPageBySlugQuery } from "@/src/sanity/queries";
+import { mapLandingPageToComponentProps } from "@/src/sanity/contentMapper";
+import { portableTextToPlainText } from "@/src/sanity/plainText";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,55 +21,55 @@ const projects = [
   {
     type: "kitchen" as const,
     title: "Transitional White Kitchen",
-    src: "https://showplacecabinetry.com/wp-content/uploads/2025/12/New-England-Transitional-with-Beachy-Island-20.jpg",
+    src: "/project-university-place.png",
     tall: true,
   },
   {
     type: "kitchen" as const,
     title: "Slab Backsplash Kitchen",
-    src: "https://images.squarespace-cdn.com/content/v1/6982349a56e1e46c7b2e0861/d7463ac6-a87c-4cd2-877a-304026df15ea/kitchen+with+slab+backsplash.jpg",
+    src: "/gallery-quartz-backsplash.jpg",
     tall: false,
   },
   {
     type: "bath" as const,
     title: "Dark Marble Retreat",
-    src: "https://images.squarespace-cdn.com/content/v1/6982349a56e1e46c7b2e0861/9e6294ff-bc6d-4a8e-a04d-11ac6bd6aa6c/Dark+Marble+Opulence.png",
+    src: "/gallery-luxury-bath.png",
     tall: true,
   },
   {
     type: "kitchen" as const,
     title: "Contemporary Island",
-    src: "https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=900&q=85",
+    src: "/project-forest-kitchen.jpg",
     tall: false,
   },
   {
     type: "kitchen" as const,
     title: "Modern Open Kitchen",
-    src: "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=900&q=85",
+    src: "/gallery-whistler-frost.jpg",
     tall: false,
   },
   {
     type: "bath" as const,
     title: "Spa Master Bath",
-    src: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=900&q=85",
+    src: "/gallery-essential-white-bath.jpg",
     tall: false,
   },
   {
     type: "kitchen" as const,
     title: "Craftsman Transitional",
-    src: "https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=900&q=85",
+    src: "/project-midnight-blue.jpg",
     tall: true,
   },
   {
     type: "bath" as const,
     title: "Wet Room Suite",
-    src: "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=900&q=85",
+    src: "/gallery-oslo-white-bath.jpg",
     tall: false,
   },
   {
     type: "kitchen" as const,
     title: "Transitional Chef Kitchen",
-    src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=900&q=85",
+    src: "/project-coastal-calm.jpg",
     tall: false,
   },
 ];
@@ -73,6 +78,7 @@ export default function GalleryPage() {
   const heroRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
   const [filter, setFilter] = useState<Filter>("all");
+  const [cmsLanding, setCmsLanding] = useState<ReturnType<typeof mapLandingPageToComponentProps> | null>(null);
 
   const visible = filter === "all" ? projects : projects.filter((p) => p.type === filter);
 
@@ -100,6 +106,33 @@ export default function GalleryPage() {
     );
   }, [filter]);
 
+  useEffect(() => {
+    let isMounted = true;
+
+    const loadCms = async () => {
+      try {
+        const landingData = await fetchSanity(landingPageBySlugQuery, getLandingPageParams("gallery"));
+        if (!isMounted) return;
+        setCmsLanding(landingData ? mapLandingPageToComponentProps(landingData) : null);
+      } catch {
+        if (isMounted) {
+          setCmsLanding(null);
+        }
+      }
+    };
+
+    loadCms();
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  const heroTitle = cmsLanding?.hero?.title || "";
+  const heroSubtitle = cmsLanding?.bodyText
+    ? portableTextToPlainText(cmsLanding.bodyText).slice(0, 220)
+    : "";
+  const heroBackground = cmsLanding?.hero?.image?.src || "/hero-kitchen-custom.png";
+
   return (
     <>
       <NavBar />
@@ -108,20 +141,28 @@ export default function GalleryPage() {
       <section className="page-hero">
         <div
           className="page-hero-bg"
-          style={{ backgroundImage: "url('https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/e2edde19-4fb4-4a28-920e-207d0ee8b444/ChatGPT+Image+Apr+2%2C+2026%2C+10_37_53+AM.png?content-type=image%2Fpng')" }}
+          style={{ backgroundImage: `url('${heroBackground}')` }}
         />
         <div className="page-hero-overlay" aria-hidden="true" />
         <div className="page-hero-inner" ref={heroRef}>
           <span className="eyebrow h-item" style={{ opacity: 0 }}>Past Projects</span>
           <h1 style={{ opacity: 0 }} className="h-item">
-            Our<br />
-            <em>Work</em>
+            {heroTitle || (
+              <>
+                Our<br />
+                <em>Work</em>
+              </>
+            )}
           </h1>
           <p className="page-hero-sub h-item" style={{ opacity: 0 }}>
-            Every project starts with a conversation and ends with a space the client loves. Browse a selection of kitchens and baths we&apos;ve designed and supplied.
+            {heroSubtitle || "Every project starts with a conversation and ends with a space the client loves. Browse a selection of kitchens and baths we've designed and supplied."}
           </p>
         </div>
       </section>
+
+      {cmsLanding ? (
+        <SanityLandingContent bodyText={cmsLanding.bodyText} features={cmsLanding.features} />
+      ) : null}
 
       {/* Gallery */}
       <section style={{ background: "var(--bg)", padding: "clamp(72px, 10vw, 120px) var(--pad)" }}>

@@ -1,23 +1,28 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import NavBar from "@/components/NavBar";
 import SiteFooter from "@/components/SiteFooter";
 import Link from "next/link";
+import SanityLandingContent from "@/components/SanityLandingContent";
+import { fetchSanity } from "@/src/sanity/client";
+import { getLandingPageParams, landingPageBySlugQuery } from "@/src/sanity/queries";
+import { mapLandingPageToComponentProps } from "@/src/sanity/contentMapper";
+import { portableTextToPlainText } from "@/src/sanity/plainText";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const SCHEDULE_URL = "https://10daykitchens.hbportal.co/public/69f4fca66910ddf27daf62b7";
 
 const photoSlots = [
-  { id: 1, label: "Showroom Floor", wide: false },
-  { id: 2, label: "Cabinetry Wall", wide: false },
-  { id: 3, label: "Stone Library", wide: false },
-  { id: 4, label: "Design Studio", wide: true },
-  { id: 5, label: "Tile Display", wide: false },
-  { id: 6, label: "Hardware Collection", wide: false },
+  { id: 1, label: "Showroom Floor", wide: false, src: "/project-heritage-woods.png", alt: "Heritage showroom floor display" },
+  { id: 2, label: "Cabinetry Wall", wide: false, src: "/gallery-whistler-frost.jpg", alt: "Cabinetry wall with sample finishes" },
+  { id: 3, label: "Stone Library", wide: false, src: "/gallery-quartz-backsplash.jpg", alt: "Stone and countertop material selections" },
+  { id: 4, label: "Design Studio", wide: true, src: "/project-university-place.png", alt: "Design studio consultation area" },
+  { id: 5, label: "Tile Display", wide: false, src: "/gallery-bath-view2.jpg", alt: "Tile and bath display wall" },
+  { id: 6, label: "Hardware Collection", wide: false, src: "/gallery-metropolitan-walnut.jpg", alt: "Cabinet hardware and fixture collection" },
 ];
 
 export default function ShowroomPage() {
@@ -25,6 +30,7 @@ export default function ShowroomPage() {
   const aboutRef = useRef<HTMLDivElement>(null);
   const photosRef = useRef<HTMLDivElement>(null);
   const infoRef = useRef<HTMLDivElement>(null);
+  const [cmsLanding, setCmsLanding] = useState<ReturnType<typeof mapLandingPageToComponentProps> | null>(null);
 
   useEffect(() => {
     if (ScrollTrigger.isTouch === 1) {
@@ -77,6 +83,33 @@ export default function ShowroomPage() {
     return () => ctx.revert();
   }, []);
 
+  useEffect(() => {
+    let isMounted = true;
+
+    const loadCms = async () => {
+      try {
+        const landingData = await fetchSanity(landingPageBySlugQuery, getLandingPageParams("showroom"));
+        if (!isMounted) return;
+        setCmsLanding(landingData ? mapLandingPageToComponentProps(landingData) : null);
+      } catch {
+        if (isMounted) {
+          setCmsLanding(null);
+        }
+      }
+    };
+
+    loadCms();
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  const heroTitle = cmsLanding?.hero?.title || "";
+  const heroSubtitle = cmsLanding?.bodyText
+    ? portableTextToPlainText(cmsLanding.bodyText).slice(0, 240)
+    : "";
+  const heroBackground = cmsLanding?.hero?.image?.src || "/hero-bathroom-custom.png";
+
   return (
     <>
       <NavBar />
@@ -85,20 +118,28 @@ export default function ShowroomPage() {
       <section className="page-hero">
         <div
           className="page-hero-bg"
-          style={{ backgroundImage: "url('https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/e2edde19-4fb4-4a28-920e-207d0ee8b444/ChatGPT+Image+Apr+2%2C+2026%2C+10_37_53+AM.png?content-type=image%2Fpng')" }}
+          style={{ backgroundImage: `url('${heroBackground}')` }}
         />
         <div className="page-hero-overlay" aria-hidden="true" />
         <div className="page-hero-inner" ref={heroRef}>
           <span className="eyebrow h-item" style={{ opacity: 0 }}>Lacey, Washington</span>
           <h1 style={{ opacity: 0 }} className="h-item">
-            Our<br />
-            <em>Showroom</em>
+            {heroTitle || (
+              <>
+                Our<br />
+                <em>Showroom</em>
+              </>
+            )}
           </h1>
           <p className="page-hero-sub h-item" style={{ opacity: 0 }}>
-            A dedicated design space where every material we carry is on display: cabinetry, stone, tile, and hardware. All under one roof so you can see and touch your choices before you commit.
+            {heroSubtitle || "A dedicated design space where every material we carry is on display: cabinetry, stone, tile, and hardware. All under one roof so you can see and touch your choices before you commit."}
           </p>
         </div>
       </section>
+
+      {cmsLanding ? (
+        <SanityLandingContent bodyText={cmsLanding.bodyText} features={cmsLanding.features} />
+      ) : null}
 
       {/* About */}
       <section style={{ background: "var(--bg)", padding: "clamp(80px, 10vw, 128px) var(--pad)", borderBottom: "1px solid var(--gold-border)" }}>
@@ -173,23 +214,15 @@ export default function ShowroomPage() {
             <em style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 400 }}>Discovery.</em>
           </h2>
           <p style={{ color: "var(--text-dim)", fontSize: "17px", lineHeight: 1.75, fontWeight: 300, maxWidth: "480px", marginBottom: "0" }}>
-            Photos and video coming soon. Stop by in person for the full experience.
+            Explore a preview of our real showroom spaces below, then visit in person for the full material experience.
           </p>
 
           {/* Photo grid */}
           <div className="showroom-photo-grid" ref={photosRef}>
-            {photoSlots.map(({ id, label, wide }) => (
+            {photoSlots.map(({ id, label, wide, src, alt }) => (
               <div key={id} className={`showroom-photo-slot${wide ? " wide" : ""}`}>
-                <div className="slot-placeholder">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <rect x="3" y="3" width="18" height="18" rx="2" />
-                    <circle cx="8.5" cy="8.5" r="1.5" />
-                    <path d="m21 15-5-5L5 21" />
-                  </svg>
-                  <span style={{ display: "block", marginTop: "10px", fontSize: "11px", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--text-faint)", fontFamily: "var(--font-body)", fontWeight: 400 }}>
-                    Photo Coming Soon
-                  </span>
-                </div>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={src} alt={alt} loading="lazy" className="showroom-photo-img" />
                 <span className="slot-label">{label}</span>
               </div>
             ))}

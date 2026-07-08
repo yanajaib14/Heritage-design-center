@@ -9,7 +9,17 @@ gsap.registerPlugin(ScrollTrigger);
 const GET_STARTED_URL = "https://10daykitchens.hbportal.co/public/69936e5e0e854c002ad50a5f";
 const TRADE_CONTACT_URL = "https://10daykitchens.hbportal.co/public/69f50cd056cf56fd0dd4c172/1-form";
 
-export default function HeroSection() {
+interface HeroSectionProps {
+  titleOverride?: string;
+  subtitleOverride?: string;
+  backgroundImageOverride?: string;
+}
+
+export default function HeroSection({
+  titleOverride,
+  subtitleOverride,
+  backgroundImageOverride,
+}: HeroSectionProps) {
   const bgRef = useRef<HTMLDivElement>(null);
   const pillRef = useRef<HTMLDivElement>(null);
   const h1Ref = useRef<HTMLHeadingElement>(null);
@@ -47,7 +57,7 @@ export default function HeroSection() {
       <div
         ref={bgRef}
         className="hero-bg"
-        style={{ backgroundImage: "url('https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/e2edde19-4fb4-4a28-920e-207d0ee8b444/ChatGPT+Image+Apr+2%2C+2026%2C+10_37_53+AM.png?content-type=image%2Fpng')" }}
+        style={{ backgroundImage: `url('${backgroundImageOverride || "/hero-kitchen-custom.png"}')` }}
         aria-hidden="true"
       />
       <div className="hero-overlay" aria-hidden="true" />
@@ -58,12 +68,16 @@ export default function HeroSection() {
         </div>
 
         <h1 ref={h1Ref} style={{ opacity: 0 }}>
-          Design, Materials &amp; Showroom<br />
-          <em>All Under One Roof.</em>
+          {titleOverride || (
+            <>
+              Design, Materials &amp; Showroom<br />
+              <em>All Under One Roof.</em>
+            </>
+          )}
         </h1>
 
         <p ref={subRef} className="hero-sub" style={{ opacity: 0 }}>
-          We design it, we source it, we deliver it. Whether you&apos;re a homeowner with a vision or a builder who needs a trusted design and supply partner, Heritage is where projects come together.
+          {subtitleOverride || "We design it, we source it, we deliver it. Whether you're a homeowner with a vision or a builder who needs a trusted design and supply partner, Heritage is where projects come together."}
         </p>
 
         <div ref={ctasRef} className="hero-ctas" style={{ opacity: 0 }}>

@@ -10,18 +10,18 @@ const SCHEDULE_URL = "https://10daykitchens.hbportal.co/public/69f4fca66910ddf27
 const PHONE_URL = "tel:3605573441";
 
 const SLIDER_IMAGES = [
-  "https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/66d7596b-2556-49cd-8f7f-7203a0ac9b63/Kitchen+-+Whistler+Flat+in+Frost.jpg?content-type=image%2Fjpeg",
-  "https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/0d9dc93e-2eef-419b-a5d1-1e3d41e8a7c1/Kitchen+-+Ethos+in+Walnut+with+clear%2C+and+Denman+in+Powder+on+the+Island.jpg?content-type=image%2Fjpeg",
-  "https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/da3ea0d3-59ea-4ee8-ae87-8251a29d29ee/Vanity+-+Metropolitan+Walnut+1.jpg?content-type=image%2Fjpeg",
-  "https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/c805d147-3999-4249-bce3-cd1b9d4a042c/kitchen+with+quatz+backsplash.jpg?content-type=image%2Fjpeg",
-  "https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/935a950b-c2d5-4a2f-b112-5a025057f946/full+kitchen+with+marble+cpuntertop.jpg?content-type=image%2Fjpeg",
-  "https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/a3d20e09-5dd9-4dec-a6c7-d1da6a8e9ce4/full+kitchen+with+busher+block.jpg?content-type=image%2Fjpeg",
-  "https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/030032ee-c9b7-4fb8-99f7-34129e493592/Luxury+Modern+Master+Bath+Concept.png?content-type=image%2Fpng",
-  "https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/da315904-f176-49cd-9c5f-d3fb752a5853/Essential+White+Bathroom+1.jpg?content-type=image%2Fjpeg",
-  "https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/8807ca3a-5ba9-4970-b5ba-fe00a7137182/Full+Master+Bathroom+Suite.png?content-type=image%2Fpng",
-  "https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/31f06899-aa52-4e30-bf5e-0fe5a22dd356/Bathroom1+View2.jpg?content-type=image%2Fjpeg",
-  "https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/cd44f26c-d314-4820-a9d0-5a698ef24756/Oslo+White+Bathroom-+View+1.jpg?content-type=image%2Fjpeg",
-  "https://images.squarespace-cdn.com/content/6982349a56e1e46c7b2e0861/5aec0b12-22cb-4356-b129-045c298ae697/Completed+Modern+Kitchen.png?content-type=image%2Fpng",
+  "/gallery-whistler-frost.jpg",
+  "/project-forest-kitchen.jpg",
+  "/gallery-metropolitan-walnut.jpg",
+  "/gallery-quartz-backsplash.jpg",
+  "/project-coastal-calm.jpg",
+  "/gallery-butcher-block.jpg",
+  "/gallery-luxury-bath.png",
+  "/gallery-essential-white-bath.jpg",
+  "/hero-bathroom-custom.png",
+  "/gallery-bath-view2.jpg",
+  "/gallery-oslo-white-bath.jpg",
+  "/project-midnight-blue.jpg",
 ];
 
 export default function ShowroomExp() {
