@@ -4,6 +4,7 @@ import "./globals.css";
 import PromoBar from "@/components/PromoBar";
 import ScrollAnimations from "@/components/ScrollAnimations";
 import SmoothScroll from "@/components/SmoothScroll";
+import { Analytics } from "@vercel/analytics/next";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -194,6 +195,7 @@ export default function RootLayout({
         <PromoBar />
         <ScrollAnimations />
         {children}
+        <Analytics />
       </body>
     </html>
   );
