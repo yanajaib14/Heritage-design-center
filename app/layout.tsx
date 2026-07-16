@@ -4,7 +4,7 @@ import "./globals.css";
 import PromoBar from "@/components/PromoBar";
 import ScrollAnimations from "@/components/ScrollAnimations";
 import SmoothScroll from "@/components/SmoothScroll";
-import { Analytics } from "@vercel/analytics/next";
+import { Analytics } from "@vercel/analytics/react";
 
 export const viewport: Viewport = {
   width: "device-width",
