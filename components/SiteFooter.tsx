@@ -42,7 +42,7 @@ export default function SiteFooter() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-16">
           
           {/* Column 1: Logo & Brand Intro */}
-          <div className="lg:col-span-5 flex flex-col justify-start footer-reveal">
+          <div className="lg:col-span-4 flex flex-col justify-start footer-reveal">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/assets/logo.png"
@@ -95,11 +95,11 @@ export default function SiteFooter() {
           </div>
 
           {/* Column 4: Hours */}
-          <div className="lg:col-span-2 flex flex-col justify-start footer-reveal">
+          <div className="lg:col-span-3 lg:-ml-12 flex flex-col justify-start footer-reveal">
             <h4 className="text-[var(--gold)] font-body text-[15px] tracking-[0.18em] uppercase font-semibold mb-6">
               Hours
             </h4>
-            <p className="text-[var(--text-dim)] font-normal text-[17px] leading-relaxed">
+            <p className="text-[var(--text-dim)] font-normal text-[17px] leading-relaxed lg:whitespace-nowrap">
               Mon – Fri: 9:00 AM – 5:30 PM<br />
               Sat: By appointment only<br />
               Sun: Closed
