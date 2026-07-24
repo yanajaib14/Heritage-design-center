@@ -68,6 +68,7 @@ export default function HeroSection({
         </div>
 
         <h1 ref={h1Ref} style={{ opacity: 0 }}>
+          <span className="hero-brand">Heritage Design Center</span>
           {titleOverride || (
             <>
               Design, Materials &amp; Showroom<br />

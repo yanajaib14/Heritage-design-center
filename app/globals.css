@@ -503,6 +503,16 @@ body.has-promo .hero {
   color: var(--gold);
   font-weight: 400;
 }
+.hero-brand {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: clamp(13px, 1.1vw, 15px);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
 
 .hero-sub {
   font-family: var(--font-body);
